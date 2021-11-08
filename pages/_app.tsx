@@ -1,7 +1,9 @@
-import '../styles/globals.scss';
-import type { AppProps } from 'next/app';
+import React, { FC } from 'react';
+import { AppProps } from 'next/app';
+import '@s/globals.scss';
 
-function MyApp({ Component, pageProps }: AppProps) {
+const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
   return <Component {...pageProps} />;
-}
-export default MyApp;
+};
+
+export default WrappedApp;

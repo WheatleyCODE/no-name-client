@@ -1,0 +1,6 @@
+@import '../../mixins.scss';
+
+.userContainer {
+  height: 100%;
+  @include flex-center;
+}

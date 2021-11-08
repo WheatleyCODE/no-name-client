@@ -1,0 +1,23 @@
+@import '../../mixins.scss';
+@import '../../variables.scss';
+
+.parent {
+  width: 100%;
+  @include flex-center;
+}
+
+.width {
+  @include max-width;
+  box-shadow: $boxShadow;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: $headerHeight;
+}
+
+.main {
+  height: Calc(100vh - $headerHeight);
+}
