@@ -1,11 +1,12 @@
 import axios from 'axios';
 import { AuthResponse } from '../types/response/AuthResponse';
 
+export const API_URL_IP = 'http://192.168.88.16:5000';
 export const API_URL = 'http://localhost:5000';
 
 const $api = axios.create({
   withCredentials: true,
-  baseURL: API_URL,
+  baseURL: API_URL_IP,
 });
 
 $api.interceptors.request.use((config: any) => {
@@ -18,10 +19,10 @@ $api.interceptors.response.use(
   async (err) => {
     // ! 403 времмено!!!
     const originalRequest = err.config;
-    if (err.response.status === 403 && err.config && !err.config.isRetry) {
+    if (err?.response?.status === 403 && err.config && !err.config.isRetry) {
       try {
         originalRequest._isRetry = true;
-        const res = await axios.get<AuthResponse>(`${API_URL}/auth/refresh`, {
+        const res = await axios.get<AuthResponse>(`${API_URL_IP}/auth/refresh`, {
           withCredentials: true,
         });
         localStorage.setItem('token', res.data.accessToken);
