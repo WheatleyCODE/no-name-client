@@ -1,9 +1,22 @@
+import $api from '@http';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import { useEffect } from 'react';
 import styles from '../styles/Home.module.scss';
 
 const Home: NextPage = () => {
+  const dasd = async () => {
+    const fdsf = await $api.get('/test');
+    console.log(fdsf);
+  };
+  useEffect(() => {
+    try {
+      dasd()
+    } catch (e) {
+      console.log(e);
+    }
+  }, []);
   return (
     <div className={styles.container}>
       <Head>
