@@ -21,7 +21,7 @@ const Home: NextPage = () => {
   //   fetchUsers();
   // }, []);
 
-  console.log(users, error);
+  // console.log(users, error);
   // /> tests
 
   return (

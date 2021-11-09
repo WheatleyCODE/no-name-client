@@ -1,0 +1,17 @@
+@import '../../variables.scss';
+
+.navLink {
+  padding: 10px;
+
+  &:hover {
+    color: $colorPrimary;
+  }
+}
+
+.navLink.active {
+  color: $colorGreen;
+
+  &:hover {
+    color: $colorPrimary;
+  }
+}

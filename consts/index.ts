@@ -1,6 +1,10 @@
 export const menuItems = [
   {
     name: 'Главная',
-    path: 'На главную',
+    path: '/',
+  },
+  {
+    name: 'Регистрация',
+    path: '/registration',
   },
 ];
