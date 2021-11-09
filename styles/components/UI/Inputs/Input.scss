@@ -4,11 +4,12 @@
   position: relative;
   width: 100%;
   padding-top: 14px;
+  margin-top: 5px;
 
   i {
     position: absolute;
-    top: 30px;
-    left: 15px;
+    top: 34px;
+    left: 17px;
     color: $colorGrey;
   }
 }
@@ -17,16 +18,16 @@
   position: absolute;
   background-color: #fff;
   color: $colorRed;
-  top: 5px;
+  top: 3px;
   left: 7px;
-  font-size: 0.85rem;
+  font-size: 0.87rem;
   padding: 0 3px;
 }
 
 .input {
   width: 100%;
-  padding: 10px;
-  padding-left: 40px;
+  padding: 16px;
+  padding-left: 48px;
   background-color: $colorWhite;
   border: none;
   border-radius: 5px;

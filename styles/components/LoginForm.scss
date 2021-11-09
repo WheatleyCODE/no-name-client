@@ -1,0 +1,56 @@
+@import '../variables.scss';
+@import '../mixins.scss';
+
+.loginFrom {
+  @include flex-center;
+  border-radius: $borderRadius;
+  flex-direction: column;
+  padding: 40px;
+  width: 400px;
+
+  h1 {
+    border-bottom: 1px solid $colorLightGrey;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .inputsBlock {
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  .links {
+    margin-top: 10px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .register {
+    margin-top: 20px;
+    width: 100%;
+    @include flex-center;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 5px;
+    padding: 14px;
+  }
+
+  .InputContainer {
+    margin-top: 20px;
+  }
+}
+
+.loginText {
+  @include flex-center;
+  height: 100%;
+
+  i {
+    margin-left: 10px;
+    font-size: 1.3rem;
+  }
+}

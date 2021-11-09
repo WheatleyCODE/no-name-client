@@ -1,10 +1,15 @@
+export enum PathRoutes {
+  HOME = '/',
+  REGISTRATION = '/login',
+}
+
 export const menuItems = [
   {
     name: 'Главная',
-    path: '/',
+    path: PathRoutes.HOME,
   },
   {
     name: 'Регистрация',
-    path: '/registration',
+    path: PathRoutes.REGISTRATION,
   },
 ];

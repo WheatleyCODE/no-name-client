@@ -1,0 +1,7 @@
+@import '../variables.scss';
+@import '../mixins.scss';
+
+.auth {
+  @include flex-center;
+  margin-top: 50px;
+}

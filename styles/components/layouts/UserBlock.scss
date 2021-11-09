@@ -1,6 +1,17 @@
 @import '../../mixins.scss';
+@import '../../variables.scss';
 
 .userContainer {
-  height: 100%;
   @include flex-center;
+  height: 100%;
+  cursor: pointer;
+
+  i {
+    margin-left: 10px;
+    font-size: 1.3rem;
+  }
+
+  &:hover {
+    color: $colorPrimary;
+  }
 }
