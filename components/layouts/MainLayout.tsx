@@ -5,6 +5,8 @@ import { menuItems } from 'consts';
 import { HeadTag } from './HeadTag';
 import { Footer } from './Footer';
 import { Button } from '@components/UI/Buttons/Button';
+import { Input } from '@components/UI/Inputs/Input';
+import { InputType, useInput } from '@hooks';
 import s from '@s/components/index.module.scss';
 
 export interface MainLayoutProps {
@@ -15,6 +17,8 @@ export interface MainLayoutProps {
 
 export const MainLayout: React.FC<MainLayoutProps> = (props) => {
   const { children, keywords, description, title = 'Главная' } = props;
+  const textInput = useInput('', 'text', InputType.TEXT);
+
   return (
     <>
       <HeadTag keywords={keywords} description={description} title={title} />
@@ -30,6 +34,12 @@ export const MainLayout: React.FC<MainLayoutProps> = (props) => {
             <div className={s.user}>
               <UserBlock />
               <Button className={s.blue}>Кнопка</Button>
+              <Input
+                validError={textInput.validError}
+                icon="far fa-envelope"
+                isError={textInput.isError}
+                defaultParams={textInput.default}
+              />
             </div>
           </div>
         </div>
