@@ -1,18 +1,13 @@
 import { motion } from 'framer-motion'; // ! Add animation
 import s from '@s/components/index.module.scss';
 
-interface IButtonProps {
+interface ButtonProps {
   disable?: boolean;
   onClickHandler?: () => void;
   className?: string;
 }
 
-export const Button: React.FC<IButtonProps> = ({
-  children,
-  onClickHandler,
-  disable,
-  className,
-}) => {
+export const Button: React.FC<ButtonProps> = ({ children, onClickHandler, disable, className }) => {
   return (
     <button
       disabled={disable ?? false}

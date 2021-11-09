@@ -8,6 +8,7 @@ import { Button } from '@components/UI/Buttons/Button';
 import { Input } from '@components/UI/Inputs/Input';
 import { InputType, useInput } from '@hooks';
 import s from '@s/components/index.module.scss';
+import { IconButton } from '@components/UI';
 
 export interface MainLayoutProps {
   title: string;
@@ -40,6 +41,7 @@ export const MainLayout: React.FC<MainLayoutProps> = (props) => {
                 isError={textInput.isError}
                 defaultParams={textInput.default}
               />
+              <IconButton icon="fas fa-times" className="" />
             </div>
           </div>
         </div>
