@@ -1,5 +1,6 @@
 import { HYDRATE } from 'next-redux-wrapper';
-import { combineReducers } from 'redux';
+import { AnyAction, combineReducers } from 'redux';
+import { ThunkDispatch } from 'redux-thunk';
 import { userReducer } from './userReducer';
 
 const rootReducer = combineReducers({
@@ -21,3 +22,4 @@ export const reducer = (state: any, action: any) => {
 };
 
 export type RootState = ReturnType<typeof rootReducer>;
+export type NextThunckDispatch = ThunkDispatch<RootState, void, AnyAction>;
