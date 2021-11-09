@@ -2,5 +2,23 @@
 @import '../../../mixins.scss';
 
 .button {
-  color: red;
+  color: $colorBlack;
+  padding: 3px 5px;
+  border-radius: 5px;
+  border: 1px solid $colorBlack;
+
+  &:hover {
+    background-color: colorBlack;
+    color: $colorWhite;
+  }
+
+  &:disabled {
+    color: $colorLightGrey;
+    border-color: $colorLightGrey;
+  }
+}
+
+.button.blue {
+  color: $colorPrimary;
+  border-color: $colorPrimary;
 }

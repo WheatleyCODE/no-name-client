@@ -4,6 +4,7 @@ import { UserBlock } from './UserBlock';
 import { menuItems } from 'consts';
 import { HeadTag } from './HeadTag';
 import { Footer } from './Footer';
+import { Button } from '@components/UI/Buttons/Button';
 import s from '@s/components/index.module.scss';
 
 export interface MainLayoutProps {
@@ -28,6 +29,7 @@ export const MainLayout: React.FC<MainLayoutProps> = (props) => {
             </div>
             <div className={s.user}>
               <UserBlock />
+              <Button className={s.blue}>Кнопка</Button>
             </div>
           </div>
         </div>

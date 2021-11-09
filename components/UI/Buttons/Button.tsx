@@ -1,8 +1,7 @@
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'; // ! Add animation
 import s from '@s/components/index.module.scss';
 
 interface IButtonProps {
-  buttonStyle: string;
   disable?: boolean;
   onClickHandler?: () => void;
   className?: string;
@@ -10,13 +9,10 @@ interface IButtonProps {
 
 export const Button: React.FC<IButtonProps> = ({
   children,
-  buttonStyle = 'default',
   onClickHandler,
   disable,
   className,
 }) => {
-  const styles = buttonStyle;
-
   return (
     <button
       disabled={disable ?? false}
