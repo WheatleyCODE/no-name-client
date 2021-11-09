@@ -4,11 +4,11 @@
 .parent {
   width: 100%;
   @include flex-center;
+  box-shadow: $boxShadow;
 }
 
 .width {
   @include max-width;
-  box-shadow: $boxShadow;
 }
 
 .header {

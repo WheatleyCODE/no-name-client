@@ -21,7 +21,6 @@ export const MainLayout: React.FC<MainLayoutProps> = (props) => {
         <div className={s.width}>
           <div className={s.header}>
             <div className={s.logo}>
-              <i className="far fa-times" />
               <Logo />
             </div>
             <div className={s.menu}>

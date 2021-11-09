@@ -8,6 +8,7 @@ export const Logo: FC = () => {
         src="https://i.pinimg.com/originals/57/84/a6/5784a6f61cdd0a4059867c05b8f639d1.png"
         alt="logo"
       />
+      <h2>noname</h2>
     </div>
   );
 };
