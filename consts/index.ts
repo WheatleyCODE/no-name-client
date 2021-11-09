@@ -1,6 +1,7 @@
 export enum PathRoutes {
   HOME = '/',
-  REGISTRATION = '/login',
+  LOGIN = '/login',
+  REGISTRATION = '/registarion',
 }
 
 export const menuItems = [
@@ -11,5 +12,9 @@ export const menuItems = [
   {
     name: 'Регистрация',
     path: PathRoutes.REGISTRATION,
+  },
+  {
+    name: 'Вход',
+    path: PathRoutes.LOGIN,
   },
 ];
