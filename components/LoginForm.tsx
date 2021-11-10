@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { InputType, useInput } from '@hooks';
-import { Input } from '@components';
-import { Button } from '@components';
+import { Input, Link, Button } from '@components';
+import { PathRoutes } from 'consts';
 import s from '@s/components/index.module.scss';
 
 interface LoginFormProps {
@@ -39,8 +39,15 @@ export const LoginForm: FC<LoginFormProps> = ({ reg = false }) => {
         )}
         {!reg ? (
           <div className={s.links}>
-            <div>Чекбокс</div>
-            <div>Забыли пароль?</div>
+            <div>
+              <label htmlFor="lol">
+                <input id="lol" type="checkbox" />
+                Запомнить меня
+              </label>
+            </div>
+            <div>
+              <Link href={PathRoutes.REGISTRATION}>Забыли пароль?</Link>
+            </div>
           </div>
         ) : (
           <div className={s.reg} />
@@ -51,7 +58,16 @@ export const LoginForm: FC<LoginFormProps> = ({ reg = false }) => {
           </span>
         </Button>
         <div className={s.register}>
-          <span>{reg ? 'Есть аккаунт? Войти' : 'Нет аккаунта? Зарегистрироваться'}</span>
+          {reg ? (
+            <>
+              <span>Есть аккаунт?</span> <Link href={PathRoutes.LOGIN}>Войти</Link>
+            </>
+          ) : (
+            <>
+              <span>Нет аккаунта?</span>{' '}
+              <Link href={PathRoutes.REGISTRATION}>Зарегистрироваться</Link>
+            </>
+          )}
         </div>
       </div>
     </div>

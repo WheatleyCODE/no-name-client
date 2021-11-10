@@ -5,8 +5,7 @@
   @include flex-center;
   border-radius: $borderRadius;
   flex-direction: column;
-  padding: 40px;
-  width: 400px;
+  width: 300px;
 
   h1 {
     border-bottom: 1px solid $colorLightGrey;
@@ -21,6 +20,7 @@
   }
 
   .links {
+    font-size: 0.95rem;
     margin-top: 10px;
     height: 50px;
     display: flex;
@@ -33,9 +33,16 @@
   }
 
   .register {
-    margin-top: 20px;
+    border-top: 1px solid $colorLightGrey;
+    padding-top: 20px;
+    margin-top: 40px;
     width: 100%;
     @include flex-center;
+    font-size: 1.05rem;
+
+    span {
+      margin-right: 10px;
+    }
   }
 
   button {

@@ -1,0 +1,11 @@
+@import '../../../variables.scss';
+
+.link {
+  display: flex;
+  padding: 1px;
+  cursor: pointer;
+  color: $colorPrimary;
+  padding-bottom: 2px;
+  border-bottom: 1px solid $colorLightPrimary;
+  line-height: 10px;
+}
