@@ -1,9 +1,9 @@
 import { Logo } from './Logo';
-import { Menu } from './Menu';
 import { UserBlock } from './UserBlock';
 import { menuItems } from 'consts';
 import { HeadTag } from './HeadTag';
 import { Footer } from './Footer';
+import { IconButton, StickyMenu, Menu } from '@components';
 import s from '@s/components/index.module.scss';
 
 export interface MainLayoutProps {
@@ -23,6 +23,9 @@ export const MainLayout: React.FC<MainLayoutProps> = (props) => {
           <div className={s.header}>
             <div className={s.logo}>
               <Logo />
+              <div className={s.mobileMenu}>
+                <IconButton className={s.big} icon="far fa-bars" />
+              </div>
             </div>
             <div className={s.menu}>
               <Menu menuItems={menuItems} />
@@ -33,6 +36,7 @@ export const MainLayout: React.FC<MainLayoutProps> = (props) => {
           </div>
         </div>
       </div>
+      <StickyMenu />
       <main className={s.main}>{children}</main>
       <Footer />
     </>

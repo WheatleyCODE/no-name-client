@@ -4,11 +4,21 @@
 .parent {
   width: 100%;
   @include flex-center;
-  box-shadow: $boxShadow;
 }
 
 .width {
   @include max-width;
+}
+
+.logo {
+  @include flex-center;
+
+  .mobileMenu {
+    height: 100%;
+    width: 60px;
+    @include flex-center;
+    display: none;
+  }
 }
 
 .header {
@@ -20,4 +30,16 @@
 
 .main {
   height: Calc(100vh - $headerHeight);
+}
+
+@media screen and (max-width: 500px) {
+  .logo {
+    .mobileMenu {
+      display: flex;
+    }
+  }
+
+  .menu {
+    display: none;
+  }
 }

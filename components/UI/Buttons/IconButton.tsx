@@ -3,7 +3,7 @@ import s from '@s/components/index.module.scss';
 interface IconButtonProps {
   onClickHandler?: () => void;
   icon: string;
-  className: string;
+  className?: string;
 }
 
 export const IconButton: React.FC<IconButtonProps> = ({ icon, onClickHandler, className }) => {

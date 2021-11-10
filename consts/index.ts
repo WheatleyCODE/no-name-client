@@ -10,11 +10,15 @@ export const menuItems = [
     path: PathRoutes.HOME,
   },
   {
-    name: 'Регистрация',
-    path: PathRoutes.REGISTRATION,
+    name: 'Отзывы',
+    path: PathRoutes.HOME,
   },
   {
-    name: 'Вход',
-    path: PathRoutes.LOGIN,
+    name: 'Контакты',
+    path: PathRoutes.HOME,
+  },
+  {
+    name: 'Код краски',
+    path: PathRoutes.HOME,
   },
 ];

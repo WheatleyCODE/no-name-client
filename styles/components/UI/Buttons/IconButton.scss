@@ -6,15 +6,23 @@
   height: 30px;
   color: $colorBlack;
   border-radius: 5px;
-  border: 1px solid $colorBlack;
+  transition: all 0.5s;
 
   &:hover {
-    background-color: colorBlack;
-    color: $colorWhite;
+    color: $colorPrimary;
   }
 }
 
-.button.blue {
-  color: $colorPrimary;
-  border-color: $colorPrimary;
+.iconButton.big {
+  color: $colorBlack;
+  width: 100%;
+  height: 100%;
+
+  i {
+    font-size: 25px;
+  }
+
+  &:hover {
+    color: $colorBlack;
+  }
 }
