@@ -2,8 +2,9 @@
 @import '../../variables.scss';
 
 .parent {
-  width: 100%;
   @include flex-center;
+  width: 100%;
+  background-color: $colorWhite;
 }
 
 .width {
@@ -12,13 +13,12 @@
 
 .logo {
   @include flex-center;
+}
 
-  .mobileMenu {
-    height: 100%;
-    width: 60px;
-    @include flex-center;
-    display: none;
-  }
+.mobileMenu {
+  height: 100%;
+  @include flex-center;
+  display: none;
 }
 
 .header {
@@ -32,14 +32,18 @@
   height: Calc(100vh - $headerHeight);
 }
 
-@media screen and (max-width: 500px) {
-  .logo {
-    .mobileMenu {
-      display: flex;
-    }
+@media screen and (max-width: 660px) {
+  .mobileMenu {
+    display: flex;
   }
 
   .menu {
     display: none;
+  }
+
+  .parent.mobile {
+    position: sticky;
+    top: 0;
+    box-shadow: $boxShadow;
   }
 }

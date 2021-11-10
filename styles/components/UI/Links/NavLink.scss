@@ -1,17 +1,22 @@
 @import '../../../variables.scss';
+@import '../../../mixins.scss';
 
 .navLink {
+  @include flex-center;
+  font-weight: bold;
+  transition: all 0.3s;
   padding: 10px;
+  color: $colorBlack;
 
   &:hover {
-    color: $colorPrimary;
+    color: $colorOrange;
   }
 }
 
 .navLink.active {
-  color: $colorGreen;
+  color: $colorOrange;
 
   &:hover {
-    color: $colorPrimary;
+    color: $colorOrange;
   }
 }

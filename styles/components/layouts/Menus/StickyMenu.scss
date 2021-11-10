@@ -1,5 +1,22 @@
+@import '../../../variables.scss';
+@import '../../../mixins.scss';
+
 .sticky {
+  @include flex-center;
   position: sticky;
   top: 0;
-  border-bottom: 1px solid black;
+  height: $headerStickyMenu;
+  background-color: $colorWhite;
+}
+
+.stickyMenu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 660px) {
+  .sticky {
+    display: none;
+  }
 }

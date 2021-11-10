@@ -9,12 +9,15 @@ $colorRed: rgb(219, 20, 20);
 $colorPrimary: rgb(47, 90, 247);
 $colorLightPrimary: rgb(76, 114, 252);
 $colorGreen: rgb(0, 191, 0);
+$colorOrange: rgb(255, 105, 0);
 $colorDarkGreen: rgb(0, 117, 0);
 $colorWhite: rgb(255, 255, 255);
 
 $borderBottom: 1px solid black;
 $border: 1px solid black;
 $boxShadow: 0px 0px 5px $colorLightGrey;
+$boxShadowSticky: 0px 3px 3px rgb(236, 236, 236);
 $borderRadius: 12px;
 
 $headerHeight: 60px;
+$headerStickyMenu: 40px;
