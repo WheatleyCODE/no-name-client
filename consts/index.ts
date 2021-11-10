@@ -2,6 +2,9 @@ export enum PathRoutes {
   HOME = '/',
   LOGIN = '/login',
   REGISTRATION = '/registarion',
+  REVIEWS = '/reviews',
+  CONTACTS = '/contacts',
+  PAINT = '/PAINT',
 }
 
 export const menuItems = [
@@ -11,15 +14,15 @@ export const menuItems = [
   },
   {
     name: 'Отзывы',
-    path: PathRoutes.HOME,
+    path: PathRoutes.REVIEWS,
   },
   {
     name: 'Контакты',
-    path: PathRoutes.HOME,
+    path: PathRoutes.CONTACTS,
   },
   {
     name: 'Код краски',
-    path: PathRoutes.HOME,
+    path: PathRoutes.PAINT,
   },
 ];
 

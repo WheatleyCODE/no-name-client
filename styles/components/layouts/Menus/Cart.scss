@@ -1,0 +1,28 @@
+.cart {
+  width: 250px;
+  height: 100%;
+
+  margin-top: 7px;
+  height: 36px;
+  display: flex;
+
+  button {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  span {
+    @include flex-center;
+  }
+
+  i {
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .cart {
+    width: 139px;
+  }
+}

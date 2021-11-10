@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Categories, Cart, Search } from '@components';
 import s from '@s/components/index.module.scss';
 
 export const StickyMenu: FC = () => {
@@ -7,9 +8,15 @@ export const StickyMenu: FC = () => {
       <div className={s.parent}>
         <div className={s.width}>
           <div className={s.stickyMenu}>
-            <h3>1</h3>
-            <h3>2</h3>
-            <h3>3</h3>
+            <div>
+              <Categories />
+            </div>
+            <div>
+              <Search />
+            </div>
+            <div>
+              <Cart />
+            </div>
           </div>
         </div>
       </div>
