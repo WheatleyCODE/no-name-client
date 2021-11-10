@@ -1,7 +1,7 @@
-import { Footer, HeadTag, UserBlock, Logo, MobileMenu } from '@components';
+import { Footer, HeadTag, UserBlock, Logo, MobileMenu, Phone } from '@components';
 import { StickyMenu, Menu } from '@components';
+import { menuItems, PHONE } from 'consts';
 import s from '@s/components/index.module.scss';
-import { menuItems } from 'consts';
 
 export interface MainLayoutProps {
   title: string;
@@ -26,6 +26,7 @@ export const MainLayout: React.FC<MainLayoutProps> = (props) => {
               <Menu menuItems={menuItems} />
             </div>
             <div className={s.user}>
+              <Phone adaptive phone={PHONE} />
               <UserBlock />
             </div>
           </div>

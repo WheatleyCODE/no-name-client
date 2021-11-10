@@ -1,0 +1,39 @@
+@import '../../variables.scss';
+@import '../../mixins.scss';
+
+.phoneAdaptive {
+  cursor: pointer;
+  @include flex-center;
+  margin-right: 35px;
+  height: 100%;
+  margin-bottom: -2px;
+  // color: $colorBlack;
+
+  i {
+    font-size: 1.4rem;
+  }
+
+  &:hover i {
+    color: $colorOrange;
+  }
+
+  .phoneIcon {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .phoneAdaptive .phoneNumber {
+    display: none;
+  }
+
+  .phoneAdaptive .phoneIcon {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .phoneAdaptive {
+    margin-right: 20px;
+  }
+}

@@ -22,3 +22,5 @@ export const menuItems = [
     path: PathRoutes.HOME,
   },
 ];
+
+export const PHONE = '78005553535';

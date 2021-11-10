@@ -7,3 +7,4 @@ export { MobileMenu } from './Menus/MobileMenu';
 export { MenuItem } from './Menus/MenuItem';
 export { UserBlock } from './UserBlock';
 export { StickyMenu } from './Menus/StickyMenu';
+export { Phone } from './Phone';
