@@ -1,5 +1,5 @@
-import { Footer, HeadTag, UserBlock, Logo } from '@components';
-import { IconButton, StickyMenu, Menu } from '@components';
+import { Footer, HeadTag, UserBlock, Logo, MobileMenu } from '@components';
+import { StickyMenu, Menu } from '@components';
 import s from '@s/components/index.module.scss';
 import { menuItems } from 'consts';
 
@@ -18,9 +18,7 @@ export const MainLayout: React.FC<MainLayoutProps> = (props) => {
       <div className={`${s.parent} ${s.mobile}`}>
         <div className={s.width}>
           <div className={s.header}>
-            <div className={s.mobileMenu}>
-              <IconButton className={s.big} icon="far fa-bars" />
-            </div>
+            <MobileMenu />
             <div className={s.logo}>
               <Logo />
             </div>
