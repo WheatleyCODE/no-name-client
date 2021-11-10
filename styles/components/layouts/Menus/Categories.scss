@@ -2,13 +2,13 @@
 @import '../../../mixins.scss';
 
 .categories {
-  margin-top: 7px;
   width: 143px;
   height: 36px;
   display: flex;
 
   button {
     width: 100%;
+    height: 100%;
     font-size: 0.9rem;
   }
 

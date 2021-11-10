@@ -4,7 +4,6 @@
 .search {
   @include flex-center;
   background: linear-gradient(90deg, $colorPrimary 0%, $colorOrange 100%);
-  margin-top: 7px;
   height: 36px;
   width: 354px;
   border-radius: 8px;

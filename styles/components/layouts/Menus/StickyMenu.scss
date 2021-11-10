@@ -2,11 +2,22 @@
 @import '../../../mixins.scss';
 
 .sticky {
+  div {
+    display: flex;
+    align-items: center;
+  }
+
   @include flex-center;
   position: sticky;
   top: 0;
   height: $headerStickyMenu;
   background-color: $colorWhite;
+}
+
+.shadow {
+  height: 61px;
+  box-shadow: $boxShadow;
+  border-bottom: 1px solid $colorLightGrey;
 }
 
 .stickyMenu {
