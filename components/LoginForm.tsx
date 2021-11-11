@@ -52,7 +52,7 @@ export const LoginForm: FC<LoginFormProps> = ({ reg = false }) => {
         ) : (
           <div className={s.reg} />
         )}
-        <Button className={s.blue}>
+        <Button className={s.bluePull}>
           <span className={s.loginText}>
             {reg ? 'Зарегистрироваться' : 'Войти на сайт'} <i className="fad fa-sign-in-alt" />
           </span>

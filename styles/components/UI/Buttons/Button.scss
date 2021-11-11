@@ -18,12 +18,117 @@
   }
 }
 
+.button.blue,
+.button.orange {
+  padding: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .test {
+    padding: 3px 5px;
+    height: 100%;
+    width: 100%;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    text-align: center;
+    position: relative;
+    transition: all 0.1s;
+  }
+
+  .test span {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    border-radius: 6px;
+  }
+
+  .test:after {
+    position: absolute;
+    border-radius: 3px;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: $colorPrimary;
+    transition: all 0.1s;
+  }
+
+  .test:hover {
+    color: #fff;
+  }
+
+  .test:hover:after {
+    width: 100%;
+  }
+}
+
 .button.blue {
   color: $colorPrimary;
   border-color: $colorPrimary;
+
+  .test:after {
+    background: $colorPrimary;
+  }
 }
 
 .button.orange {
   color: $colorOrange;
   border-color: $colorOrange;
+
+  .test:after {
+    background: $colorOrange;
+  }
+}
+
+.button.bluePull,
+.button.bluePull {
+  transition: all 0.4s;
+  color: $colorWhite;
+  border-color: $colorPrimary;
+  background-color: $colorPrimary;
+  letter-spacing: 1px;
+
+  &:hover {
+    background-color: $colorLightPrimary;
+    border-color: colorLightPrimary;
+
+    transform: translateY(1px);
+  }
+
+  &:active {
+    background-color: $colorWhite;
+    color: $colorLightPrimary;
+  }
+}
+
+.button.bluePull {
+  border-color: $colorPrimary;
+  background-color: $colorPrimary;
+
+  &:hover {
+    background-color: $colorLightPrimary;
+    border-color: colorLightPrimary;
+  }
+
+  &:active {
+    color: $colorLightPrimary;
+  }
+}
+
+.button.orangePull {
+  border-color: $colorOrange;
+  background-color: $colorOrange;
+
+  &:hover {
+    background-color: $colorDarkOrange;
+    border-color: colorDarkOrange;
+  }
+
+  &:active {
+    color: $colorDarkOrange;
+  }
 }
