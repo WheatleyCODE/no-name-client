@@ -7,7 +7,7 @@ export const Cart: FC = () => {
     <div className={s.cart}>
       <Button className={s.orange}>
         <span>
-          Корзина <i className="far fa-shopping-cart" />
+          <i className="far fa-shopping-cart" />
         </span>
       </Button>
     </div>

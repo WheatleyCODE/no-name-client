@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from 'react';
-import { Categories, Cart, Search } from '@components';
+import { Categories, Cart, Search, ColorPanel } from '@components';
 import s from '@s/components/index.module.scss';
 
 export const StickyMenu: FC = () => {
@@ -31,7 +31,8 @@ export const StickyMenu: FC = () => {
             <div>
               <Search />
             </div>
-            <div>
+            <div className={s.cartBlock}>
+              <ColorPanel color="BF1A4TTfd" />
               <Cart />
             </div>
           </div>
