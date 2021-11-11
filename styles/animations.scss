@@ -1,0 +1,59 @@
+.modal-enter-active {
+  animation: show-modal 0.7s forwards;
+}
+
+.modal-exit-active {
+  animation: show-modal 0.7s reverse;
+}
+
+@keyframes show-modal {
+  0% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes showLogo {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes showLogoRev {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+}
+
+.logo-enter-active {
+  animation: showLogo 0.2s forwards;
+}
+
+.logo-exit-active {
+  animation: showLogo 0.2s reverse;
+}
+
+.logorev-enter-active {
+  animation: showLogoRev 0.2s forwards;
+}
+
+.logorev-exit-active {
+  animation: showLogoRev 0.2s reverse;
+}

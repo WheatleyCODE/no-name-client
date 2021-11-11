@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { CSSTransition } from 'react-transition-group';
 import s from '@s/components/index.module.scss';
 
 interface DefaultParams {
@@ -20,7 +21,9 @@ export const Input: FC<InputProps> = (props) => {
 
   return (
     <div className={s.InputContainer}>
-      {isError && <span className={s.error}>{validError}</span>}
+      <CSSTransition in={isError} timeout={100} classNames={'modal'} mountOnEnter unmountOnExit>
+        <span className={s.error}>{validError}</span>
+      </CSSTransition>
       <input className={s.input} {...defaultParams} />
       <i className={icon} />
     </div>

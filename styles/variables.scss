@@ -5,7 +5,7 @@ $colorVeryLightGrey: rgb(231, 231, 231);
 
 $colorNone: rgba(0, 0, 0, 0);
 
-$colorRed: rgb(219, 20, 20);
+$colorRed: rgb(255, 33, 33);
 $colorPrimary: rgb(47, 90, 247);
 $colorLightPrimary: rgb(60, 102, 252);
 $colorGreen: rgb(0, 191, 0);
@@ -15,8 +15,8 @@ $colorDarkOrange: rgb(234, 97, 0);
 $colorDarkGreen: rgb(0, 117, 0);
 $colorWhite: rgb(255, 255, 255);
 
-$borderBottom: 1px solid black;
-$border: 1px solid black;
+$borderBottom: 1px solid $colorBlack;
+$border: 1px solid $colorBlack;
 $boxShadow: 0px 0px 5px $colorLightGrey;
 $borderRadius: 12px;
 

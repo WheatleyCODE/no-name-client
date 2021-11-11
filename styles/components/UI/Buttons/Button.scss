@@ -73,6 +73,10 @@
   .place:after {
     background: $colorPrimary;
   }
+
+  &:active .place:after {
+    background-color: $colorLightPrimary;
+  }
 }
 
 .button.orange {
@@ -82,10 +86,14 @@
   .place:after {
     background: $colorOrange;
   }
+
+  &:active .place:after {
+    background-color: $colorDarkOrange;
+  }
 }
 
 .button.bluePull,
-.button.bluePull {
+.button.orangePull {
   transition: all 0.4s;
   color: $colorWhite;
   border-color: $colorPrimary;
@@ -101,7 +109,6 @@
 
   &:active {
     background-color: $colorWhite;
-    color: $colorLightPrimary;
   }
 }
 
@@ -115,7 +122,8 @@
   }
 
   &:active {
-    color: $colorLightPrimary;
+    color: $colorPrimary;
+    background-color: $colorWhite;
   }
 }
 
@@ -129,6 +137,7 @@
   }
 
   &:active {
-    color: $colorDarkOrange;
+    color: $colorOrange;
+    background-color: $colorWhite;
   }
 }
