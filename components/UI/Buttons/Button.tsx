@@ -15,7 +15,7 @@ export const Button: React.FC<ButtonProps> = ({ children, onClickHandler, disabl
       type="button"
       className={`${s.button} ${className && `${className}`}`}
     >
-      <div className={s.test}>
+      <div className={s.place}>
         <span>{children}</span>
       </div>
     </button>

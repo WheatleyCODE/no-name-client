@@ -26,7 +26,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  .test {
+  .place {
     padding: 3px 5px;
     height: 100%;
     width: 100%;
@@ -37,7 +37,7 @@
     transition: all 0.1s;
   }
 
-  .test span {
+  .place span {
     position: relative;
     width: 100%;
     height: 100%;
@@ -45,7 +45,7 @@
     border-radius: 6px;
   }
 
-  .test:after {
+  .place:after {
     position: absolute;
     border-radius: 3px;
     content: '';
@@ -57,11 +57,11 @@
     transition: all 0.1s;
   }
 
-  .test:hover {
+  .place:hover {
     color: #fff;
   }
 
-  .test:hover:after {
+  .place:hover:after {
     width: 100%;
   }
 }
@@ -70,7 +70,7 @@
   color: $colorPrimary;
   border-color: $colorPrimary;
 
-  .test:after {
+  .place:after {
     background: $colorPrimary;
   }
 }
@@ -79,7 +79,7 @@
   color: $colorOrange;
   border-color: $colorOrange;
 
-  .test:after {
+  .place:after {
     background: $colorOrange;
   }
 }
