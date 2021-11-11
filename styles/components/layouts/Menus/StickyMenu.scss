@@ -9,6 +9,7 @@
 
   @include flex-center;
   position: sticky;
+  z-index: 10;
   top: 0;
   height: $headerStickyMenu;
   background-color: $colorWhite;

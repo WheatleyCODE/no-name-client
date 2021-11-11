@@ -4,4 +4,105 @@
 .auth {
   @include flex-center;
   margin-top: 50px;
+  width: 100%;
+  position: relative;
+}
+
+.form {
+  padding: 0 30px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.sell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 480px;
+  max-width: 480px;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 3px 0px 5px $colorLightGrey;
+
+  .logo {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+
+    img {
+      height: 130px;
+    }
+
+    .logoImg {
+      @include flex-center;
+      flex-direction: column;
+
+      a {
+        color: black;
+        border-bottom: none;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .list {
+    @include flex-center;
+    flex-direction: column;
+    height: 100%;
+    font-size: 1.2rem;
+
+    ul li {
+      display: flex;
+      align-items: center;
+      padding-top: 30px;
+      list-style: none;
+
+      i {
+        width: 100px;
+        @include flex-center;
+        color: $colorOrange;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .wave {
+    width: 480px;
+    margin-top: 10px;
+
+    svg {
+      margin-bottom: -7px;
+    }
+  }
+}
+
+.registration {
+  display: flex;
+
+  .homeLink {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    a {
+      @include flex-center;
+    }
+
+    i {
+      margin-right: 6px;
+    }
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .sell {
+    display: none;
+  }
+
+  .registration .homeLink {
+    display: none;
+  }
 }

@@ -47,8 +47,10 @@
   }
 
   .parent.mobile {
+    background-color: $colorWhite;
     position: sticky;
     top: 0;
     box-shadow: $boxShadow;
+    z-index: 10;
   }
 }

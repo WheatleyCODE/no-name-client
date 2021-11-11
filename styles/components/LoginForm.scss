@@ -5,27 +5,48 @@
   @include flex-center;
   border-radius: $borderRadius;
   flex-direction: column;
-  width: 300px;
+  width: 100%;
 
   h1 {
     border-bottom: 1px solid $colorLightGrey;
     width: 100%;
-    text-align: center;
     padding-bottom: 10px;
+    font-size: 2rem;
   }
 
   .inputsBlock {
     width: 100%;
-    padding-top: 10px;
+
+    .InputContainer {
+      i {
+        top: 31px;
+      }
+    }
+  }
+
+  .input {
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 
   .links {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     margin-top: 10px;
     height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .checkbox {
+      label {
+        @include flex-center;
+        cursor: pointer;
+      }
+
+      input {
+        margin-right: 5px;
+      }
+    }
   }
 
   .reg {

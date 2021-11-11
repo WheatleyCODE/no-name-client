@@ -39,7 +39,7 @@ export const LoginForm: FC<LoginFormProps> = ({ reg = false }) => {
         )}
         {!reg ? (
           <div className={s.links}>
-            <div>
+            <div className={s.checkbox}>
               <label htmlFor="lol">
                 <input id="lol" type="checkbox" />
                 Запомнить меня
