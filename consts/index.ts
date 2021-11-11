@@ -27,3 +27,4 @@ export const menuItems = [
 ];
 
 export const PHONE = '78005553535';
+export const MAX_CLIENT_WIDTH_MOBILE = 713;
