@@ -1,16 +1,19 @@
 import { FC, useEffect, useState } from 'react';
-import { Categories, Cart, Search, ColorPanel } from '@components';
+import { Categories, Cart, Search, ColorPanel, Logo } from '@components';
 import s from '@s/components/index.module.scss';
 
 export const StickyMenu: FC = () => {
   const [className, setClassName] = useState('');
+  const [showLogo, setShowLogo] = useState(false);
 
   const scrollHandler = (e: any) => {
     const top = e.target.documentElement.scrollTop;
     if (top > 60) {
       setClassName(s.shadow);
+      setShowLogo(true);
     } else {
       setClassName('');
+      setShowLogo(false);
     }
   };
 
@@ -25,10 +28,15 @@ export const StickyMenu: FC = () => {
       <div className={s.parent}>
         <div className={s.width}>
           <div className={s.stickyMenu}>
-            <div>
-              <Categories />
+            <div className={s.categoriesBlock}>
+              {showLogo && (
+                <div className={s.logo}>
+                  <Logo noText />
+                </div>
+              )}
+              <Categories noText={showLogo} />
             </div>
-            <div>
+            <div className={s.searchBlock}>
               <Search />
             </div>
             <div className={s.cartBlock}>

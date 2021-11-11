@@ -13,6 +13,14 @@
   top: 0;
   height: $headerStickyMenu;
   background-color: $colorWhite;
+
+  .logo {
+    .logoContainer {
+      width: 60px;
+      height: 60px;
+      justify-content: flex-start;
+    }
+  }
 }
 
 .shadow {
@@ -30,6 +38,10 @@
 
 .cartBlock {
   width: 267.2px;
+}
+
+.categoriesBlock {
+  width: 149.5px;
 }
 
 @media screen and (max-width: 860px) {

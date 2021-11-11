@@ -2,7 +2,7 @@
 @import '../../../mixins.scss';
 
 .categories {
-  width: 149.5px;
+  width: 100%;
   height: 36px;
   display: flex;
 
@@ -16,8 +16,11 @@
     @include flex-center;
   }
 
+  .text {
+    margin-right: 10px;
+  }
+
   i {
     font-size: 1.2rem;
-    margin-left: 10px;
   }
 }
