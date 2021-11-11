@@ -1,9 +1,10 @@
 import { FC } from 'react';
+import s from '@s/components/index.module.scss';
 
 export const Footer: FC = () => {
   return (
-    <div>
+    <footer className={s.footer}>
       <h1>Footer</h1>
-    </div>
+    </footer>
   );
 };
