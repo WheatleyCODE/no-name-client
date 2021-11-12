@@ -14,6 +14,10 @@
 .logo {
   @include flex-center;
   width: 149.5px;
+
+  img {
+    height: 48px;
+  }
 }
 
 .user {
@@ -39,6 +43,10 @@
 }
 
 @media screen and (max-width: 730px) {
+  .header {
+    height: 60px;
+  }
+
   .mobileMenu {
     display: flex;
   }

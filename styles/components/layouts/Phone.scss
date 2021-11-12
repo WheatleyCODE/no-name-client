@@ -4,30 +4,64 @@
 .phoneAdaptive {
   cursor: pointer;
   @include flex-center;
-  margin-right: 35px;
+  flex-direction: column;
+  margin-right: 20px;
   height: 100%;
-  margin-bottom: -2px;
+  width: 172px;
 
-  i {
-    font-size: 1.4rem;
-  }
-
-  &:hover i {
+  &:hover .phoneIcon i {
     color: $colorOrange;
   }
 
   .phoneIcon {
+    margin-bottom: -2px;
     display: none;
+
+    i {
+      font-size: 1.4rem;
+    }
+  }
+
+  .phoneNumber {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    font-size: 0.9rem;
+  }
+
+  .messagers {
+    display: flex;
+    padding-bottom: 5px;
+    padding-top: 5px;
+
+    div {
+      padding: 0;
+      margin: 0;
+    }
+
+    i {
+      font-size: 1.4rem;
+      margin: 0px 4px;
+    }
+
+    i:hover {
+      color: $colorPrimary;
+    }
   }
 }
 
 @media screen and (max-width: 860px) {
-  .phoneAdaptive .phoneNumber {
-    display: none;
-  }
+  .phoneAdaptive {
+    width: 100%;
 
-  .phoneAdaptive .phoneIcon {
-    display: block;
+    .phoneNumber,
+    .messagers {
+      display: none;
+    }
+
+    .phoneIcon {
+      display: block;
+    }
   }
 }
 

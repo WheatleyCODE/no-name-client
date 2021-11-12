@@ -26,5 +26,20 @@ export const menuItems = [
   },
 ];
 
+export const messagers = [
+  {
+    name: 'Телеграм',
+    icon: 'fal fa-comment',
+  },
+  {
+    name: 'Viber',
+    icon: 'fal fa-circle',
+  },
+  {
+    name: 'WhatsApp',
+    icon: 'fal fa-envelope',
+  },
+];
+
 export const PHONE = '78005553535';
 export const MAX_CLIENT_WIDTH_MOBILE = 713;

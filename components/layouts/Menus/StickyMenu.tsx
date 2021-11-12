@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 import { Categories, Cart, Search, ColorPanel, Logo } from '@components';
-import s from '@s/components/index.module.scss';
 import { CSSTransition } from 'react-transition-group';
+import s from '@s/components/index.module.scss';
 
 export const StickyMenu: FC = () => {
   const [className, setClassName] = useState('');
@@ -9,6 +9,7 @@ export const StickyMenu: FC = () => {
 
   const scrollHandler = (e: any) => {
     const top = e.target.documentElement.scrollTop;
+
     if (top > 60) {
       setClassName(s.shadow);
       setShowLogo(true);
