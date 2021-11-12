@@ -1,9 +1,9 @@
 .modal-enter-active {
-  animation: show-modal 0.7s forwards;
+  animation: show-modal 0.5s forwards;
 }
 
 .modal-exit-active {
-  animation: show-modal 0.7s reverse;
+  animation: show-modal 0.5s reverse;
 }
 
 @keyframes show-modal {
@@ -18,6 +18,14 @@
   }
 }
 
+.logo-enter-active {
+  animation: showLogo 0.2s forwards;
+}
+
+.logo-exit-active {
+  display: none !important;
+}
+
 @keyframes showLogo {
   0% {
     opacity: 0;
@@ -28,6 +36,14 @@
     opacity: 1;
     transform: translateY(0px);
   }
+}
+
+.logorev-enter-active {
+  animation: showLogoRev 0.15s ease-out;
+}
+
+.logorev-exit-active {
+  animation: showLogoRev 0.15s reverse ease-out;
 }
 
 @keyframes showLogoRev {
@@ -42,18 +58,20 @@
   }
 }
 
-.logo-enter-active {
-  animation: showLogo 0.2s forwards;
+.categories-enter-active {
+  animation: simpleShow 0.2s reverse;
 }
 
-.logo-exit-active {
-  animation: showLogo 0.2s reverse;
+.categories-exit-active {
+  display: none !important;
 }
 
-.logorev-enter-active {
-  animation: showLogoRev 0.2s forwards;
-}
+@keyframes simpleShow {
+  0% {
+    opacity: 1;
+  }
 
-.logorev-exit-active {
-  animation: showLogoRev 0.2s reverse;
+  100% {
+    opacity: 0;
+  }
 }

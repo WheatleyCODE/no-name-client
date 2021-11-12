@@ -20,6 +20,7 @@ export const MainLayout: React.FC<MainLayoutProps> = (props) => {
     if (document.documentElement.scrollWidth <= MAX_CLIENT_WIDTH_MOBILE) {
       return;
     }
+
     if (top > 60) {
       setShowLogo(true);
     } else {
@@ -41,7 +42,7 @@ export const MainLayout: React.FC<MainLayoutProps> = (props) => {
           <div className={s.header}>
             <MobileMenu />
             <div className={s.logo}>
-              <CSSTransition in={showLogo} timeout={300} classNames={'logorev'}>
+              <CSSTransition in={showLogo} timeout={150} classNames={'logorev'}>
                 <Logo noText />
               </CSSTransition>
               <h3>JET COLOR</h3>
