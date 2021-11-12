@@ -29,12 +29,13 @@
   .place {
     padding: 3px 5px;
     height: 100%;
-    width: 100%;
+    width: Calc(100% + 1px);
     border-radius: 3px;
     letter-spacing: 1px;
     text-align: center;
     position: relative;
     transition: all 0.1s;
+    margin-left: -1px;
   }
 
   .place span {
