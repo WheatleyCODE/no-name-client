@@ -13,6 +13,7 @@
 
 .logo {
   @include flex-center;
+  width: 141.41px;
 
   img {
     height: 40px;
@@ -20,8 +21,13 @@
 }
 
 .user {
+  width: 268.11px;
   display: flex;
   align-items: center;
+}
+
+.menu {
+  width: 375.58px;
 }
 
 .mobileMenu {
@@ -39,6 +45,12 @@
 
 .main {
   height: Calc(100vh - $headerHeight);
+}
+
+@media screen and (max-width: 860px) {
+  .user {
+    width: 143.9px;
+  }
 }
 
 @media screen and (max-width: 730px) {
