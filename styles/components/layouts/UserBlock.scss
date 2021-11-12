@@ -7,19 +7,24 @@
   cursor: pointer;
 
   i {
-    transition: color 0.3s;
+    transition: color 0.2s;
     font-size: 1.7rem;
   }
 
   .text {
     margin-right: 7px;
-    transition: color 0.3s;
+    transition: color 0.2s;
     font-size: 0.85rem;
   }
 
   &:hover i,
   &:hover .text {
     color: $colorOrange;
+  }
+
+  &:active i,
+  &:active .text {
+    color: $colorDarkOrange;
   }
 
   a {
