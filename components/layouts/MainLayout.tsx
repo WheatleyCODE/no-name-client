@@ -1,9 +1,10 @@
 import { Footer, HeadTag, UserBlock, Logo, MobileMenu, Phone } from '@components';
 import { StickyMenu, Menu } from '@components';
-import { MAX_CLIENT_WIDTH_MOBILE, menuItems, PHONE } from 'consts';
+import { MAX_CLIENT_WIDTH_MOBILE, menuItems, PathRoutes, PHONE } from 'consts';
 import { useEffect, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import s from '@s/components/index.module.scss';
+import { Link } from '@components/UI';
 
 export interface MainLayoutProps {
   title: string;
@@ -45,7 +46,9 @@ export const MainLayout: React.FC<MainLayoutProps> = (props) => {
               <CSSTransition in={showLogo} timeout={150} classNames={'logorev'}>
                 <Logo noText />
               </CSSTransition>
-              <h3>JET COLOR</h3>
+              <Link className={s.logoLink} href={PathRoutes.HOME}>
+                JET COLOR
+              </Link>
             </div>
             <div className={s.menu}>
               <Menu menuItems={menuItems} />

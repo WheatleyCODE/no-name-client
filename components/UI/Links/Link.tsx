@@ -4,9 +4,10 @@ import s from '@s/components/index.module.scss';
 
 interface LinkProps {
   href: string;
+  className?: string;
 }
 
-export const Link: FC<LinkProps> = ({ href, children }) => {
+export const Link: FC<LinkProps> = ({ href, children, className }) => {
   const router = useRouter();
 
   const onClickHanlder = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -15,7 +16,7 @@ export const Link: FC<LinkProps> = ({ href, children }) => {
   };
 
   return (
-    <a onClick={onClickHanlder} className={s.link}>
+    <a onClick={onClickHanlder} className={`${s.link} ${className}`}>
       {children}
     </a>
   );
