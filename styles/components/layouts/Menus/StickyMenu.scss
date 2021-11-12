@@ -3,6 +3,7 @@
 
 .sticky {
   display: block;
+
   div {
     display: flex;
     align-items: center;
@@ -38,14 +39,21 @@
 }
 
 .cartBlock {
-  width: 267.2px;
+  width: 268.11px;
 }
 
 .categoriesBlock {
-  width: 149.5px;
+  width: 141.41px;
+}
+
+.searchBlock {
+  width: 375.58px;
 }
 
 @media screen and (max-width: 860px) {
+  .phoneIcon {
+    padding-left: 24px;
+  }
   .cartBlock {
     width: 143.9px;
   }
