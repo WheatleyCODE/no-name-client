@@ -40,12 +40,13 @@
     }
 
     i {
+      transition: color 0.2s;
       font-size: 1.4rem;
       margin: 0px 4px;
     }
 
     i:hover {
-      color: $colorPrimary;
+      color: $colorOrange;
     }
   }
 }
