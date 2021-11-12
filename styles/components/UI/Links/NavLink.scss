@@ -11,6 +11,10 @@
   &:hover {
     color: $colorOrange;
   }
+
+  &:active {
+    color: $colorDarkOrange;
+  }
 }
 
 .navLink.active {
