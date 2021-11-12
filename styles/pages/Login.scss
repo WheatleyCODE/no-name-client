@@ -53,26 +53,34 @@
     @include flex-center;
     flex-direction: column;
     height: 100%;
-    font-size: 1.1rem;
+    font-size: 1rem;
+
+    ul {
+      padding-top: 20px;
+    }
 
     ul li {
       display: flex;
       align-items: center;
-      padding-top: 30px;
+      padding-top: 20px;
       list-style: none;
 
       i {
-        width: 100px;
+        width: 90px;
         @include flex-center;
         color: $colorOrange;
         font-size: 2rem;
+      }
+
+      span {
+        border-bottom: 1px solid $colorLightGrey;
+        padding-bottom: 5px;
       }
     }
   }
 
   .wave {
     width: 480px;
-    margin-top: 10px;
 
     svg {
       margin-bottom: -7px;
