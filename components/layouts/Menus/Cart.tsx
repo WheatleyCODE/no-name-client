@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Button } from '@components';
+import { Button, CartCounter } from '@components';
 import s from '@s/components/index.module.scss';
 
 export const Cart: FC = () => {
@@ -7,8 +7,9 @@ export const Cart: FC = () => {
     <div className={s.cart}>
       <Button className={s.orange}>
         <span>
-          <i className="far fa-shopping-cart" />
+          <i className="fal fa-shopping-cart" />
         </span>
+        <CartCounter count={3} />
       </Button>
     </div>
   );

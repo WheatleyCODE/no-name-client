@@ -1,0 +1,14 @@
+@import '../../../variables.scss';
+@import '../../../mixins.scss';
+
+.cartCounter {
+  @include flex-center;
+  position: absolute;
+  transition: all 0.1s;
+  height: 17px;
+  padding: 0 5px;
+  top: -14px;
+  background-color: $colorWhite;
+  font-size: 0.8rem;
+  border-radius: 5px;
+}

@@ -4,6 +4,7 @@ export { Logo } from './Logo';
 export { MainLayout } from './MainLayout';
 export { Menu } from './Menus/Menu';
 export { Cart } from './Menus/Cart';
+export { CartCounter } from './Menus/CartCounter';
 export { Categories } from './Menus/Categories';
 export { Search } from './Menus/Search';
 export { MobileMenu } from './Menus/MobileMenu';
