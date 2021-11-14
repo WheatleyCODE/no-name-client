@@ -4,19 +4,25 @@ import s from '@s/components/index.module.scss';
 
 interface NavLinkProps {
   href: string;
+  onClickHandler?: () => void;
 }
 
-export const NavLink: FC<NavLinkProps> = ({ href, children }) => {
+export const NavLink: FC<NavLinkProps> = ({ href, children, onClickHandler }) => {
   const router = useRouter();
   const className = router.asPath === href ? s.active : null;
 
-  const onClickHandler = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  const clickHandler = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
+
+    if (onClickHandler) {
+      onClickHandler();
+    }
+
     router.push(href);
   };
 
   return (
-    <a className={`${s.navLink} ${className}`} href={href} onClick={onClickHandler}>
+    <a className={`${s.navLink} ${className}`} href={href} onClick={clickHandler}>
       {children}
     </a>
   );

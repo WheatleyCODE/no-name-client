@@ -1,2 +1,2 @@
 export * from './user';
-export type { AuthResponse } from './response/AuthResponse';
+export type { AuthResponse } from './auth';
