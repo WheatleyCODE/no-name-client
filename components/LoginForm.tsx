@@ -1,7 +1,8 @@
 import { FC } from 'react';
-import { InputType, useInput } from '@hooks';
+import { InputType, useActions, useInput } from '@hooks';
 import { Input, Link, Button } from '@components';
 import { PathRoutes } from 'consts';
+import { useRouter } from 'next/router';
 import s from '@s/components/index.module.scss';
 
 interface LoginFormProps {
@@ -12,6 +13,21 @@ export const LoginForm: FC<LoginFormProps> = ({ reg = false }) => {
   const email = useInput('', 'Почта', InputType.EMAIL);
   const password = useInput('', 'Пароль', InputType.PASSWORD);
   const repeat = useInput('', 'Повторите пароль', InputType.PASSWORD);
+  const router = useRouter();
+  const { loginAC, registrationAC } = useActions();
+
+  const onRegisterHandler = async () => {
+    if (email.default.value === '' || password.default.value === '') return null;
+
+    await registrationAC(email.default.value, password.default.value);
+    await loginAC(email.default.value, password.default.value);
+    router.push('/activate');
+  };
+
+  const onLoginHandler = async () => {
+    await loginAC(email.default.value, password.default.value);
+    router.push('/');
+  };
 
   return (
     <div className={s.loginFrom}>
@@ -52,7 +68,12 @@ export const LoginForm: FC<LoginFormProps> = ({ reg = false }) => {
         ) : (
           <div className={s.reg} />
         )}
-        <Button className={s.bluePull}>
+        <Button
+          onClickHandler={() => {
+            reg ? onRegisterHandler() : onLoginHandler();
+          }}
+          className={s.bluePull}
+        >
           <span className={s.loginText}>
             {reg ? 'Зарегистрироваться' : 'Войти на сайт'} <i className="fad fa-sign-in-alt" />
           </span>

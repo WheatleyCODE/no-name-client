@@ -1,16 +1,18 @@
 import type { NextPage } from 'next';
-import { MainLayout } from '@components';
+import { Button, MainLayout } from '@components';
 import { useTypedSelector } from '@hooks';
 import { wrapper } from '@store';
-import { fetchUsers } from '@store/actions-creators/user';
+import { fetchUsersAC } from '@store/actions-creators/user';
 import { NextThunckDispatch } from '@store/reducers';
 import s from '@s/pages/index.module.scss';
+import { useState } from 'react';
+import { UserService } from '@services/UserService';
 
 // Redux tests
-export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
-  const dispatch = store.dispatch as NextThunckDispatch;
-  await dispatch(await fetchUsers());
-});
+// export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
+//   // const dispatch = store.dispatch as NextThunckDispatch;
+//   // await dispatch(await fetchUsersAC());
+// });
 
 const Home: NextPage = () => {
   // Redux tests
@@ -24,6 +26,17 @@ const Home: NextPage = () => {
   // console.log(users, error);
   // /> tests
 
+  const [test, setTest] = useState();
+
+  const testFN = async () => {
+    try {
+      const lol = await UserService.fetchUsers();
+      console.log(lol.data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <MainLayout
       description="Главаная страница сайта noname"
@@ -32,6 +45,7 @@ const Home: NextPage = () => {
     >
       <div className={s.container}>
         <h2>content</h2>
+        <Button onClickHandler={testFN}>Запросить пользователей</Button>
       </div>
     </MainLayout>
   );
