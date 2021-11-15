@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import { Button, MainLayout } from '@components';
-import { useTypedSelector } from '@hooks';
+import { useAuth, useTypedSelector } from '@hooks';
 import { wrapper } from '@store';
 import { fetchUsersAC } from '@store/actions-creators/user';
 import { NextThunckDispatch } from '@store/reducers';
@@ -9,10 +9,10 @@ import { useState } from 'react';
 import { UserService } from '@services/UserService';
 
 // Redux tests
-// export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
-//   // const dispatch = store.dispatch as NextThunckDispatch;
-//   // await dispatch(await fetchUsersAC());
-// });
+export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
+  const dispatch = store.dispatch as NextThunckDispatch;
+  await dispatch(await fetchUsersAC());
+});
 
 const Home: NextPage = () => {
   // Redux tests
@@ -27,6 +27,7 @@ const Home: NextPage = () => {
   // /> tests
 
   const [test, setTest] = useState();
+  useAuth();
 
   const testFN = async () => {
     try {

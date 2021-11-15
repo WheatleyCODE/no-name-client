@@ -1,10 +1,10 @@
-import { useTypedSelector } from '@hooks';
 import type { NextPage } from 'next';
 import { Logo, SendMailAgain } from '@components';
+import { useAuth } from '@hooks';
 import s from '@s/pages/index.module.scss';
 
 const Home: NextPage = () => {
-  const { user } = useTypedSelector((state) => state.user);
+  const { user } = useAuth();
 
   if (!user?.email) {
     return null;

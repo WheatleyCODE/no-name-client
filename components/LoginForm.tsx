@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { InputType, useActions, useInput, useTypedSelector } from '@hooks';
 import { Input, Link, Button, AuthError } from '@components';
 import { PathRoutes } from 'consts';
@@ -14,6 +14,7 @@ export const LoginForm: FC<LoginFormProps> = ({ reg = false }) => {
   const password = useInput('', 'Пароль', InputType.PASSWORD);
   const repeat = useInput('', 'Повторите пароль', InputType.PASSWORD);
   const router = useRouter();
+  const [checked, setCheked] = useState(true);
   const { loginAC, registrationAC, setAuthErrorAC } = useActions();
   const { authError } = useTypedSelector((state) => state.user);
 
@@ -47,7 +48,9 @@ export const LoginForm: FC<LoginFormProps> = ({ reg = false }) => {
   };
 
   useEffect(() => {
-    setAuthErrorAC(null);
+    if (authError !== null) {
+      setAuthErrorAC(null);
+    }
   }, [email.default.value, password.default.value]);
 
   return (
@@ -78,7 +81,12 @@ export const LoginForm: FC<LoginFormProps> = ({ reg = false }) => {
           <div className={s.links}>
             <div className={s.checkbox}>
               <label htmlFor="lol">
-                <input id="lol" type="checkbox" />
+                <input
+                  defaultChecked={checked}
+                  onChange={() => setCheked((prev) => !prev)}
+                  id="lol"
+                  type="checkbox"
+                />
                 Запомнить меня
               </label>
             </div>

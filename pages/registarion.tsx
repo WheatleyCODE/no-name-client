@@ -1,9 +1,11 @@
 import { LoginForm, Logo, Link, HeadTag } from '@components';
 import { NextPage } from 'next';
 import { PathRoutes } from 'consts';
+import { useAuth } from '@hooks';
 import s from '@s/pages/index.module.scss';
 
 const Registration: NextPage = () => {
+  useAuth();
   return (
     <>
       <HeadTag
