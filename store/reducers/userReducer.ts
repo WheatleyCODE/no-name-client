@@ -5,6 +5,7 @@ const initialState: UserState = {
   users: [],
   loading: false,
   error: null,
+  authError: null,
   isAuth: false,
   user: {} as IUser,
 };
@@ -33,6 +34,13 @@ export const userReducer = (state = initialState, action: UserAction): UserState
         user: {
           ...action.payload,
         },
+      };
+    }
+
+    case UserActionTypes.SET_AUTH_ERROR: {
+      return {
+        ...state,
+        authError: action.payload,
       };
     }
 

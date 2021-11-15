@@ -1,6 +1,6 @@
-import { FC } from 'react';
-import { InputType, useActions, useInput } from '@hooks';
-import { Input, Link, Button } from '@components';
+import { FC, useEffect } from 'react';
+import { InputType, useActions, useInput, useTypedSelector } from '@hooks';
+import { Input, Link, Button, AuthError } from '@components';
 import { PathRoutes } from 'consts';
 import { useRouter } from 'next/router';
 import s from '@s/components/index.module.scss';
@@ -14,24 +14,41 @@ export const LoginForm: FC<LoginFormProps> = ({ reg = false }) => {
   const password = useInput('', 'Пароль', InputType.PASSWORD);
   const repeat = useInput('', 'Повторите пароль', InputType.PASSWORD);
   const router = useRouter();
-  const { loginAC, registrationAC } = useActions();
+  const { loginAC, registrationAC, setAuthErrorAC } = useActions();
+  const { authError } = useTypedSelector((state) => state.user);
+
+  let isCompare = true;
+
+  if (reg && password.default.value !== repeat.default.value) {
+    isCompare = false;
+  }
+
+  const redirect = (path: PathRoutes) => {
+    return () => {
+      router.push(path);
+    };
+  };
 
   const onRegisterHandler = async () => {
     if (email.default.value === '' || password.default.value === '') return null;
 
     if (password.default.value === repeat.default.value) {
-      await registrationAC(email.default.value, password.default.value);
-      await loginAC(email.default.value, password.default.value);
+      await registrationAC(
+        email.default.value,
+        password.default.value,
+        redirect(PathRoutes.ACTIVATE)
+      );
     }
-
-    router.push(PathRoutes.ACTIVATE);
   };
 
   const onLoginHandler = async () => {
     if (email.default.value === '' || password.default.value === '') return null;
-    await loginAC(email.default.value, password.default.value);
-    router.push('/');
+    await loginAC(email.default.value, password.default.value, redirect(PathRoutes.HOME));
   };
+
+  useEffect(() => {
+    setAuthErrorAC(null);
+  }, [email.default.value, password.default.value]);
 
   return (
     <div className={s.loginFrom}>
@@ -45,15 +62,15 @@ export const LoginForm: FC<LoginFormProps> = ({ reg = false }) => {
         />
         <Input
           icon="far fa-unlock"
-          isError={password.isError}
-          validError={password.validError}
+          isError={!isCompare || password.isError}
+          validError={(!isCompare && 'Пароли не совпадают') || password.validError}
           defaultParams={password.default}
         />
         {reg && (
           <Input
             icon="far fa-unlock"
-            isError={repeat.isError}
-            validError={repeat.validError}
+            isError={!isCompare || repeat.isError}
+            validError={(!isCompare && 'Пароли не совпадают') || repeat.validError}
             defaultParams={repeat.default}
           />
         )}
@@ -82,6 +99,7 @@ export const LoginForm: FC<LoginFormProps> = ({ reg = false }) => {
             {reg ? 'Зарегистрироваться' : 'Войти на сайт'} <i className="fad fa-sign-in-alt" />
           </span>
         </Button>
+        {authError && <AuthError error={authError} />}
         <div className={s.register}>
           {reg ? (
             <>

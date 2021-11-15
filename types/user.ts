@@ -15,6 +15,7 @@ export interface UserState {
   users: any[];
   loading: boolean;
   error: null | string;
+  authError: null | string;
   isAuth: boolean;
   user: IUser;
 }
@@ -25,6 +26,7 @@ export enum UserActionTypes {
   FETCH_USERS_ERROR = 'FETCH_USERS_ERROR',
   SET_USER = 'SET_USER',
   SET_AUTH = 'SET_AUTH',
+  SET_AUTH_ERROR = 'SET_ERROR',
 }
 
 interface FetchUserAction {
@@ -51,9 +53,15 @@ interface SetAuthAction {
   payload: boolean;
 }
 
+interface SetAuthErrorAction {
+  type: UserActionTypes.SET_AUTH_ERROR;
+  payload: string | null;
+}
+
 export type UserAction =
   | FetchUserAction
   | FetchUserSuccesAction
   | FetchUserErrorAction
   | SetUserAction
-  | SetAuthAction;
+  | SetAuthAction
+  | SetAuthErrorAction;

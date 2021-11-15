@@ -1,0 +1,12 @@
+@import '../mixins.scss';
+@import '../variables.scss';
+
+.authError {
+  @include flex-center;
+  color: $colorRed;
+  background-color: rgba(255, 0, 0, 0.14);
+  padding: 8px;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}

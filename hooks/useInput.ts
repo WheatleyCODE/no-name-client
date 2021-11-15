@@ -78,6 +78,8 @@ export const useInput = (initialValue: string, placeholder: string, type: InputT
           setValidError('Поле не может быть пустым');
         } else if (e.target.value.length < 5) {
           setValidError('Пароль должен быть длинее 5 символов');
+        } else if (e.target.value.length > 16) {
+          setValidError('Пароль должен быть менее 16 символов');
         } else {
           setValidError('');
         }

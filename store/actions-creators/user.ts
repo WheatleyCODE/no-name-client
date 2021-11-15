@@ -1,3 +1,4 @@
+import { PathRoutes } from './../../consts/index';
 import axios from 'axios';
 import { Dispatch } from 'react';
 import { AuthResponse, IUser, UserAction, UserActionTypes } from '@t';
@@ -39,30 +40,40 @@ export const setAuthAC = (boolean: boolean): UserAction => {
   };
 };
 
-export const loginAC = (email: string, password: string) => {
+export const setAuthErrorAC = (err: string | null): UserAction => {
+  return {
+    type: UserActionTypes.SET_AUTH_ERROR,
+    payload: err,
+  };
+};
+
+export const loginAC = (email: string, password: string, redirect: () => void) => {
   return async (dispatch: Dispatch<UserAction>): Promise<void> => {
     try {
+      dispatch(setAuthErrorAC(null));
       const res = await AuthService.login(email, password);
-      console.log(res);
       localStorage.setItem('token', res.data.accessToken);
       dispatch(setAuthAC(true));
       dispatch(setUserAC(res.data.user));
+      redirect();
     } catch (e) {
-      console.log(e?.response?.data?.message);
+      dispatch(setAuthErrorAC(e?.response?.data?.message));
     }
   };
 };
 
-export const registrationAC = (email: string, password: string) => {
+export const registrationAC = (email: string, password: string, redirect: () => void) => {
   return async (dispatch: Dispatch<UserAction>): Promise<void> => {
     try {
+      dispatch(setAuthErrorAC(null));
       const res = await AuthService.registration(email, password);
-      console.log(res);
+      const resLog = await AuthService.login(email, password);
       localStorage.setItem('token', res.data.accessToken);
       dispatch(setAuthAC(true));
       dispatch(setUserAC(res.data.user));
+      redirect();
     } catch (e) {
-      console.log(e?.response?.data?.message);
+      dispatch(setAuthErrorAC(e?.response?.data?.message));
     }
   };
 };
