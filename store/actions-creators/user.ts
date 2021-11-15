@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Dispatch } from 'react';
 import { AuthResponse, IUser, UserAction, UserActionTypes } from '@t';
 import { AuthService } from '@services/AuthService';
-import { API_URL } from '@http';
+import { API_URL_IP } from '@http';
 import { UserService } from '@services/UserService';
 
 export const fetchUsersAC = () => {
@@ -84,7 +84,7 @@ export const logoutAC = () => {
 export const checkAuthAC = () => {
   return async (dispatch: Dispatch<UserAction>): Promise<void> => {
     try {
-      const res = await axios.get<AuthResponse>(`${API_URL}/api/auth/refresh`, {
+      const res = await axios.get<AuthResponse>(`${API_URL_IP}/api/auth/refresh`, {
         withCredentials: true,
       });
       console.log(res);

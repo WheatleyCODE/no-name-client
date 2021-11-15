@@ -4,7 +4,8 @@ export enum PathRoutes {
   REGISTRATION = '/registarion',
   REVIEWS = '/reviews',
   CONTACTS = '/contacts',
-  PAINT = '/PAINT',
+  PAINT = '/paint',
+  ACTIVATE = '/activate',
 }
 
 export const menuItems = [

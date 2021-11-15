@@ -6,7 +6,7 @@ export const API_URL = 'http://localhost:5000';
 
 const $api = axios.create({
   withCredentials: true,
-  baseURL: API_URL,
+  baseURL: API_URL_IP,
 });
 
 $api.interceptors.request.use((config: any) => {
@@ -21,7 +21,7 @@ $api.interceptors.response.use(
     if (err?.response?.status === 401 && err.config && !err.config.isRetry) {
       try {
         originalRequest._isRetry = true;
-        const res = await axios.get<AuthResponse>(`${API_URL}/api/auth/refresh`, {
+        const res = await axios.get<AuthResponse>(`${API_URL_IP}/api/auth/refresh`, {
           withCredentials: true,
         });
         localStorage.setItem('token', res.data.accessToken);

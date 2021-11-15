@@ -19,12 +19,16 @@ export const LoginForm: FC<LoginFormProps> = ({ reg = false }) => {
   const onRegisterHandler = async () => {
     if (email.default.value === '' || password.default.value === '') return null;
 
-    await registrationAC(email.default.value, password.default.value);
-    await loginAC(email.default.value, password.default.value);
-    router.push('/activate');
+    if (password.default.value === repeat.default.value) {
+      await registrationAC(email.default.value, password.default.value);
+      await loginAC(email.default.value, password.default.value);
+    }
+
+    router.push(PathRoutes.ACTIVATE);
   };
 
   const onLoginHandler = async () => {
+    if (email.default.value === '' || password.default.value === '') return null;
     await loginAC(email.default.value, password.default.value);
     router.push('/');
   };
