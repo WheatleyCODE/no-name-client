@@ -14,4 +14,8 @@ export class AuthService {
   static async logout(): Promise<void> {
     return $api.post('/api/auth/logout');
   }
+
+  static async sendActivationMail(email: string): Promise<void> {
+    return $api.post('/api/auth/activate/link', { email });
+  }
 }
