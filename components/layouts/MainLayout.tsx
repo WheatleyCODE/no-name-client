@@ -1,10 +1,9 @@
-import { Footer, HeadTag, UserBlock, Logo, MobileMenu, Phone } from '@components';
-import { StickyMenu, Menu } from '@components';
-import { MAX_CLIENT_WIDTH_MOBILE, menuItems, PathRoutes, PHONE } from 'consts';
 import { useEffect, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import s from '@s/components/index.module.scss';
+import { Footer, HeadTag, UserBlock, Logo, MobileMenu, Phone, StickyMenu, Menu } from '@components';
+import { MAX_CLIENT_WIDTH_MOBILE, menuItems, PathRoutes, PHONE } from 'consts';
 import { Link } from '@components/UI';
+import s from '@s/components/index.module.scss';
 
 export interface MainLayoutProps {
   title: string;

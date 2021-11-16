@@ -18,7 +18,7 @@ export const UserBlock: FC = () => {
           href={PathRoutes.LOGIN}
         >
           <span className={s.text}>Выйти</span>
-          <i className="fal fa-sign-in-alt" />
+          <i className="fal fa-sign-out-alt" />
         </NavLink>
       ) : (
         <NavLink href={PathRoutes.LOGIN}>
