@@ -26,4 +26,8 @@ export class AuthService {
   static async resetPassword(email: string): Promise<void> {
     return $api.post('/api/auth/reset/password', { email });
   }
+
+  static async checkResetPasswordLink(link: string): Promise<void> {
+    return $api.post('/api/auth/change/check', { link });
+  }
 }

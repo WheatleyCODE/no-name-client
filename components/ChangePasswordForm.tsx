@@ -17,18 +17,29 @@ export const ChangePasswordForm: FC<ChangePasswordFormProps> = ({ isEmail = fals
   const [isSendMail, setIsSendMail] = useState(false);
   const [showError, setShowError] = useState<string | null>(null);
 
+  let isCompare = true;
+  if (password.default.value !== repeat.default.value) {
+    isCompare = false;
+  }
+
   const reset = async () => {
-    AuthService.resetPassword(email.default.value);
+    if (email.default.value !== '' && !email.isError) {
+      try {
+        await AuthService.resetPassword(email.default.value);
+        setIsSendMail(true);
+      } catch (e) {
+        setShowError(e?.response?.data?.message);
+      }
+    }
   };
 
-  useEffect(() => {
-    if (router.query.id) {
-      console.log(router.query.id, 'eff');
-    }
-  }, [router.query.id]);
-
   const change = async () => {
-    if (typeof router.query.id === 'string' && password.default.value !== '' && !password.isError) {
+    if (
+      typeof router.query.id === 'string' &&
+      password.default.value !== '' &&
+      !password.isError &&
+      isCompare
+    ) {
       try {
         await AuthService.changePassword(router.query.id, password.default.value);
         router.push(PathRoutes.LOGIN);
@@ -40,7 +51,6 @@ export const ChangePasswordForm: FC<ChangePasswordFormProps> = ({ isEmail = fals
 
   const onResetPassword = () => {
     if (!email.isError) {
-      setIsSendMail(true);
       reset();
     }
   };
@@ -81,14 +91,14 @@ export const ChangePasswordForm: FC<ChangePasswordFormProps> = ({ isEmail = fals
           <Input
             icon="far fa-unlock"
             defaultParams={password.default}
-            isError={password.isError}
-            validError={password.validError}
+            isError={!isCompare || password.isError}
+            validError={(!isCompare && 'Пароли не совпадают') || password.validError}
           />
           <Input
             icon="far fa-unlock"
             defaultParams={repeat.default}
-            isError={repeat.isError}
-            validError={repeat.validError}
+            isError={!isCompare || repeat.isError}
+            validError={(!isCompare && 'Пароли не совпадают') || repeat.validError}
           />
           <div>
             <Button onClickHandler={onChangePassword} className={s.bluePull}>
@@ -106,7 +116,9 @@ export const ChangePasswordForm: FC<ChangePasswordFormProps> = ({ isEmail = fals
         </div>
       )}
 
-      {isSendMail && isEmail && <SendMailAgain email={email.default.value} />}
+      {isSendMail && isEmail && (
+        <SendMailAgain callback={() => onResetPassword()} email={email.default.value} />
+      )}
     </div>
   );
 };

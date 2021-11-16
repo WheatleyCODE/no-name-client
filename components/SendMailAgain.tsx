@@ -4,12 +4,18 @@ import s from '@s/components/index.module.scss';
 
 interface SendMailAgainProps {
   email: string;
+  callback?: () => void;
 }
 
-export const SendMailAgain: FC<SendMailAgainProps> = ({ email = 'qb.wheatley@gmail.com' }) => {
+export const SendMailAgain: FC<SendMailAgainProps> = ({ email, callback }) => {
   const [timer, setTimer] = useState(0);
   const [inter, setInter] = useState<NodeJS.Timer>();
+
   const sendMail = async () => {
+    if (callback) {
+      return callback();
+    }
+
     await AuthService.sendActivationMail(email);
   };
 
