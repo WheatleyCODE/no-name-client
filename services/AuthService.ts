@@ -18,4 +18,12 @@ export class AuthService {
   static async sendActivationMail(email: string): Promise<void> {
     return $api.post('/api/auth/activate/link', { email });
   }
+
+  static async changePassword(link: string, password: string): Promise<void> {
+    return $api.post('/api/auth/change/password', { link, password });
+  }
+
+  static async resetPassword(email: string): Promise<void> {
+    return $api.post('/api/auth/reset/password', { email });
+  }
 }
