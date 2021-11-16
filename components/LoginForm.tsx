@@ -91,7 +91,7 @@ export const LoginForm: FC<LoginFormProps> = ({ reg = false }) => {
               </label>
             </div>
             <div>
-              <Link href={PathRoutes.REGISTRATION}>Забыли пароль?</Link>
+              <Link href={PathRoutes.FORGOT}>Забыли пароль?</Link>
             </div>
           </div>
         ) : (

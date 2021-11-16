@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { AuthResponse } from '@t';
 
-export const API_URL_IP = 'http://192.168.0.100:5000';
+export const API_URL_IP = 'http://192.168.88.16:5000';
 export const API_URL = 'http://localhost:5000';
 
 const $api = axios.create({

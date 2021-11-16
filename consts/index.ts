@@ -6,6 +6,7 @@ export enum PathRoutes {
   CONTACTS = '/contacts',
   PAINT = '/paint',
   ACTIVATE = '/activate',
+  FORGOT = '/forgot',
 }
 
 export const menuItems = [

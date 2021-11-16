@@ -1,10 +1,20 @@
 import type { NextPage } from 'next';
 import { Logo, SendMailAgain } from '@components';
 import { useAuth } from '@hooks';
+import { useRouter } from 'next/router';
+import { PathRoutes } from 'consts';
+import { useEffect } from 'react';
 import s from '@s/pages/index.module.scss';
 
-const Home: NextPage = () => {
+const Activate: NextPage = () => {
   const { user } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!user?.email) {
+      router.push(PathRoutes.HOME);
+    }
+  }, []);
 
   if (!user?.email) {
     return null;
@@ -24,4 +34,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Activate;

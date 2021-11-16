@@ -6,10 +6,9 @@ interface SendMailAgainProps {
   email: string;
 }
 
-export const SendMailAgain: FC<SendMailAgainProps> = ({ email }) => {
+export const SendMailAgain: FC<SendMailAgainProps> = ({ email = 'qb.wheatley@gmail.com' }) => {
   const [timer, setTimer] = useState(0);
   const [inter, setInter] = useState<NodeJS.Timer>();
-  const localInterval = localStorage.getItem('interval');
   const sendMail = async () => {
     await AuthService.sendActivationMail(email);
   };
@@ -25,16 +24,17 @@ export const SendMailAgain: FC<SendMailAgainProps> = ({ email }) => {
     localStorage.setItem('interval', JSON.stringify(interval));
   };
 
-  useEffect(() => {
-    if (localInterval !== null) {
-      setTime(40);
-    }
-  }, []);
-
   const sendMailAgain = () => {
     setTime(60);
     sendMail();
   };
+
+  useEffect(() => {
+    const localInterval = localStorage.getItem('interval');
+    if (localInterval !== null) {
+      setTime(40);
+    }
+  }, []);
 
   useEffect(() => {
     if (timer === 0 && inter !== undefined) {
