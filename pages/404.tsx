@@ -8,7 +8,7 @@ const Home: NextPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push(PathRoutes.REGISTRATION);
+    router.push(PathRoutes.HOME);
   }, []);
 
   return (

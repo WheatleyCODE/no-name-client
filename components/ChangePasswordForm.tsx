@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import { InputType, useInput } from '@hooks';
 import { Button, Input, Logo, SendMailAgain, AuthError } from '@components';
 import { AuthService } from '@services/AuthService';
@@ -18,6 +18,7 @@ export const ChangePasswordForm: FC<ChangePasswordFormProps> = ({ isEmail = fals
   const [showError, setShowError] = useState<string | null>(null);
 
   let isCompare = true;
+
   if (password.default.value !== repeat.default.value) {
     isCompare = false;
   }
