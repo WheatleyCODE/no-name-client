@@ -1,10 +1,9 @@
 import { FC, useEffect, useState } from 'react';
-import { AuthService } from '@services/AuthService';
 import s from '@s/components/index.module.scss';
 
 interface SendMailAgainProps {
   email: string;
-  callback?: () => void;
+  callback: (email: string) => void;
 }
 
 export const SendMailAgain: FC<SendMailAgainProps> = ({ email, callback }) => {
@@ -12,11 +11,7 @@ export const SendMailAgain: FC<SendMailAgainProps> = ({ email, callback }) => {
   const [inter, setInter] = useState<NodeJS.Timer>();
 
   const sendMail = async () => {
-    if (callback) {
-      return callback();
-    }
-
-    await AuthService.sendActivationMail(email);
+    callback(email);
   };
 
   const setTime = (time: number) => {

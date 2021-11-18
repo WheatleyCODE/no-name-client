@@ -24,40 +24,33 @@ export const ChangePasswordForm: FC<ChangePasswordFormProps> = ({ isEmail = fals
   }
 
   const reset = async () => {
-    if (email.default.value !== '' && !email.isError) {
-      try {
-        await AuthService.resetPassword(email.default.value);
-        setIsSendMail(true);
-      } catch (e) {
-        setShowError(e?.response?.data?.message);
-      }
+    try {
+      await AuthService.resetPassword(email.default.value);
+      setIsSendMail(true);
+    } catch (e) {
+      setShowError(e?.response?.data?.message);
     }
   };
 
   const change = async () => {
-    if (
-      typeof router.query.id === 'string' &&
-      password.default.value !== '' &&
-      !password.isError &&
-      isCompare
-    ) {
-      try {
-        await AuthService.changePassword(router.query.id, password.default.value);
-        router.push(PathRoutes.LOGIN);
-      } catch (e) {
-        setShowError(e?.response?.data?.message);
-      }
+    if (!(typeof router.query.id === 'string')) return;
+
+    try {
+      await AuthService.changePassword(router.query.id, password.default.value);
+      router.push(PathRoutes.LOGIN);
+    } catch (e) {
+      setShowError(e?.response?.data?.message);
     }
   };
 
   const onResetPassword = () => {
-    if (!email.isError) {
+    if (!email.isError && email.default.value !== '' && !email.isError) {
       reset();
     }
   };
 
   const onChangePassword = () => {
-    if (!email.isError) {
+    if (password.default.value !== '' && !password.isError && isCompare) {
       change();
     }
   };

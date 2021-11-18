@@ -15,10 +15,10 @@ export interface IUnput {
 }
 
 export enum InputType {
-  EMAIL = 'EMAIL',
-  PASSWORD = 'PASSWORD',
-  PROMOCODE = 'PROMOCODE',
-  TEXT = 'TEXT',
+  EMAIL = 'email',
+  PASSWORD = 'password',
+  PROMOCODE = 'text',
+  TEXT = 'text',
 }
 
 export const useInput = (initialValue: string, placeholder: string, type: InputType) => {

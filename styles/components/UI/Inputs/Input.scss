@@ -1,4 +1,5 @@
 @import '../../../variables.scss';
+@import '../../../mixins.scss';
 
 .InputContainer {
   position: relative;
@@ -11,6 +12,21 @@
     top: 34px;
     left: 17px;
     color: $colorGrey;
+  }
+
+  .showPassword {
+    @include flex-center;
+    position: absolute;
+    height: 50px;
+    width: 30px;
+    top: 14px;
+    right: 15px;
+    cursor: pointer;
+
+    i {
+      position: static;
+      font-size: 1.2rem;
+    }
   }
 }
 
