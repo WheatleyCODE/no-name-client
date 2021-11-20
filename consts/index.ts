@@ -28,18 +28,27 @@ export const menuItems = [
   },
 ];
 
+export enum socials {
+  TELEGRAM = 'telegram',
+  VIBER = 'viber',
+  WHATSAPP = 'whatsapp',
+}
+
 export const messagers = [
   {
     name: 'Телеграм',
-    icon: 'fal fa-comment',
+    img: socials.TELEGRAM,
+    link: 'https://t.me/qb_wht',
   },
   {
     name: 'Viber',
-    icon: 'fal fa-circle',
+    img: socials.VIBER,
+    link: 'https://t.me/qb_wht',
   },
   {
     name: 'WhatsApp',
-    icon: 'fal fa-envelope',
+    img: socials.WHATSAPP,
+    link: 'https://t.me/qb_wht',
   },
 ];
 

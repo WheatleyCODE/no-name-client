@@ -31,18 +31,25 @@
 
   .messagers {
     display: flex;
-    padding-bottom: 5px;
-    padding-top: 5px;
+    padding-bottom: 7px;
+    padding-top: 0px;
 
     div {
       padding: 0;
       margin: 0;
     }
 
-    i {
-      transition: color 0.2s;
-      font-size: 1.4rem;
-      margin: 0px 4px;
+    .socialImgs {
+      padding: 0 3px;
+      height: 30px;
+
+      img {
+        transition: 0.2s transform;
+      }
+
+      img:hover {
+        transform: rotateZ(5deg);
+      }
     }
 
     i:hover {
@@ -78,5 +85,11 @@
 
   .header i {
     font-size: 1.3rem !important;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .phoneAdaptive {
+    margin-right: 15px;
   }
 }

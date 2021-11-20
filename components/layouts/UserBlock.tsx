@@ -9,23 +9,25 @@ export const UserBlock: FC = () => {
   const { logoutAC } = useActions();
 
   return (
-    <div className={s.userContainer}>
-      {isAuth ? (
-        <NavLink
-          onClickHandler={() => {
-            logoutAC();
-          }}
-          href={PathRoutes.LOGIN}
-        >
-          <span className={s.text}>Выйти</span>
-          <i className="fal fa-sign-out-alt" />
-        </NavLink>
-      ) : (
-        <NavLink href={PathRoutes.LOGIN}>
-          <span className={s.text}>Войти</span>
-          <i className="fal fa-sign-in-alt" />
-        </NavLink>
-      )}
-    </div>
+    <NavLink
+      onClickHandler={() => {
+        if (isAuth) logoutAC();
+      }}
+      href={PathRoutes.LOGIN}
+    >
+      <div className={s.userContainer}>
+        {isAuth ? (
+          <>
+            <span className={s.text}>Выйти</span>
+            <i className="fal fa-sign-out-alt" />
+          </>
+        ) : (
+          <>
+            <span className={s.text}>Войти</span>
+            <i className="fal fa-sign-in-alt" />
+          </>
+        )}
+      </div>
+    </NavLink>
   );
 };

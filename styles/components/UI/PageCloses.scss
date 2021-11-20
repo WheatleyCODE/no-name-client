@@ -1,0 +1,30 @@
+@import '../../variables.scss';
+@import '../../mixins.scss';
+
+.pageCloses {
+  @include flex-center;
+  padding-top: 30px;
+  flex-direction: column;
+  color: $colorBlack;
+
+  h2 {
+    font-size: 1.3rem;
+    padding-top: 30px;
+  }
+
+  .logoContainer {
+    height: 60px;
+  }
+
+  .linkBlock {
+    @include flex-center;
+    padding-top: 40px;
+    display: flex;
+    font-size: 1.5rem;
+
+    span i {
+      margin-right: 9px;
+      font-size: 1.4rem;
+    }
+  }
+}

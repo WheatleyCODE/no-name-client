@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { Logo, SendMailAgain } from '@components';
+import { Logo, PageCloses, SendMailAgain } from '@components';
 import { useAuth } from '@hooks';
 import { AuthService } from '@services/AuthService';
 import s from '@s/pages/index.module.scss';
@@ -12,7 +12,7 @@ const Activate: NextPage = () => {
   };
 
   if (user?.isActivated === undefined || user.isActivated) {
-    return null;
+    return <PageCloses text="Возможно ваш аккаунт уже активирван или вы не вошли в систему" />;
   }
 
   return (
