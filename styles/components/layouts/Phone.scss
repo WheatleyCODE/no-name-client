@@ -5,7 +5,6 @@
   cursor: pointer;
   @include flex-center;
   flex-direction: column;
-  margin-right: 20px;
   height: 100%;
   width: 172px;
 
@@ -58,10 +57,81 @@
   }
 }
 
+.modalPhoneInfo {
+  padding-top: 75px;
+
+  h2 {
+    font-size: 1.05rem;
+  }
+
+  .infoLogo {
+    position: absolute;
+    height: 45px;
+    top: 15px;
+    left: 20px;
+    border: 1px solid $colorLightGrey;
+    border-radius: 7px;
+    padding-right: 10px;
+    padding-left: 5px;
+  }
+
+  .infoTitle {
+    h2 {
+      font-size: 2rem;
+      border-bottom: 1px solid $colorLightGrey;
+      padding-bottom: 10px;
+      padding-top: 20px;
+      margin-bottom: 30px;
+    }
+  }
+
+  .messagers {
+    margin-top: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $colorLightGrey;
+
+    .socialImgs {
+      @include flex-center;
+    }
+
+    li a {
+      transition: 0.2s;
+      background-color: rgba(0, 0, 0, 0.06);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+      padding: 5px 0;
+      padding-left: 20px;
+      border: 1px solid rgb(255, 255, 255);
+
+      span {
+        padding-left: 20px;
+      }
+
+      &:hover {
+        border: 1px solid $colorLightGrey;
+      }
+    }
+  }
+
+  .modalPhoneInfoNumber {
+    margin-top: 20px;
+
+    h2 {
+      font-size: 1.2rem;
+      padding-bottom: 10px;
+    }
+
+    .phoneNumber {
+      font-size: 1.6rem;
+    }
+  }
+}
+
 @media screen and (max-width: 860px) {
   .phoneAdaptive {
     width: 100%;
-    margin-right: 50px;
 
     .phoneNumber,
     .messagers {
@@ -71,6 +141,30 @@
     .phoneIcon {
       display: block;
     }
+  }
+}
+
+@media screen and (min-width: 730px) {
+  .infoLogo {
+    display: none;
+  }
+
+  .infoTitle {
+    display: block;
+  }
+
+  .modalPhoneInfo {
+    padding: 40px 20px;
+    padding-top: 0px;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .phoneAdaptive {
+    margin-right: 50px;
+  }
+  .infoTitle {
+    display: none;
   }
 }
 
@@ -91,5 +185,34 @@
 @media screen and (max-width: 380px) {
   .phoneAdaptive {
     margin-right: 15px;
+  }
+
+  .modalPhoneInfo {
+    h2 {
+      font-size: 1rem;
+    }
+
+    .messagers {
+      margin-top: 30px;
+      padding-bottom: 20px;
+
+      li a {
+        margin: 6px 0;
+        padding-top: 0;
+      }
+    }
+
+    .modalPhoneInfoNumber {
+      margin-top: 15px;
+
+      h2 {
+        font-size: 1.1rem;
+        padding-bottom: 7px;
+      }
+
+      .phoneNumber {
+        font-size: 1.6rem;
+      }
+    }
   }
 }

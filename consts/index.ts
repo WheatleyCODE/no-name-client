@@ -36,7 +36,7 @@ export enum socials {
 
 export const messagers = [
   {
-    name: 'Телеграм',
+    name: 'Telegram',
     img: socials.TELEGRAM,
     link: 'https://t.me/qb_wht',
   },

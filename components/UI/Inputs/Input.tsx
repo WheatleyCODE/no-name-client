@@ -23,7 +23,13 @@ export const Input: FC<InputProps> = (props) => {
 
   return (
     <div className={s.InputContainer}>
-      <CSSTransition in={isError} timeout={100} classNames={'modal'} mountOnEnter unmountOnExit>
+      <CSSTransition
+        in={isError}
+        timeout={100}
+        classNames={'validError'}
+        mountOnEnter
+        unmountOnExit
+      >
         <span className={s.error}>{validError}</span>
       </CSSTransition>
       <input

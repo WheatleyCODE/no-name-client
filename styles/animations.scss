@@ -1,12 +1,32 @@
 .modal-enter-active {
-  animation: show-modal 0.5s forwards;
+  animation: show-modal 0.2s forwards;
 }
 
 .modal-exit-active {
-  animation: show-modal 0.5s reverse;
+  animation: show-modal 0.2s reverse forwards;
 }
 
 @keyframes show-modal {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.validError-enter-active {
+  animation: show-validError 0.1s forwards;
+}
+
+.validError-exit-active {
+  animation: show-validError 0.1s reverse forwards;
+}
+
+@keyframes show-validError {
   0% {
     opacity: 0;
     transform: translateY(-4px);

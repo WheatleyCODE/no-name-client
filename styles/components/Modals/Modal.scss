@@ -1,0 +1,66 @@
+@import '../../mixins';
+@import '../../variables';
+
+.modal {
+  padding: 40px;
+  width: 100%;
+  max-width: 680px;
+  padding-bottom: 30px;
+  border-radius: $borderRadius;
+  position: relative;
+  background-color: $colorWhite;
+  z-index: 30;
+
+  .closeButton {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -35px;
+    right: -35px;
+    font-size: 2.5rem;
+
+    .iconButton {
+      @include flex-center;
+      width: 30px;
+      height: 30px;
+
+      i {
+        width: 100%;
+        transition: 0.2s transform;
+        color: $colorWhite;
+      }
+
+      &:hover i {
+        transform: rotateZ(-10deg);
+      }
+
+      button {
+        display: block;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .modal {
+    padding: 20px;
+    max-width: 100%;
+    height: 100vh;
+    width: 100vh;
+    border-radius: 0;
+
+    .closeButton {
+      top: 22px;
+      right: 22px;
+      font-size: 2.5rem;
+
+      .iconButton {
+        i {
+          color: $colorBlack;
+        }
+      }
+    }
+  }
+}

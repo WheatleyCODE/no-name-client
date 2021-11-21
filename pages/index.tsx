@@ -1,11 +1,12 @@
 import type { NextPage } from 'next';
 import { useState } from 'react';
-import { Button, MainLayout } from '@components';
+import { Button, MainLayout, Portal, Modal } from '@components';
 import { useAuth, useTypedSelector } from '@hooks';
 import { wrapper } from '@store';
 import { fetchUsersAC } from '@store/actions-creators/user';
 import { NextThunckDispatch } from '@store/reducers';
 import { UserService } from '@services/UserService';
+import { CSSTransition } from 'react-transition-group';
 import s from '@s/pages/index.module.scss';
 
 // Redux tests
@@ -17,6 +18,7 @@ export const getServerSideProps = wrapper.getServerSideProps((store) => async ()
 const Home: NextPage = () => {
   // Redux tests
   const { users, error } = useTypedSelector((state) => state.user);
+  const [show, setShow] = useState(false);
   // const { fetchUsers } = useActions();
 
   // useEffect(() => {
@@ -32,7 +34,7 @@ const Home: NextPage = () => {
   const testFN = async () => {
     try {
       const lol = await UserService.fetchUsers();
-      console.log(lol.data)
+      console.log(lol.data);
       setTest(lol.data);
     } catch (e) {
       console.log(e);
@@ -48,7 +50,7 @@ const Home: NextPage = () => {
       <div className={s.container}>
         <h2>content</h2>
         <Button onClickHandler={testFN}>Запросить пользователей</Button>
-        <div>
+        <div onClick={() => setShow(true)}>
           <br />
           <ul>
             {users.map((user) => (
@@ -66,6 +68,14 @@ const Home: NextPage = () => {
           </ul>
         </div>
       </div>
+
+      <CSSTransition in={show} timeout={200} classNames="modal" mountOnEnter unmountOnExit>
+        <Portal>
+          <Modal onCloseModal={() => setShow((prev) => !prev)} stopScroll>
+            <h2 style={{ textAlign: 'center' }}>lol</h2>
+          </Modal>
+        </Portal>
+      </CSSTransition>
     </MainLayout>
   );
 };
