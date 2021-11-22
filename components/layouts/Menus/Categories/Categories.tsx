@@ -1,6 +1,6 @@
-import { FC } from 'react';
-import { Button } from '@components';
+import { FC, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { Button, CategoriesMenu } from '@components';
 import s from '@s/components/index.module.scss';
 
 interface CategoriesProps {
@@ -8,9 +8,11 @@ interface CategoriesProps {
 }
 
 export const Categories: FC<CategoriesProps> = ({ noText = false }) => {
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
     <div className={s.categories}>
-      <Button className={s.blue}>
+      <Button onClickHandler={() => setShowMenu((p) => !p)} className={s.blue}>
         <div style={{ width: noText ? '20px' : '137.5px' }}>
           <CSSTransition
             in={!noText}
@@ -26,6 +28,9 @@ export const Categories: FC<CategoriesProps> = ({ noText = false }) => {
           </span>
         </div>
       </Button>
+      <CSSTransition mountOnEnter unmountOnExit in={showMenu} timeout={200} classNames={'modal'}>
+        <CategoriesMenu closeMenu={() => setShowMenu(false)} />
+      </CSSTransition>
     </div>
   );
 };

@@ -1,0 +1,29 @@
+@import '../../../../variables.scss';
+@import '../../../../mixins.scss';
+
+.categoriesMenu {
+  position: absolute;
+  justify-content: center;
+  align-items: flex-start !important;
+  top: 60px;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: Calc(50vh - 60px);
+  background-color: $colorWhite;
+
+  .categoriesMenuCont {
+    @include max-width;
+    margin-top: 20px;
+    padding: 0 20px;
+    padding-bottom: 30px;
+    border-radius: 5px;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: $colorWhite;
+
+    h5 {
+      padding-top: 20px;
+    }
+  }
+}

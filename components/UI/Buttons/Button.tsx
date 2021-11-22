@@ -5,11 +5,18 @@ interface ButtonProps {
   disable?: boolean;
   onClickHandler?: () => void;
   className?: string;
+  onMouseHadlers?: {
+    onMouseEnter?: () => void;
+    onMouseOver?: () => void;
+    onMouseLeave?: () => void;
+  };
 }
 
-export const Button: React.FC<ButtonProps> = ({ children, onClickHandler, disable, className }) => {
+export const Button: React.FC<ButtonProps> = (props) => {
+  const { children, onClickHandler, disable, className, onMouseHadlers } = props;
   return (
     <button
+      {...onMouseHadlers}
       disabled={disable ?? false}
       onClick={onClickHandler}
       type="button"
