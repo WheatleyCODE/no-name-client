@@ -1,10 +1,10 @@
 @import './Logo.scss';
 @import './MainLayout.scss';
-@import './Menus/Menu.scss';
+@import './Menus/NavMenu/Menu.scss';
 @import './Menus/StickyMenu.scss';
-@import './Menus/Cart.scss';
-@import './Menus/CartCounter.scss';
-@import './Menus/Categories.scss';
+@import './Menus/Cart/Cart.scss';
+@import './Menus/Cart/CartCounter.scss';
+@import './Menus/Categories/Categories.scss';
 @import './Menus/Search.scss';
 @import './UserBlock.scss';
 @import './Phone.scss';
