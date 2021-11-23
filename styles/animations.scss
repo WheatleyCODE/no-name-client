@@ -6,6 +6,26 @@
   animation: show-modal 0.2s reverse forwards;
 }
 
+.ctgr-enter-active {
+  animation: showCategories 0.15s forwards;
+}
+
+.ctgr-exit-active {
+  animation: showCategories 0.15s reverse forwards;
+}
+
+@keyframes showCategories {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
 @keyframes show-modal {
   0% {
     opacity: 0;

@@ -1,7 +1,9 @@
 import { FC, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { useRouter } from 'next/router';
 import { useDebounce } from '@hooks';
 import { Button, CartCounter, MiniCart } from '@components';
+import { PathRoutes } from 'consts';
 import s from '@s/components/index.module.scss';
 
 export const Cart: FC = () => {
@@ -10,6 +12,8 @@ export const Cart: FC = () => {
 
   const [isHoverCartOver, setIsHoverCartOver] = useState(false);
   const [isHoverCartEnter, setIsHoverCartEnter] = useState(false);
+
+  const router = useRouter();
 
   const closeCartButton = useDebounce(() => setIsHoverButtonOver(false), 1000);
   const closeCart = useDebounce(() => setIsHoverCartOver(false), 1000);
@@ -46,7 +50,11 @@ export const Cart: FC = () => {
 
   return (
     <div className={s.cart}>
-      <Button onMouseHadlers={onMouseHandlersButton} className={s.orange}>
+      <Button
+        onClickHandler={() => router.push(PathRoutes.CART)}
+        onMouseHadlers={onMouseHandlersButton}
+        className={s.orange}
+      >
         <span>
           <i className="fal fa-shopping-cart" />
         </span>
@@ -57,7 +65,7 @@ export const Cart: FC = () => {
         unmountOnExit
         in={isHoverButtonOver || isHoverCartOver || isHoverButtonEnter || isHoverCartEnter}
         timeout={150}
-        classNames={'modal'}
+        classNames={'ctgr'}
       >
         <MiniCart onMouseHandlers={onMouseHandlersCart} />
       </CSSTransition>

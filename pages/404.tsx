@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { PathRoutes } from 'consts';
 import s from '@s/pages/index.module.scss';
 
-const Home: NextPage = () => {
+const Error: NextPage = () => {
   const router = useRouter();
 
   useEffect(() => {
@@ -18,4 +18,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Error;

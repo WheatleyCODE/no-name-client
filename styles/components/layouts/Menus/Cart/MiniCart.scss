@@ -1,4 +1,7 @@
 .miniCart {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
   color: red;
   position: absolute;
   top: 50px;
@@ -7,4 +10,17 @@
   height: 600px;
   background-color: rgb(232, 232, 232);
   border-radius: 8px;
+
+  .cartMain {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.072);
+    height: 100%;
+  }
+
+  .cartFooter {
+    width: 100%;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.072);
+    height: 120px;
+  }
 }

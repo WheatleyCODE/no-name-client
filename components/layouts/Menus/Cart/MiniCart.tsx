@@ -10,5 +10,10 @@ interface MiniCartProps {
 }
 
 export const MiniCart: FC<MiniCartProps> = ({ onMouseHandlers }) => {
-  return <div {...onMouseHandlers} className={s.miniCart} />;
+  return (
+    <div {...onMouseHandlers} className={s.miniCart}>
+      <div className={s.cartMain}></div>
+      <div className={s.cartFooter}></div>
+    </div>
+  );
 };

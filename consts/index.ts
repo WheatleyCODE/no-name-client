@@ -4,9 +4,10 @@ export enum PathRoutes {
   REGISTRATION = '/registarion',
   REVIEWS = '/reviews',
   CONTACTS = '/contacts',
-  PAINT = '/paint',
   ACTIVATE = '/activate',
   RESET = '/reset',
+  CART = '/cart',
+  CAR_COLOR = '/car_color',
 }
 
 export const menuItems = [
@@ -24,7 +25,7 @@ export const menuItems = [
   },
   {
     name: 'Код краски',
-    path: PathRoutes.PAINT,
+    path: PathRoutes.CAR_COLOR,
   },
 ];
 

@@ -24,11 +24,28 @@ export const Categories: FC<CategoriesProps> = ({ noText = false }) => {
             <span className={s.text}>Категории</span>
           </CSSTransition>
           <span>
-            <i className="far fa-list-ul" />
+            <CSSTransition
+              mountOnEnter
+              unmountOnExit
+              in={showMenu}
+              timeout={150}
+              classNames={'ctgr'}
+            >
+              <i style={{ fontSize: '1.5rem' }} className="fal fa-times" />
+            </CSSTransition>
+            <CSSTransition
+              mountOnEnter
+              unmountOnExit
+              in={!showMenu}
+              timeout={150}
+              classNames={'ctgr'}
+            >
+              <i style={{ position: 'absolute' }} className="far fa-list-ul" />
+            </CSSTransition>
           </span>
         </div>
       </Button>
-      <CSSTransition mountOnEnter unmountOnExit in={showMenu} timeout={200} classNames={'modal'}>
+      <CSSTransition mountOnEnter unmountOnExit in={showMenu} timeout={150} classNames={'ctgr'}>
         <CategoriesMenu closeMenu={() => setShowMenu(false)} />
       </CSSTransition>
     </div>
