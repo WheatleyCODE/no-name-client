@@ -2,25 +2,48 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  color: red;
   position: absolute;
   top: 50px;
   right: 0;
   width: 300px;
-  height: 600px;
-  background-color: rgb(232, 232, 232);
+  background-color: rgb(248, 248, 248);
   border-radius: 8px;
 
   .cartMain {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.072);
-    height: 100%;
+    border-radius: 5px;
+
+    .mainItem {
+      width: 100%;
+      padding: 3px;
+      height: 80px;
+      border-radius: 5px;
+      background-color: rgba(0, 0, 0, 0.023);
+      margin-bottom: 10px;
+    }
+
+    .cartLink {
+      display: flex;
+      justify-content: center;
+      border-top: 1px solid $colorLightGrey;
+      width: 100%;
+      font-size: 0.8rem;
+      padding-top: 18px;
+    }
   }
 
   .cartFooter {
+    position: relative;
     width: 100%;
-    margin-top: 10px;
-    background-color: rgba(0, 0, 0, 0.072);
-    height: 120px;
+    padding-top: 10px;
+    padding-bottom: 60px;
+
+    button {
+      top: 40px;
+      position: absolute;
+      height: 50px;
+    }
   }
 }
