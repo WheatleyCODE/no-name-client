@@ -14,7 +14,7 @@ const Change: NextPage = () => {
     try {
       await AuthService.checkResetPasswordLink(link);
       setIsLink(true);
-    } catch (e) {
+    } catch (e: any) {
       router.push(PathRoutes.HOME);
     }
   };

@@ -27,7 +27,7 @@ export const ChangePasswordForm: FC<ChangePasswordFormProps> = ({ isEmail = fals
     try {
       await AuthService.resetPassword(email.default.value);
       setIsSendMail(true);
-    } catch (e) {
+    } catch (e: any) {
       setShowError(e?.response?.data?.message);
     }
   };
@@ -38,7 +38,7 @@ export const ChangePasswordForm: FC<ChangePasswordFormProps> = ({ isEmail = fals
     try {
       await AuthService.changePassword(router.query.id, password.default.value);
       router.push(PathRoutes.LOGIN);
-    } catch (e) {
+    } catch (e: any) {
       setShowError(e?.response?.data?.message);
     }
   };

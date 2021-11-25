@@ -17,7 +17,7 @@ export const fetchUsersAC = () => {
         type: UserActionTypes.FETCH_USERS_SUCCES,
         payload: response.data,
       });
-    } catch (e) {
+    } catch (e: any) {
       dispatch({
         type: UserActionTypes.FETCH_USERS_ERROR,
         payload: 'Произошла ошибка при загрузке пользователей',
@@ -56,7 +56,7 @@ export const loginAC = (email: string, password: string, redirect: () => void) =
       dispatch(setAuthAC(true));
       dispatch(setUserAC(res.data.user));
       redirect();
-    } catch (e) {
+    } catch (e: any) {
       dispatch(setAuthErrorAC(e?.response?.data?.message));
     }
   };
@@ -72,7 +72,7 @@ export const registrationAC = (email: string, password: string, redirect: () => 
       dispatch(setAuthAC(true));
       dispatch(setUserAC(res.data.user));
       redirect();
-    } catch (e) {
+    } catch (e: any) {
       dispatch(setAuthErrorAC(e?.response?.data?.message));
     }
   };
@@ -86,7 +86,7 @@ export const logoutAC = () => {
       localStorage.removeItem('token');
       dispatch(setAuthAC(false));
       dispatch(setUserAC({} as IUser));
-    } catch (e) {
+    } catch (e: any) {
       console.log(e?.response?.data?.message);
     }
   };
@@ -102,7 +102,7 @@ export const checkAuthAC = () => {
       localStorage.setItem('token', res.data.accessToken);
       dispatch(setAuthAC(true));
       dispatch(setUserAC(res.data.user));
-    } catch (e) {
+    } catch (e: any) {
       console.log(e?.response?.data?.message);
     }
   };
@@ -114,7 +114,7 @@ export const fetchUsersACNormal = () => {
       const res = await UserService.fetchUsers();
       console.log(res);
       // dispatch(setTestAC(res.data));
-    } catch (e) {
+    } catch (e: any) {
       console.log(e?.response?.data?.message);
     }
   };

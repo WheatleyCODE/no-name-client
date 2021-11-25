@@ -13,7 +13,7 @@ export const CategoriesMenu: FC<CategoriesMenuProps> = ({ closeMenu }) => {
       icon: 'fal fa-paint-brush',
       items: {
         title: 'Подкраска сколов',
-      }
+      },
     },
     {
       name: 'Маркеры для подкраски',
@@ -48,7 +48,7 @@ export const CategoriesMenu: FC<CategoriesMenuProps> = ({ closeMenu }) => {
         <div className={s.row}>
           <div className={s.categoriesName}>
             {menuItems.map((itm, indx) => (
-              <CategoriesItem onHover={() => {}} key={itm.name} name={itm.name} icon={itm.icon} />
+              <CategoriesItem onHover={() => null} key={itm.name} name={itm.name} icon={itm.icon} />
             ))}
           </div>
           <div className={s.more}>

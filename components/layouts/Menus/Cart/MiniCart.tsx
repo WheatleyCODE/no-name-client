@@ -3,7 +3,6 @@ import { Button, Link } from '@components';
 import { PathRoutes } from 'consts';
 import s from '@s/components/index.module.scss';
 
-
 interface MiniCartProps {
   onMouseHandlers: {
     onMouseEnter: () => void;

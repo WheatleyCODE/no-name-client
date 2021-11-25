@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { NextPage } from 'next';
 import { useState } from 'react';
 import { MainLayout, Portal, Modal, ImgSlider, ProductSlider } from '@components';
@@ -10,7 +11,7 @@ import { CSSTransition } from 'react-transition-group';
 import s from '@s/pages/index.module.scss';
 
 // Redux tests
-export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
+export const getServerSideProps = wrapper.getServerSideProps((store): any => async () => {
   const dispatch = store.dispatch as NextThunckDispatch;
   await dispatch(await fetchUsersAC());
 });
@@ -36,7 +37,7 @@ const Home: NextPage = () => {
       const lol = await UserService.fetchUsers();
       console.log(lol.data);
       setTest(lol.data);
-    } catch (e) {
+    } catch (e: any) {
       console.log(e);
     }
   };

@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import s from '@s/components/index.module.scss';
 
-interface ProsuctSliderProps {}
+// interface ProsuctSliderProps {}
 
-export const ProductSlider: FC<ProsuctSliderProps> = () => {
+export const ProductSlider: FC = () => {
   return (
     <div className={s.productSlider}>
       <div className={s.slider}>
