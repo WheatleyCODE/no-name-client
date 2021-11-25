@@ -21,13 +21,9 @@ export const ImgSlider: FC = () => {
           <div className={s.circle}>
             <i className="fas fa-circle" />
           </div>
-        </div>
-        <div className={s.step}>
           <div className={s.circle}>
             <i className="fas fa-circle" />
           </div>
-        </div>
-        <div className={s.step}>
           <div className={s.circle}>
             <i className="fas fa-circle" />
           </div>
