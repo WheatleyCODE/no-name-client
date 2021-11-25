@@ -1,7 +1,8 @@
 import { FC } from 'react';
-import s from '@s/components/index.module.scss';
-import { Button, Link } from '@components/UI';
+import { Button, Link } from '@components';
 import { PathRoutes } from 'consts';
+import s from '@s/components/index.module.scss';
+
 
 interface MiniCartProps {
   onMouseHandlers: {
@@ -24,7 +25,10 @@ export const MiniCart: FC<MiniCartProps> = ({ onMouseHandlers }) => {
       </div>
       <div className={s.cartFooter}>
         <div className={s.buttons}>
-          <Button className={s.orange}>Оформить заказ</Button>
+          <Button className={s.orange}>
+            Оформить заказ
+            <i className="fal fa-money-check" />
+          </Button>
         </div>
       </div>
     </div>

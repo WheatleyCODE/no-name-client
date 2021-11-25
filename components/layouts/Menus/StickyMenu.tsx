@@ -10,7 +10,7 @@ export const StickyMenu: FC = () => {
   const scrollHandler = (e: any) => {
     const top = e.target.documentElement.scrollTop;
 
-    if (top > 60) {
+    if (top > 80) {
       setClassName(s.shadow);
       setShowLogo(true);
     } else {

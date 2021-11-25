@@ -58,10 +58,6 @@
   height: $headerHeight;
 }
 
-.main {
-  height: Calc(100vh - $headerHeight);
-}
-
 @media screen and (max-width: 860px) {
   .user {
     width: 143.9px;

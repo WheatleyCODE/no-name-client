@@ -1,0 +1,47 @@
+@import '../variables.scss';
+@import '../mixins.scss';
+
+.mainLanding {
+  @include flex-center;
+  background-color: $colorBlack;
+  width: 100%;
+  padding: 12 0px;
+  padding-top: 0;
+
+  .main {
+    z-index: 2;
+    @include flex-center;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: $colorWhite;
+    height: 1200px;
+    width: 100%;
+    // border-radius: 40px;
+  }
+
+  .title {
+    width: 100%;
+    padding: 90px 0 70px;
+    // background-color: red;
+
+    h2 {
+      font-size: 3rem;
+    }
+  }
+
+  .width {
+    max-width: 1200px;
+    width: 100%;
+  }
+}
+
+.categories {
+  @include max-width;
+  width: 100%;
+  padding-top: 40px;
+
+  h2 {
+    font-size: 2.3rem;
+    padding-bottom: 30px;
+  }
+}

@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { CategoriesItem } from './CategoriesItem';
 import s from '@s/components/index.module.scss';
 
 interface CategoriesMenuProps {
@@ -6,6 +7,36 @@ interface CategoriesMenuProps {
 }
 
 export const CategoriesMenu: FC<CategoriesMenuProps> = ({ closeMenu }) => {
+  const menuItems = [
+    {
+      name: 'Кисточки для подкраски',
+      icon: 'fal fa-paint-brush',
+      items: {
+        title: 'Подкраска сколов',
+      }
+    },
+    {
+      name: 'Маркеры для подкраски',
+      icon: 'fal fa-highlighter',
+    },
+    {
+      name: 'Баллончики',
+      icon: 'fal fa-spray-can',
+    },
+    {
+      name: 'Эмаль по коду',
+      icon: 'fal fa-fill-drip',
+    },
+    {
+      name: 'Комплекты для ремонта сколов',
+      icon: 'fal fa-box-alt',
+    },
+    {
+      name: 'Расходные материалы',
+      icon: 'fal fa-toolbox',
+    },
+  ];
+
   const onCloseMenuHandler = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation();
     closeMenu();
@@ -16,52 +47,32 @@ export const CategoriesMenu: FC<CategoriesMenuProps> = ({ closeMenu }) => {
       <div onClick={(e) => e.stopPropagation()} className={s.categoriesMenuCont}>
         <div className={s.row}>
           <div className={s.categoriesName}>
-            <div className={s.name}>
-              <span>
-                <i className="fal fa-paint-brush" />
-                Кисточка
-              </span>
-              <i className="fal fa-caret-right" />
+            {menuItems.map((itm, indx) => (
+              <CategoriesItem onHover={() => {}} key={itm.name} name={itm.name} icon={itm.icon} />
+            ))}
+          </div>
+          <div className={s.more}>
+            <div className={s.moreBlock}>
+              <h6>Подкраска сколов</h6>
+              <ul>
+                <li>Эмаль по коду цвета автомобиля</li>
+                <li>Акриловый лак</li>
+                <li>Акриловый грунт</li>
+                <li>Преобразователь ржавчины</li>
+              </ul>
             </div>
-            <div className={s.name}>
-              <span>
-                <i className="fal fa-highlighter" />
-                Маркер
-              </span>
-              <i className="fal fa-caret-right" />
-            </div>
-            <div className={s.name}>
-              <span>
-                <i className="fal fa-spray-can" />
-                Баллончики
-              </span>
-              <i className="fal fa-caret-right" />
-            </div>
-            <div className={s.name}>
-              <span>
-                <i className="fal fa-fill-drip" />
-                Эмаль по коду
-              </span>
-              <i className="fal fa-caret-right" />
-            </div>
-            <div className={s.name}>
-              <span>
-                <i className="fal fa-box-alt" />
-                Комплекты
-              </span>
-              <i className="fal fa-caret-right" />
-            </div>
-            <div className={s.name}>
-              <span>
-                <i className="fal fa-toolbox" />
-                Расходные материалы
-              </span>
-              <i className="fal fa-caret-right" />
+            <div className={s.moreBlock}>
+              <h6>RAL, RAL design</h6>
+              <ul>
+                <li>Эмали RAL</li>
+                <li>Эмали RAL design</li>
+                <li>Эмали еще что нибудь</li>
+                <li>Моковый текст</li>
+              </ul>
             </div>
           </div>
-          <div className={s.dontnow}></div>
         </div>
-        <div className={s.down}>
+        <div className={s.sale}>
           <h4>Скидка 140% на все!</h4>
         </div>
       </div>

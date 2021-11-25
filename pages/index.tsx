@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import { useState } from 'react';
-import { Button, MainLayout, Portal, Modal } from '@components';
+import { MainLayout, Portal, Modal, ImgSlider, ProductSlider } from '@components';
 import { useAuth, useTypedSelector } from '@hooks';
 import { wrapper } from '@store';
 import { fetchUsersAC } from '@store/actions-creators/user';
@@ -47,7 +47,7 @@ const Home: NextPage = () => {
       title="Главная"
       keywords={['Главная', 'noname']}
     >
-      <div className={s.container}>
+      {/* <div className={s.container}>
         <h2>content</h2>
         <Button onClickHandler={testFN}>Запросить пользователей</Button>
         <div onClick={() => setShow(true)}>
@@ -66,6 +66,24 @@ const Home: NextPage = () => {
               <li key={tes._id}>{tes.email}</li>
             ))}
           </ul>
+        </div>
+      </div> */}
+
+      <ImgSlider />
+
+      <div className={s.mainLanding}>
+        <div className={s.main}>
+          <div className={s.width}>
+            <div className={s.title}>
+              <h2>Категории</h2>
+            </div>
+          </div>
+          <ProductSlider />
+          <div className={s.width}>
+            <div className={s.title}>
+              <h2>Новое и популярное</h2>
+            </div>
+          </div>
         </div>
       </div>
 

@@ -21,7 +21,7 @@ export const MainLayout: React.FC<MainLayoutProps> = (props) => {
       return;
     }
 
-    if (top > 60) {
+    if (top > 80) {
       setShowLogo(true);
     } else {
       setShowLogo(false);
