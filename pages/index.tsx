@@ -70,7 +70,7 @@ const Home: NextPage = () => {
         </div>
       </div> */}
 
-      <ImgSlider />
+      {/* <ImgSlider />
 
       <div className={s.mainLanding}>
         <div className={s.main}>
@@ -86,7 +86,7 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <CSSTransition in={show} timeout={200} classNames="modal" mountOnEnter unmountOnExit>
         <Portal>

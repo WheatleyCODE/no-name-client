@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import { CategoriesItem } from './CategoriesItem';
+import { FC, useState } from 'react';
+import { categoriesMenuItems } from 'consts';
 import s from '@s/components/index.module.scss';
 
 interface CategoriesMenuProps {
@@ -7,35 +7,7 @@ interface CategoriesMenuProps {
 }
 
 export const CategoriesMenu: FC<CategoriesMenuProps> = ({ closeMenu }) => {
-  const menuItems = [
-    {
-      name: 'Кисточки для подкраски',
-      icon: 'fal fa-paint-brush',
-      items: {
-        title: 'Подкраска сколов',
-      },
-    },
-    {
-      name: 'Маркеры для подкраски',
-      icon: 'fal fa-highlighter',
-    },
-    {
-      name: 'Баллончики',
-      icon: 'fal fa-spray-can',
-    },
-    {
-      name: 'Эмаль по коду',
-      icon: 'fal fa-fill-drip',
-    },
-    {
-      name: 'Комплекты для ремонта сколов',
-      icon: 'fal fa-box-alt',
-    },
-    {
-      name: 'Расходные материалы',
-      icon: 'fal fa-toolbox',
-    },
-  ];
+  const [activeCatalogIndx, setActiveCatalogInx] = useState(0);
 
   const onCloseMenuHandler = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation();
@@ -47,33 +19,39 @@ export const CategoriesMenu: FC<CategoriesMenuProps> = ({ closeMenu }) => {
       <div onClick={(e) => e.stopPropagation()} className={s.categoriesMenuCont}>
         <div className={s.row}>
           <div className={s.categoriesName}>
-            {menuItems.map((itm, indx) => (
-              <CategoriesItem onHover={() => null} key={itm.name} name={itm.name} icon={itm.icon} />
+            {categoriesMenuItems.map((itm, indx) => (
+              <div
+                key={itm.icon}
+                onMouseOver={() => setActiveCatalogInx(indx)}
+                className={indx === activeCatalogIndx ? s.name + ' ' + s.active : s.name}
+              >
+                <span>
+                  <i className={itm.icon} />
+                  {itm.name}
+                </span>
+                <i className="fal fa-caret-right" />
+              </div>
             ))}
           </div>
           <div className={s.more}>
-            <div className={s.moreBlock}>
-              <h6>Подкраска сколов</h6>
-              <ul>
-                <li>Эмаль по коду цвета автомобиля</li>
-                <li>Акриловый лак</li>
-                <li>Акриловый грунт</li>
-                <li>Преобразователь ржавчины</li>
-              </ul>
-            </div>
-            <div className={s.moreBlock}>
-              <h6>RAL, RAL design</h6>
-              <ul>
-                <li>Эмали RAL</li>
-                <li>Эмали RAL design</li>
-                <li>Эмали еще что нибудь</li>
-                <li>Моковый текст</li>
-              </ul>
-            </div>
+            {categoriesMenuItems.map((el, ind) => {
+              if (ind === activeCatalogIndx) {
+                return el.items?.map((item) => (
+                  <div key={item.title} className={s.moreBlock}>
+                    <h6>{item.title}</h6>
+                    <ul>
+                      {item.links.map((link) => (
+                        <li key={link.name}>{link.name}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ));
+              }
+            })}
           </div>
         </div>
         <div className={s.sale}>
-          <h4>Скидка 140% на все!</h4>
+          <h4>Сконфигурируй комплект и получи скидку до 32%</h4>
         </div>
       </div>
     </div>

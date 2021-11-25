@@ -2,7 +2,10 @@
 @import '../../variables.scss';
 
 .test {
+  margin-top: 20px;
+  margin-bottom: 10px;
   position: relative;
+  @include flex-center;
   // background: linear-gradient(
   //   0deg,
   //   $colorBlack 0%,
@@ -11,10 +14,7 @@
   //   $colorWhite 100%
   // );
   // background-color: $colorBlack;
-  padding: 15px;
-  padding-bottom: 0;
-  width: 100%;
-  height: 500px;
+  height: 300px;
 
   .steps {
     @include flex-center;
@@ -26,12 +26,12 @@
       @include flex-center;
       box-shadow: 0px 0px 10px 4px $colorBlack;
       background-color: rgb(255, 255, 255);
-      padding: 9px 10px;
-      padding-bottom: 4px;
+      padding: 7px 7px;
+      padding-bottom: 5px;
       border-radius: 10px 10px 0 0;
       cursor: pointer;
       margin: 1px;
-      margin-bottom: 0;
+      margin-bottom: -10px;
 
       .circle {
         padding: 0px 5px;
@@ -39,29 +39,41 @@
 
         i {
           color: $colorLightGrey;
-          font-size: 0.8rem;
+          font-size: 0.6rem;
         }
       }
     }
 
     .circle:first-child i {
-      color: $colorBlack;
+      color: $colorOrange;
     }
+  }
+
+  .rightPanel,
+  .leftPanel {
+    @include flex-center;
+    position: absolute;
+    height: 100%;
+  }
+
+  .rightPanel {
+    right: 0;
+  }
+
+  .leftPanel {
+    left: 0;
   }
 
   .right,
   .left {
     @include flex-center;
-    position: absolute;
-    background-color: $colorBlack;
-    width: 60px;
     height: 120px;
-    margin-top: 200px;
+    padding: 20px;
     cursor: pointer;
     box-shadow: 0px 0px 10px 3px $colorBlack;
 
     i {
-      color: $colorWhite;
+      color: $colorBlack;
       font-size: 2rem;
     }
   }
@@ -77,17 +89,30 @@
   }
 }
 
-.imgSlider {
+.imgSlider,
+.imgSliderRight,
+.imgSliderLeft {
+  position: relative;
   @include flex-center;
   flex-direction: column;
-  border-radius: 30px;
-  // border-top: 2px solid $colorBlack;
-  // border-bottom: 2px solid $colorBlack;
-  box-shadow: inset 0px 0px 10px 3px $colorBlack;
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px 1px $colorBlack;
   height: 100%;
   width: 100%;
   background: url('../../../public/new3.jpg') no-repeat;
   background-size: cover;
+  width: 100%;
+  max-width: 1160px;
+
+  .text {
+    width: 40%;
+    @include flex-center;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    height: 100%;
+    right: 0;
+  }
 
   h1,
   h2 {
@@ -97,17 +122,25 @@
   }
 
   h1 {
-    margin-left: 530px;
     color: $colorWhite;
-    font-size: 2.3rem;
+    font-size: 1.3rem;
     background-color: $colorBlack;
   }
 
   h2 {
     background-color: $colorBlack;
-    margin-left: 850px;
     color: $colorWhite;
-    font-size: 2.3rem;
+    font-size: 1.3rem;
     margin-bottom: 10px;
   }
+}
+
+.imgSliderRight {
+  position: absolute;
+  right: -820px;
+}
+
+.imgSliderLeft {
+  position: absolute;
+  left: -820px;
 }
