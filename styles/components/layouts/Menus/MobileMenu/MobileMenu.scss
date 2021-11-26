@@ -10,6 +10,11 @@
     transition: color 0.2s;
   }
 
+  .bars i {
+    color: $colorBlack;
+    font-size: 1.5rem !important;
+  }
+
   &:hover i {
     color: $colorOrange;
   }
@@ -34,16 +39,6 @@
   .header {
     @include flex-center;
     position: relative;
-
-    .bars {
-      position: absolute;
-      left: 0;
-      padding-left: 20px;
-      i {
-        color: $colorWhite;
-        font-size: 1.9rem !important;
-      }
-    }
 
     .logo a {
       color: $colorWhite;
@@ -101,7 +96,16 @@
 
 .bars {
   position: absolute;
+  left: 0;
+  margin: 0;
   padding-left: 20px;
+
+  i {
+    color: $colorWhite;
+    font-size: 1.9rem !important;
+    padding: 10px;
+    margin: 0;
+  }
 }
 
 @media screen and (max-width: 730px) {

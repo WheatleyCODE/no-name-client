@@ -4,17 +4,21 @@
 .mobileMenuModal {
   position: absolute;
   width: 100%;
-  background-color: $colorWhite;
+  background-color: $colorBlack;
   min-height: 660px;
   height: 100%;
   top: 0;
   left: 0;
   z-index: 21;
-  color: red;
+  color: $colorWhite;
 
   .header {
     width: 100%;
     @include flex-center;
+  }
+
+  i {
+    color: $colorWhite;
   }
 
   .bars {
