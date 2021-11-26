@@ -20,6 +20,7 @@ import { transormPhone } from 'utils';
 import { useActions, useTypedSelector } from '@hooks';
 import { useRouter } from 'next/router';
 import s from '@s/components/index.module.scss';
+import { Confirm } from '@components/Modals/Confirm';
 
 export const MobileMenu: FC = () => {
   const [show, setShow] = useState(false);
@@ -27,6 +28,7 @@ export const MobileMenu: FC = () => {
   const [showCart, setShowCart] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const [showUpprove, setShowUpprove] = useState(false);
 
   const { isAuth } = useTypedSelector((state) => state.user);
   const { logoutAC } = useActions();
@@ -84,7 +86,7 @@ export const MobileMenu: FC = () => {
             <div className={s.main}>
               <ul>
                 {isAuth ? (
-                  <li onClick={onLogoutHandler}>
+                  <li onClick={() => setShowUpprove(true)}>
                     <i className="fal fa-sign-out-alt" />
                     Выйти
                   </li>
@@ -140,6 +142,13 @@ export const MobileMenu: FC = () => {
               </ul>
             </div>
           </div>
+        </Portal>
+      </CSSTransition>
+      <CSSTransition in={showUpprove} timeout={200} classNames="modal" mountOnEnter unmountOnExit>
+        <Portal>
+          <Confirm onUpprove={onLogoutHandler} onCloseModal={() => setShowUpprove(false)}>
+            <h3>Вы действительно хотите выйти?</h3>
+          </Confirm>
         </Portal>
       </CSSTransition>
       <CSSTransition
