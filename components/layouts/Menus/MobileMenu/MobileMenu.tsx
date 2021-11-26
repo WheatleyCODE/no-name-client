@@ -4,9 +4,20 @@ import Image from 'next/image';
 import viber from 'public/viber.svg';
 import telegram from 'public/telegram.svg';
 import whatsapp from 'public/whatsapp.svg';
-import { Portal, IconButton, Logo, Link, MobileMenuModal } from '@components';
+import {
+  Portal,
+  IconButton,
+  Logo,
+  Link,
+  MobileMenuModal,
+  MobileCategories,
+  MobileCart,
+  MobileLogin,
+  MobileSearch,
+} from '@components';
 import { menuItems, messagers, PathRoutes, PHONE } from 'consts';
 import { transormPhone } from 'utils';
+import { useActions, useTypedSelector } from '@hooks';
 import s from '@s/components/index.module.scss';
 
 export const MobileMenu: FC = () => {
@@ -15,6 +26,13 @@ export const MobileMenu: FC = () => {
   const [showCart, setShowCart] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+
+  const { isAuth } = useTypedSelector((state) => state.user);
+  const { logoutAC } = useActions();
+
+  const onLogoutHandler = () => {
+    logoutAC();
+  };
 
   const socials = {
     viber,
@@ -58,10 +76,17 @@ export const MobileMenu: FC = () => {
             </div>
             <div className={s.main}>
               <ul>
-                <li onClick={() => setShowLogin(true)}>
-                  <i className="fal fa-sign-in-alt" />
-                  Войти
-                </li>
+                {isAuth ? (
+                  <li onClick={onLogoutHandler}>
+                    <i className="fal fa-sign-out-alt" />
+                    Выйти
+                  </li>
+                ) : (
+                  <li onClick={() => setShowLogin(true)}>
+                    <i className="fal fa-sign-in-alt" />
+                    Войти
+                  </li>
+                )}
                 <li onClick={() => setShowSearch(true)}>
                   <i className="fal fa-search" />
                   Поиск
@@ -121,7 +146,7 @@ export const MobileMenu: FC = () => {
                 />
               </div>
             </div>
-            Категории
+            <MobileCategories />
           </MobileMenuModal>
         </Portal>
       </CSSTransition>
@@ -134,16 +159,7 @@ export const MobileMenu: FC = () => {
       >
         <Portal>
           <MobileMenuModal>
-            <div className={s.header}>
-              <div className={s.bars}>
-                <IconButton
-                  onClickHandler={() => setShowCart((p) => !p)}
-                  className={s.big}
-                  icon="far fa-chevron-left"
-                />
-              </div>
-            </div>
-            Корзина
+            <MobileCart onCloseHandler={() => setShowCart(false)} />
           </MobileMenuModal>
         </Portal>
       </CSSTransition>
@@ -156,16 +172,7 @@ export const MobileMenu: FC = () => {
       >
         <Portal>
           <MobileMenuModal>
-            <div className={s.header}>
-              <div className={s.bars}>
-                <IconButton
-                  onClickHandler={() => setShowLogin((p) => !p)}
-                  className={s.big}
-                  icon="far fa-chevron-left"
-                />
-              </div>
-            </div>
-            Войти
+            <MobileLogin onCloseHandler={() => setShowLogin(false)} />
           </MobileMenuModal>
         </Portal>
       </CSSTransition>
@@ -187,7 +194,7 @@ export const MobileMenu: FC = () => {
                 />
               </div>
             </div>
-            Поиск
+            <MobileSearch />
           </MobileMenuModal>
         </Portal>
       </CSSTransition>

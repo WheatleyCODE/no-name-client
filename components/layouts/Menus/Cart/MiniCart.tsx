@@ -4,7 +4,7 @@ import { PathRoutes } from 'consts';
 import s from '@s/components/index.module.scss';
 
 interface MiniCartProps {
-  onMouseHandlers: {
+  onMouseHandlers?: {
     onMouseEnter: () => void;
     onMouseOver: () => void;
     onMouseLeave: () => void;

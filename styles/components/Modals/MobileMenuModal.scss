@@ -10,14 +10,13 @@
   top: 0;
   left: 0;
   z-index: 21;
-  color: $colorBlack;
 
   .header {
     width: 100%;
     @include flex-center;
   }
 
-  i {
+  .bars i {
     color: $colorBlack;
   }
 }

@@ -1,0 +1,13 @@
+@import '../../../../mixins.scss';
+@import '../../../../variables.scss';
+
+.mobileLogin {
+  width: 100%;
+  @include flex-center;
+
+  .loginFrom {
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+  }
+}
