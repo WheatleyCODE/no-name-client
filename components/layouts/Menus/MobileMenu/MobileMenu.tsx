@@ -26,13 +26,7 @@ export const MobileMenu: FC = () => {
     const $main = document.querySelector<HTMLElement>('main');
     if (!$main) return;
 
-    if (show) {
-      $main.style.display = 'none';
-      document.body.style.backgroundColor = 'rgb(35, 35, 35)';
-    } else {
-      $main.style.display = 'block';
-      document.body.style.backgroundColor = '#fff';
-    }
+    show ? ($main.style.display = 'none') : ($main.style.display = 'block');
   }, [show]);
 
   return (

@@ -1,7 +1,6 @@
 @import '../../../../variables.scss';
 
 .mobileMenu {
-  overflow: hidden;
   @include flex-center;
   height: 100%;
   display: none;
@@ -28,7 +27,7 @@
   top: 0;
   width: 100%;
   min-height: 660px;
-  height: 100%;
+  height: 100vh;
   color: $colorWhite;
   background-color: $colorBlack;
 
