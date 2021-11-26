@@ -7,9 +7,10 @@ import s from '@s/components/index.module.scss';
 
 interface LoginFormProps {
   reg?: boolean;
+  onCloseHandler?: () => void;
 }
 
-export const LoginForm: FC<LoginFormProps> = ({ reg = false }) => {
+export const LoginForm: FC<LoginFormProps> = ({ reg = false, onCloseHandler = null }) => {
   const email = useInput('', 'Почта', InputType.EMAIL);
   const password = useInput('', 'Пароль', InputType.PASSWORD);
   const repeat = useInput('', 'Повторите пароль', InputType.PASSWORD);
@@ -26,6 +27,9 @@ export const LoginForm: FC<LoginFormProps> = ({ reg = false }) => {
 
   const redirect = (path: PathRoutes) => {
     return () => {
+      if (onCloseHandler) {
+        onCloseHandler();
+      }
       router.push(path);
     };
   };

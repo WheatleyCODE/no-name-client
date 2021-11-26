@@ -65,11 +65,11 @@ export const Phone: FC<PhoneProps> = ({ phone, adaptive = false }) => {
                 <ul className={s.messagers}>
                   {messagers.map((mes) => (
                     <li key={mes.name}>
-                      <a href={mes.link}>
+                      <a target="_blank" href={mes.link} rel="noreferrer">
                         <div className={s.socialImgs}>
                           <Img
-                            width={'60px'}
-                            height={'60px'}
+                            width={'45px'}
+                            height={'45px'}
                             src={socials[mes.img]}
                             alt={mes.name}
                           />

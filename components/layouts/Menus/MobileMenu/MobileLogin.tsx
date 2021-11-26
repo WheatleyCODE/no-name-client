@@ -20,7 +20,7 @@ export const MobileLogin: FC<MobileLoginProps> = ({ onCloseHandler }) => {
         </div>
       </div>
       <div className={s.mobileLogin}>
-        <LoginForm />
+        <LoginForm onCloseHandler={onCloseHandler} />
       </div>
     </>
   );

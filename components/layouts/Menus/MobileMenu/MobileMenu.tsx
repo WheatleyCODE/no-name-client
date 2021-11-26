@@ -18,6 +18,7 @@ import {
 import { menuItems, messagers, PathRoutes, PHONE } from 'consts';
 import { transormPhone } from 'utils';
 import { useActions, useTypedSelector } from '@hooks';
+import { useRouter } from 'next/router';
 import s from '@s/components/index.module.scss';
 
 export const MobileMenu: FC = () => {
@@ -29,9 +30,15 @@ export const MobileMenu: FC = () => {
 
   const { isAuth } = useTypedSelector((state) => state.user);
   const { logoutAC } = useActions();
+  const router = useRouter();
 
   const onLogoutHandler = () => {
     logoutAC();
+  };
+
+  const changePage = (path: PathRoutes) => {
+    setShow(false);
+    router.push(path);
   };
 
   const socials = {
@@ -97,7 +104,7 @@ export const MobileMenu: FC = () => {
                 </li>
                 <div className={s.hr} />
                 {menuItems.map((item) => (
-                  <li onClick={() => setShow(false)} className={s.mainMenu} key={item.name}>
+                  <li onClick={() => changePage(item.path)} className={s.mainMenu} key={item.name}>
                     <i className={item.icon} />
                     {item.name}
                   </li>
@@ -117,7 +124,14 @@ export const MobileMenu: FC = () => {
                   <div className={s.svgs}>
                     {messagers.map((el) => (
                       <div className={s.svg} key={el.name}>
-                        <Image width={'45px'} height={'45px'} src={socials[el.img]} alt={el.name} />
+                        <a target="_blank" href={el.link} rel="noreferrer">
+                          <Image
+                            width={'45px'}
+                            height={'45px'}
+                            src={socials[el.img]}
+                            alt={el.name}
+                          />
+                        </a>
                       </div>
                     ))}
                   </div>
@@ -137,16 +151,7 @@ export const MobileMenu: FC = () => {
       >
         <Portal>
           <MobileMenuModal>
-            <div className={s.header}>
-              <div className={s.bars}>
-                <IconButton
-                  onClickHandler={() => setShowCategories((p) => !p)}
-                  className={s.big}
-                  icon="far fa-chevron-left"
-                />
-              </div>
-            </div>
-            <MobileCategories />
+            <MobileCategories onCloseHandler={() => setShowCategories((p) => !p)} />
           </MobileMenuModal>
         </Portal>
       </CSSTransition>
