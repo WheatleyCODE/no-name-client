@@ -123,7 +123,7 @@ export const MobileMenu: FC = () => {
                 <IconButton
                   onClickHandler={() => setShowCategories((p) => !p)}
                   className={s.big}
-                  icon="fas fa-chevron-left"
+                  icon="far fa-chevron-left"
                 />
               </div>
             </div>
@@ -145,7 +145,7 @@ export const MobileMenu: FC = () => {
                 <IconButton
                   onClickHandler={() => setShowCart((p) => !p)}
                   className={s.big}
-                  icon="fas fa-chevron-left"
+                  icon="far fa-chevron-left"
                 />
               </div>
             </div>
@@ -167,7 +167,7 @@ export const MobileMenu: FC = () => {
                 <IconButton
                   onClickHandler={() => setShowLogin((p) => !p)}
                   className={s.big}
-                  icon="fas fa-chevron-left"
+                  icon="far fa-chevron-left"
                 />
               </div>
             </div>
@@ -189,7 +189,7 @@ export const MobileMenu: FC = () => {
                 <IconButton
                   onClickHandler={() => setShowSearch((p) => !p)}
                   className={s.big}
-                  icon="fas fa-chevron-left"
+                  icon="far fa-chevron-left"
                 />
               </div>
             </div>
