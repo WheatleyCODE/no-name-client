@@ -1,5 +1,6 @@
 import { FC, useState } from 'react';
 import { categoriesMenuItems } from 'consts';
+import { Link } from '@components';
 import s from '@s/components/index.module.scss';
 
 interface CategoriesMenuProps {
@@ -51,7 +52,10 @@ export const CategoriesMenu: FC<CategoriesMenuProps> = ({ closeMenu }) => {
           </div>
         </div>
         <div className={s.sale}>
-          <h4>Сконфигурируй комплект и получи скидку до 32%</h4>
+          <Link href={''}>
+            <i className="fal fa-cog" />
+            <span>Собери свой комплект и получи скидку до 32%</span>
+          </Link>
         </div>
       </div>
     </div>

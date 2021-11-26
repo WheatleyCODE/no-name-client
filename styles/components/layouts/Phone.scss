@@ -17,6 +17,7 @@
     display: none;
 
     i {
+      transition: color 0.2s;
       font-size: 1.4rem;
     }
   }
@@ -80,14 +81,14 @@
       font-size: 2rem;
       border-bottom: 1px solid $colorLightGrey;
       padding-bottom: 10px;
-      padding-top: 15px;
-      margin-bottom: 30px;
+      padding-top: 10px;
+      margin-bottom: 20px;
     }
   }
 
   .messagers {
-    margin-top: 40px;
-    padding-bottom: 30px;
+    margin-top: 25px;
+    padding-bottom: 15px;
     border-bottom: 1px solid $colorLightGrey;
 
     .socialImgs {
@@ -95,7 +96,7 @@
     }
 
     li a {
-      transition: 0.2s;
+      transition: all 0.2s;
       background-color: rgba(0, 0, 0, 0.06);
       border-radius: 10px;
       display: flex;
@@ -120,7 +121,7 @@
 
     h2 {
       font-size: 1.2rem;
-      padding-bottom: 10px;
+      padding-bottom: 8px;
     }
 
     .phoneNumber {

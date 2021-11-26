@@ -9,7 +9,7 @@ export { CartCounter } from './Menus/Cart/CartCounter';
 export { Categories } from './Menus/Categories/Categories';
 export { CategoriesMenu } from './Menus/Categories/CategoriesMenu';
 export { Search } from './Menus/Search';
-export { MobileMenu } from './Menus/NavMenu/MobileMenu';
+export { MobileMenu } from './Menus/MobileMenu/MobileMenu';
 export { MenuItem } from './Menus/NavMenu/MenuItem';
 export { UserBlock } from './UserBlock';
 export { StickyMenu } from './Menus/StickyMenu';

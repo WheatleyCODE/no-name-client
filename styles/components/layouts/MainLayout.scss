@@ -44,12 +44,6 @@
   width: 375.58px;
 }
 
-.mobileMenu {
-  height: 100%;
-  @include flex-center;
-  display: none;
-}
-
 .header {
   display: flex;
   justify-content: space-between;

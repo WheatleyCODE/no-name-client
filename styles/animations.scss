@@ -129,3 +129,21 @@
     transform: rotate(360deg);
   }
 }
+
+.mobileModal-enter-active {
+  animation: translate 0.18s forwards ease-in;
+}
+
+.mobileModal-exit-active {
+  animation: translate 0.18s forwards reverse ease-in-out;
+}
+
+@keyframes translate {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}

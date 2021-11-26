@@ -14,18 +14,22 @@ export const menuItems = [
   {
     name: 'Главная',
     path: PathRoutes.HOME,
+    icon: 'fal fa-home',
   },
   {
     name: 'Отзывы',
     path: PathRoutes.REVIEWS,
+    icon: 'fal fa-comment-lines',
   },
   {
     name: 'Контакты',
     path: PathRoutes.CONTACTS,
+    icon: 'fal fa-address-book',
   },
   {
     name: 'Код краски',
     path: PathRoutes.CAR_COLOR,
+    icon: 'fal fa-pencil-paintbrush',
   },
 ];
 
@@ -238,7 +242,7 @@ export const categoriesMenuItems = [
     icon: 'fal fa-box-alt',
     items: [
       {
-        title: 'Комплекты для ремонта сколов',
+        title: 'Ремонт сколов / царапин',
         links: [
           {
             name: 'Комплекты кисточек',
