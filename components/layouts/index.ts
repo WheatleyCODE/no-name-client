@@ -12,6 +12,7 @@ export { CategoriesMenu } from './Menus/Categories/CategoriesMenu';
 export { MobileCategories } from './Menus/Categories/MobileCategories';
 export { Search } from './Menus/Search/Search';
 export { MobileSearch } from './Menus/Search/MobileSearch';
+export { SearchResults } from './Menus/Search/SearchResults';
 export { MobileMenu } from './Menus/MobileMenu/MobileMenu';
 export { MenuItem } from './Menus/NavMenu/MenuItem';
 export { UserBlock } from './UserBlock';

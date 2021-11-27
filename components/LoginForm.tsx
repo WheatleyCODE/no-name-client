@@ -8,9 +8,14 @@ import s from '@s/components/index.module.scss';
 interface LoginFormProps {
   reg?: boolean;
   onCloseHandler?: () => void;
+  noTitle?: boolean;
 }
 
-export const LoginForm: FC<LoginFormProps> = ({ reg = false, onCloseHandler = null }) => {
+export const LoginForm: FC<LoginFormProps> = (props) => {
+  const { reg = false, onCloseHandler = null, noTitle = false } = props;
+
+  console.log(noTitle);
+
   const email = useInput('', 'Почта', InputType.EMAIL);
   const password = useInput('', 'Пароль', InputType.PASSWORD);
   const repeat = useInput('', 'Повторите пароль', InputType.PASSWORD);
@@ -59,7 +64,7 @@ export const LoginForm: FC<LoginFormProps> = ({ reg = false, onCloseHandler = nu
 
   return (
     <div className={s.loginFrom}>
-      <h1>{reg ? 'Регистрация' : 'Вход на сайт'}</h1>
+      {!noTitle ? <h1>{reg ? 'Регистрация' : 'Вход на сайт'}</h1> : null}
       <div className={s.inputsBlock}>
         <Input
           icon="far fa-envelope"

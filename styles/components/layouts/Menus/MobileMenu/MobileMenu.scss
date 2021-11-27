@@ -33,6 +33,18 @@
 
   .main {
     padding: 20px;
+
+    .counter {
+      margin-left: 10px;
+      letter-spacing: 4px;
+      font-size: 1rem;
+    }
+
+    .title {
+      display: block;
+      padding-top: 5px;
+      font-size: 1.05rem;
+    }
   }
 
   .header {
@@ -42,6 +54,11 @@
     .logo a {
       color: $colorWhite;
       border-color: $colorBlack;
+    }
+
+    .logo {
+      margin: 0;
+      padding-left: 0;
     }
   }
 
@@ -61,7 +78,7 @@
   }
 
   i {
-    margin-right: 20px;
+    width: 40px;
     margin-left: 5px;
     color: $colorWhite;
   }

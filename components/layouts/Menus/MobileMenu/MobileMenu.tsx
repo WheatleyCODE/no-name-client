@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 import viber from 'public/viber.svg';
 import telegram from 'public/telegram.svg';
@@ -14,13 +15,12 @@ import {
   MobileCart,
   MobileLogin,
   MobileSearch,
+  Confirm,
 } from '@components';
 import { menuItems, messagers, PathRoutes, PHONE } from 'consts';
 import { transormPhone } from 'utils';
 import { useActions, useTypedSelector } from '@hooks';
-import { useRouter } from 'next/router';
 import s from '@s/components/index.module.scss';
-import { Confirm } from '@components/Modals/Confirm';
 
 export const MobileMenu: FC = () => {
   const [show, setShow] = useState(false);
@@ -114,7 +114,7 @@ export const MobileMenu: FC = () => {
                 <div className={s.hr} />
                 <li onClick={() => setShowCart(true)}>
                   <i className="fal fa-shopping-cart" />
-                  Корзина
+                  Корзина <span className={s.counter}>(3)</span>
                 </li>
                 <li>
                   <i className="fal fa-swatchbook" />
@@ -122,7 +122,7 @@ export const MobileMenu: FC = () => {
                 </li>
                 <div className={s.hr} />
                 <div className={s.socials}>
-                  <span>Пишите нам в мессенджерах</span>
+                  <span className={s.title}>Пишите нам в мессенджерах</span>
                   <div className={s.svgs}>
                     {messagers.map((el) => (
                       <div className={s.svg} key={el.name}>
@@ -199,16 +199,7 @@ export const MobileMenu: FC = () => {
       >
         <Portal>
           <MobileMenuModal>
-            <div className={s.header}>
-              <div className={s.bars}>
-                <IconButton
-                  onClickHandler={() => setShowSearch((p) => !p)}
-                  className={s.big}
-                  icon="far fa-chevron-left"
-                />
-              </div>
-            </div>
-            <MobileSearch />
+            <MobileSearch onCloseHandler={() => setShowSearch(false)} />
           </MobileMenuModal>
         </Portal>
       </CSSTransition>

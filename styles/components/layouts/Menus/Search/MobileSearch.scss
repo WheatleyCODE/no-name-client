@@ -1,0 +1,32 @@
+@import '../../../../variables.scss';
+@import '../../../../mixins.scss';
+
+.mobileSearch {
+  .search {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    padding-top: 24px;
+    background: $colorWhite;
+
+    div {
+      width: 100%;
+      height: 50px;
+    }
+
+    button {
+      display: none;
+    }
+  }
+
+  input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid $colorLightGrey;
+  }
+
+  .results {
+    padding: 20px;
+    padding-top: 0;
+  }
+}

@@ -18,9 +18,10 @@ export const MobileLogin: FC<MobileLoginProps> = ({ onCloseHandler }) => {
             icon="far fa-chevron-left"
           />
         </div>
+        <h3>Вход на сайт</h3>
       </div>
       <div className={s.mobileLogin}>
-        <LoginForm onCloseHandler={onCloseHandler} />
+        <LoginForm noTitle onCloseHandler={onCloseHandler} />
       </div>
     </>
   );

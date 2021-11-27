@@ -13,12 +13,14 @@
     "printWidth": 100
   },
   "dependencies": {
+    "@types/react-scroll": "^1.8.3",
     "axios": "^0.24.0",
     "framer-motion": "^5.2.1",
     "next": "12.0.3",
     "next-redux-wrapper": "^7.0.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-scroll": "^1.8.4",
     "react-transition-group": "^4.4.2",
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.0",

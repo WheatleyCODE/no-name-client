@@ -29,7 +29,7 @@ export const menuItems = [
   {
     name: 'Код краски',
     path: PathRoutes.CAR_COLOR,
-    icon: 'fal fa-pencil-paintbrush',
+    icon: 'fal fa-car-side',
   },
 ];
 
