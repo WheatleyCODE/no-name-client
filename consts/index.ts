@@ -128,6 +128,10 @@ export const categoriesMenuItems = [
             name: 'Акриловый грунт',
             path: PathRoutes.HOME,
           },
+          {
+            name: 'МОковый тект',
+            path: PathRoutes.HOME,
+          },
         ],
       },
       {
@@ -143,6 +147,10 @@ export const categoriesMenuItems = [
           },
           {
             name: 'Эмали еще что нибудь',
+            path: PathRoutes.HOME,
+          },
+          {
+            name: 'МОковый тект',
             path: PathRoutes.HOME,
           },
         ],

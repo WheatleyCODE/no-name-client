@@ -21,7 +21,7 @@ export const MobileCategories: FC<MobileCategoriesProps> = ({ onCloseHandler }) 
       return s.links + ' ' + s.fadeOut;
     }
 
-    return activeCatalogIndx === i ? s.links + ' ' + s.active : s.links;
+    return activeCatalogIndx === i ? s.links + ' ' + s.activeCategories : s.links;
   };
 
   const onClose = () => {
@@ -48,40 +48,59 @@ export const MobileCategories: FC<MobileCategoriesProps> = ({ onCloseHandler }) 
 
   return (
     <>
-      <div className={s.header}>
+      <Element name="top" className={s.header}>
         <div className={s.bars}>
           <IconButton onClickHandler={onClose} className={s.big} icon="far fa-chevron-left" />
         </div>
         <h3>Категории</h3>
-      </div>
+      </Element>
       <div className={s.mobileCategories}>
         <ul>
           {categoriesMenuItems.map((itm, i) => (
             <>
-              <Link key={itm.name} to={itm.name} delay={0} spy smooth offset={0} duration={1000}>
-                <li
-                  className={activeCatalogIndx === i ? s.items + ' ' + s.active : s.items}
-                  key={itm.name}
-                  onClick={() => onShowCurrent(i)}
-                >
-                  <i className={`${s.left} fal fa-angle-down`} />
-                  <span>
-                    <i className={itm.icon}></i>
-                    {itm.name}
-                  </span>
-                  <i className={`${s.right} fal fa-angle-down`} />
-                </li>
-              </Link>
+              {i > 3 ? (
+                <Link key={itm.name} to={itm.name} spy smooth offset={0} duration={1000}>
+                  <li
+                    className={
+                      activeCatalogIndx === i ? s.items + ' ' + s.activeCategories : s.items
+                    }
+                    key={itm.name}
+                    onClick={() => onShowCurrent(i)}
+                  >
+                    <i className={`${s.left} fal fa-angle-down`} />
+                    <span>
+                      <i className={itm.icon}></i>
+                      {itm.name}
+                    </span>
+                    <i className={`${s.right} fal fa-angle-down`} />
+                  </li>
+                </Link>
+              ) : (
+                <Link key={itm.name} to="top" spy smooth offset={0} duration={1000}>
+                  <li
+                    className={
+                      activeCatalogIndx === i ? s.items + ' ' + s.activeCategories : s.items
+                    }
+                    key={itm.name}
+                    onClick={() => onShowCurrent(i)}
+                  >
+                    <i className={`${s.left} fal fa-angle-down`} />
+                    <span>
+                      <i className={itm.icon}></i>
+                      {itm.name}
+                    </span>
+                    <i className={`${s.right} fal fa-angle-down`} />
+                  </li>
+                </Link>
+              )}
 
-              {/* <Element
-                name={itm.name}
-                key={itm.name}
-                className="container__collection"
-              ></Element> */}
               <Element name={itm.name} className={getClassName(i)}>
-                {itm.items.map((item) => (
+                {itm.items.map((item, indx) => (
                   <ul key={item.title}>
-                    <h3>{item.title}</h3>
+                    <h3 className={indx === 1 ? s.last : ''}>
+                      <i className={`${itm.icon}`} />
+                      {item.title}
+                    </h3>
 
                     {item.links.map((el) => (
                       <li className={s.linksItem} key={el.name}>

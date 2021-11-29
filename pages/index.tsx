@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { NextPage } from 'next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MainLayout, Portal, Modal, ImgSlider, ProductSlider } from '@components';
 import { useAuth, useTypedSelector } from '@hooks';
 import { wrapper } from '@store';
@@ -22,11 +22,6 @@ const Home: NextPage = () => {
   const [show, setShow] = useState(false);
   // const { fetchUsers } = useActions();
 
-  // useEffect(() => {
-  //   fetchUsers();
-  // }, []);
-
-  // console.log(users, error);
   // /> tests
 
   const [test, setTest] = useState<any>([]);
@@ -48,45 +43,9 @@ const Home: NextPage = () => {
       title="Главная"
       keywords={['Главная', 'noname']}
     >
-      {/* <div className={s.container}>
-        <h2>content</h2>
-        <Button onClickHandler={testFN}>Запросить пользователей</Button>
-        <div onClick={() => setShow(true)}>
-          <br />
-          <ul>
-            {users.map((user) => (
-              <li key={user.id}>{user.name}</li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <br />
-          <ul>
-            {test.map((tes: any) => (
-              <li key={tes._id}>{tes.email}</li>
-            ))}
-          </ul>
-        </div>
-      </div> */}
-
-      {/* <ImgSlider />
-
-      <div className={s.mainLanding}>
-        <div className={s.main}>
-          <div className={s.width}>
-            <div className={s.title}>
-              <h2>Категории</h2>
-            </div>
-          </div>
-          <ProductSlider />
-          <div className={s.width}>
-            <div className={s.title}>
-              <h2>Новое и популярное</h2>
-            </div>
-          </div>
-        </div>
-      </div> */}
+      <div className={s.slider}>
+        <ImgSlider />
+      </div>
 
       <CSSTransition in={show} timeout={200} classNames="modal" mountOnEnter unmountOnExit>
         <Portal>

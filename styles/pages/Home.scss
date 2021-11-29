@@ -43,3 +43,7 @@
     padding-bottom: 30px;
   }
 }
+
+.slider {
+  @include flex-center;
+}

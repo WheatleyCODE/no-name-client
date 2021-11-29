@@ -1,146 +1,15 @@
-@import '../../mixins.scss';
-@import '../../variables.scss';
-
-.test {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  position: relative;
-  @include flex-center;
-  // background: linear-gradient(
-  //   0deg,
-  //   $colorBlack 0%,
-  //   $colorBlack 40%,
-  //   $colorWhite 80%,
-  //   $colorWhite 100%
-  // );
-  // background-color: $colorBlack;
-  height: 300px;
-
-  .steps {
-    @include flex-center;
-    width: Calc(100% - 20px);
-    position: absolute;
-    bottom: 0;
-
-    .step {
-      @include flex-center;
-      box-shadow: 0px 0px 10px 4px $colorBlack;
-      background-color: rgb(255, 255, 255);
-      padding: 7px 7px;
-      padding-bottom: 5px;
-      border-radius: 10px 10px 0 0;
-      cursor: pointer;
-      margin: 1px;
-      margin-bottom: -10px;
-
-      .circle {
-        padding: 0px 5px;
-        @include flex-center;
-
-        i {
-          color: $colorLightGrey;
-          font-size: 0.6rem;
-        }
-      }
-    }
-
-    .circle:first-child i {
-      color: $colorOrange;
-    }
-  }
-
-  .rightPanel,
-  .leftPanel {
-    @include flex-center;
-    position: absolute;
-    height: 100%;
-  }
-
-  .rightPanel {
-    right: 0;
-  }
-
-  .leftPanel {
-    left: 0;
-  }
-
-  .right,
-  .left {
-    @include flex-center;
-    height: 120px;
-    padding: 20px;
-    cursor: pointer;
-    box-shadow: 0px 0px 10px 3px $colorBlack;
-
-    i {
-      color: $colorBlack;
-      font-size: 2rem;
-    }
-  }
-
-  .right {
-    right: 0;
-    border-radius: 20px 0 0 20px;
-  }
-
-  .left {
-    left: 0;
-    border-radius: 0 20px 20px 0;
-  }
-}
-
-.imgSlider,
-.imgSliderRight,
-.imgSliderLeft {
-  position: relative;
-  @include flex-center;
-  flex-direction: column;
-  border-radius: 20px;
-  box-shadow: 0px 0px 5px 1px $colorBlack;
-  height: 100%;
+.imgSlider {
+  max-width: 1200px;
+  padding: 20px;
   width: 100%;
-  background: url('../../../public/new3.jpg') no-repeat;
-  background-size: cover;
-  width: 100%;
-  max-width: 1160px;
 
-  .text {
-    width: 40%;
-    @include flex-center;
-    flex-direction: column;
-    align-items: flex-start;
+  i {
     position: absolute;
-    height: 100%;
-    right: 0;
-  }
-
-  h1,
-  h2 {
-    padding: 7px 30px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 10px 3px $colorBlack;
-  }
-
-  h1 {
     color: $colorWhite;
-    font-size: 1.3rem;
-    background-color: $colorBlack;
+    font-size: 2.2rem;
   }
 
-  h2 {
-    background-color: $colorBlack;
-    color: $colorWhite;
-    font-size: 1.3rem;
-    margin-bottom: 10px;
+  img {
+    border-radius: 10px;
   }
-}
-
-.imgSliderRight {
-  position: absolute;
-  right: -820px;
-}
-
-.imgSliderLeft {
-  position: absolute;
-  left: -820px;
 }
