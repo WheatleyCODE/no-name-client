@@ -1,46 +1,45 @@
 import { FC } from 'react';
+import SwiperCore, { Navigation, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { ProductCard } from '@components';
 import s from '@s/components/index.module.scss';
 
-// interface ProsuctSliderProps {}
+SwiperCore.use([Navigation, Pagination]);
 
-export const ProductSlider: FC = () => {
-  // ! mark
+interface ProsuctSliderProps {
+  test?: boolean;
+}
+
+export const ProductSlider: FC<ProsuctSliderProps> = ({ test = false }) => {
+  const product = test ? [1, 2, 3, 4] : [1, 2, 3, 4, 5, 6, 7, 8];
+
   return (
     <div className={s.productSlider}>
-      <div className={s.slider}>
-        <div className={s.blockLeft}>
-          <div className={s.circle}></div>
-          <div className={s.name}>Расходные материалы</div>
-        </div>
-        <div className={s.block}>
-          <div className={s.circle}></div>
-          <div className={s.name}>Кисточки для подкраски сколов</div>
-        </div>
-        <div className={s.block}>
-          <div className={s.circle}></div>
-          <div className={s.name}>Баллончики</div>
-        </div>
-        <div className={s.block}>
-          <div className={s.circle}></div>
-          <div className={s.name}>Эмаль по коду</div>
-        </div>
-        <div className={s.block}>
-          <div className={s.circle}></div>
-          <div className={s.name}>Комплекты для ремонта сколов</div>
-        </div>
-        <div className={s.blockRight}>
-          <div className={s.circle}></div>
-          <div className={s.name}>Маркеры для подкраски</div>
-        </div>
-      </div>
-      <div className={s.shadow}>
-        <div className={s.left}>
-          <i className="fas fa-chevron-left" />
-        </div>
-        <div className={s.right}>
-          <i className="fas fa-chevron-right" />
-        </div>
-      </div>
+      <Swiper
+        breakpoints={{
+          [1057]: {
+            slidesPerView: 4,
+          },
+
+          [806]: {
+            slidesPerView: 3,
+          },
+
+          [556]: {
+            slidesPerView: 2,
+          },
+        }}
+        spaceBetween={20}
+        slidesPerView={1}
+        navigation
+        className="products"
+      >
+        {product.map((_, i) => (
+          <SwiperSlide key={i}>
+            <ProductCard test key={i} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };

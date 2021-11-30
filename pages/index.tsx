@@ -2,7 +2,16 @@
 import type { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { MainLayout, Portal, Modal, ImgSlider, CategoriesSlider } from '@components';
+import {
+  MainLayout,
+  Portal,
+  Modal,
+  ImgSlider,
+  CategoriesSlider,
+  Banner,
+  ProductList,
+  ProductSlider,
+} from '@components';
 import { useAuth, useTypedSelector } from '@hooks';
 import { wrapper } from '@store';
 import { fetchUsersAC } from '@store/actions-creators/user';
@@ -65,6 +74,35 @@ const Home: NextPage = () => {
       </div>
       <div className={s.categoriesSlider}>
         <CategoriesSlider />
+      </div>
+      <div className={s.mainLanding}>
+        <div className={s.width}>
+          <div className={s.margin} />
+          <div className={s.title}>
+            <h2>Новое и популярное</h2>
+          </div>
+        </div>
+        <ProductList />
+        <div className={s.width}>
+          <Banner />
+        </div>
+        <div className={s.width}>
+          <div className={s.margin} />
+          <div className={s.title}>
+            <h2>Класное молодежное</h2>
+          </div>
+        </div>
+        <ProductList test />
+        <div className={s.width}>
+          <div className={s.margin} />
+          <div className={s.title}>
+            <h2>Слайдер</h2>
+          </div>
+        </div>
+        <ProductSlider />
+        <div className={s.width}>
+          <Banner />
+        </div>
       </div>
 
       <CSSTransition in={show} timeout={200} classNames="modal" mountOnEnter unmountOnExit>

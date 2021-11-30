@@ -1,0 +1,41 @@
+.productList {
+  display: flex;
+  flex-wrap: wrap;
+
+  .productCard {
+    width: calc(100% / 4 - 20px);
+    margin-bottom: 20px;
+    min-width: 230px;
+    margin-left: 20px;
+  }
+}
+
+.widthList {
+  max-width: 1200px;
+  width: 100%;
+  padding-right: 20px;
+}
+
+@media screen and (max-width: 1056px) {
+  .productList {
+    .productCard {
+      width: calc(100% / 3 - 20px);
+    }
+  }
+}
+
+@media screen and (max-width: 806px) {
+  .productList {
+    .productCard {
+      width: calc(100% / 2 - 20px);
+    }
+  }
+}
+
+@media screen and (max-width: 556px) {
+  .productList {
+    .productCard {
+      width: calc(100% / 1 - 20px);
+    }
+  }
+}

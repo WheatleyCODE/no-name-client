@@ -18,7 +18,7 @@ body {
 }
 
 main {
-  height: 2000px;
+  min-height: 2000px;
 }
 
 button {
@@ -149,9 +149,8 @@ $pad: calc(100vw - 1180px);
 }
 
 .swiper.categories {
-  padding: 0 20px;
-  padding-right: 17px;
-  margin-right: 3px;
+  padding-right: calc($pad / 2);
+  padding-left: calc(($pad / 2));
 }
 
 .swiper-pagination-bullets .swiper-pagination-bullet {
@@ -185,6 +184,12 @@ $pad: calc(100vw - 1180px);
 
       left: 50px;
     }
+  }
+
+  .swiper.categories {
+    padding: 0 20px;
+    padding-right: 17px;
+    margin-right: 3px;
   }
 }
 

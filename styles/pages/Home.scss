@@ -6,8 +6,13 @@
   @include flex-center;
 }
 
+.categoriesSlider {
+  padding-bottom: 15px;
+}
+
 .mainLanding {
   @include flex-center;
+  flex-direction: column;
 
   .width {
     max-width: 1200px;

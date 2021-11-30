@@ -16,6 +16,7 @@ export const ImgSlider: FC = () => {
         spaceBetween={30}
         navigation={true}
         slidesPerView={1}
+        initialSlide={2}
         loop
         pagination={{
           clickable: true,
