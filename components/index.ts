@@ -8,3 +8,4 @@ export { ChangePasswordForm } from './ChangePasswordForm';
 export { AuthError } from './AuthError';
 export { ImgSlider } from './Sliders/ImgSlider';
 export { ProductSlider } from './Sliders/ProductSlider';
+export { CategoriesSlider } from './Sliders/CategoriesSlider';

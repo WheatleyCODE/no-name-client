@@ -96,8 +96,120 @@ select {
 }
 
 // Стили для слайдера
-.swiper {
-  border-radius: 10px;
+$pad: calc(100vw - 1180px);
+
+#__next .swiper.images {
+  padding-right: calc($pad / 2);
+  padding-left: calc($pad / 2);
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    height: 100%;
+    top: 22px;
+    width: calc($pad / 2);
+
+    i {
+      transition: color 0.2s;
+    }
+
+    &:hover i {
+      color: $colorOrange;
+    }
+  }
+
+  .swiper-button-next {
+    right: 0;
+
+    i {
+      margin-left: calc($pad / -5);
+    }
+
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgb(255, 255, 255) 80%,
+      rgb(255, 255, 255) 100%
+    );
+  }
+
+  .swiper-button-prev {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255) 0%,
+      rgba(255, 255, 255) 20%,
+      rgb(255, 255, 255, 0) 100%
+    );
+
+    left: 0;
+
+    i {
+      margin-right: calc($pad / -5);
+    }
+  }
+}
+
+.swiper.categories {
+  padding: 0 20px;
+  padding-right: 17px;
+  margin-right: 3px;
+}
+
+.swiper-pagination-bullets .swiper-pagination-bullet {
+  background-color: $colorBlack;
+  opacity: 0.6;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: $colorOrange;
+}
+
+@media screen and (max-width: 1260px) {
+  #__next .swiper.images {
+    padding: 0 20px;
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: auto;
+    }
+
+    .swiper-button-next {
+      right: 50px;
+      padding-right: 0px;
+
+      background: none;
+    }
+
+    .swiper-button-prev {
+      padding-left: 0px;
+      background: none;
+
+      left: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  #__next .swiper.images {
+    .swiper-pagination {
+      bottom: 0px;
+    }
+  }
+}
+
+@media screen and (max-width: 730px) {
+  #__next .swiper.images {
+    padding: 0px;
+
+    .swiper-button-next {
+      right: 20px;
+
+      background: none;
+    }
+
+    .swiper-button-prev {
+      left: 20px;
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

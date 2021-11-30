@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { NextPage } from 'next';
 import { useEffect, useState } from 'react';
-import { MainLayout, Portal, Modal, ImgSlider, ProductSlider } from '@components';
+import { CSSTransition } from 'react-transition-group';
+import { MainLayout, Portal, Modal, ImgSlider, CategoriesSlider } from '@components';
 import { useAuth, useTypedSelector } from '@hooks';
 import { wrapper } from '@store';
 import { fetchUsersAC } from '@store/actions-creators/user';
 import { NextThunckDispatch } from '@store/reducers';
 import { UserService } from '@services/UserService';
-import { CSSTransition } from 'react-transition-group';
 import s from '@s/pages/index.module.scss';
 
 // Redux tests
@@ -37,6 +37,16 @@ const Home: NextPage = () => {
     }
   };
 
+  useEffect(() => {
+    const prev = document.querySelectorAll('.swiper-button-next');
+    const next = document.querySelectorAll('.swiper-button-prev');
+
+    if (prev !== null && next !== null) {
+      prev.forEach((node) => (node.innerHTML = '<i class="fal fa-chevron-right" />'));
+      next.forEach((node) => (node.innerHTML = '<i class="fal fa-chevron-left" />'));
+    }
+  });
+
   return (
     <MainLayout
       description="Главаная страница сайта noname"
@@ -45,6 +55,16 @@ const Home: NextPage = () => {
     >
       <div className={s.slider}>
         <ImgSlider />
+      </div>
+      <div className={s.mainLanding}>
+        <div className={s.width}>
+          <div className={s.title}>
+            <h2> Категории</h2>
+          </div>
+        </div>
+      </div>
+      <div className={s.categoriesSlider}>
+        <CategoriesSlider />
       </div>
 
       <CSSTransition in={show} timeout={200} classNames="modal" mountOnEnter unmountOnExit>

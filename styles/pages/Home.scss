@@ -1,49 +1,54 @@
 @import '../variables.scss';
 @import '../mixins.scss';
 
+.slider,
+.categoriesSlider {
+  @include flex-center;
+}
+
 .mainLanding {
   @include flex-center;
-  background-color: $colorBlack;
-  width: 100%;
-  padding: 12 0px;
-  padding-top: 0;
-
-  .main {
-    z-index: 2;
-    @include flex-center;
-    justify-content: flex-start;
-    flex-direction: column;
-    background-color: $colorWhite;
-    height: 1200px;
-    width: 100%;
-  }
-
-  .title {
-    width: 100%;
-
-    h2 {
-      padding: 35px 20px 15px 20px;
-      font-size: 1.6rem;
-    }
-  }
 
   .width {
     max-width: 1200px;
     width: 100%;
+    padding: 20px;
+    padding-top: 0;
+  }
+
+  .title {
+    padding-top: 15px;
+
+    h2 {
+      font-size: 1.5rem;
+    }
   }
 }
 
-.categories {
-  @include max-width;
-  width: 100%;
-  padding-top: 40px;
+@media screen and (max-width: 1050px) {
+  .mainLanding {
+    .title {
+      padding-top: 15px;
 
-  h2 {
-    font-size: 2.3rem;
-    padding-bottom: 30px;
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    .width {
+      padding-bottom: 15px;
+    }
   }
 }
 
-.slider {
-  @include flex-center;
+@media screen and (max-width: 800px) {
+  .mainLanding {
+    .title {
+      padding-top: 13px;
+
+      h2 {
+        font-size: 1.4rem;
+      }
+    }
+  }
 }

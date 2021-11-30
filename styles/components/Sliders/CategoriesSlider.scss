@@ -1,0 +1,45 @@
+@import '../../mixins.scss';
+@import '../../variables.scss';
+
+.categoriesSlider {
+  max-width: 1200px;
+  width: 100%;
+
+  i {
+    color: $colorBlack;
+    font-size: 2rem;
+  }
+}
+
+.categoriesSlide {
+  cursor: pointer;
+  width: 270px;
+  margin: 8px 0;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px $colorGrey;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 70px;
+
+  .circle {
+    width: 50px;
+    padding-top: 5px;
+  }
+
+  .text {
+    width: 70%;
+    font-size: 0.9rem;
+    padding-left: 10px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .categoriesSlide {
+    .text {
+      font-size: 0.8rem;
+    }
+  }
+}
