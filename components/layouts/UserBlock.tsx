@@ -7,7 +7,6 @@ import { useActions, useTypedSelector } from '@hooks';
 
 import s from '@s/components/index.module.scss';
 
-
 export const UserBlock: FC = () => {
   const { isAuth } = useTypedSelector((state) => state.user);
   const { logoutAC } = useActions();

@@ -4,6 +4,7 @@ import s from '@s/components/index.module.scss';
 // interface ProsuctSliderProps {}
 
 export const ProductSlider: FC = () => {
+  // ! mark
   return (
     <div className={s.productSlider}>
       <div className={s.slider}>

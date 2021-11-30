@@ -6,10 +6,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-// interface ImgSliderProps {}
 SwiperCore.use([Navigation, Pagination]);
 
 export const ImgSlider: FC = () => {
+  // ! mark
   return (
     <div className={s.imgSlider}>
       <Swiper

@@ -7,6 +7,7 @@ import { PathRoutes } from 'consts';
 import s from '@s/components/index.module.scss';
 
 export const Cart: FC = () => {
+  // ! mark
   const [isHoverButtonOver, setIsHoverButtonOver] = useState(false);
   const [isHoverButtonEnter, setIsHoverButtonEnter] = useState(false);
 

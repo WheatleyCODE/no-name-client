@@ -23,6 +23,7 @@ import { useActions, useTypedSelector } from '@hooks';
 import s from '@s/components/index.module.scss';
 
 export const MobileMenu: FC = () => {
+  // ! mark
   const [show, setShow] = useState(false);
   const [showCategories, setShowCategories] = useState(false);
   const [showCart, setShowCart] = useState(false);

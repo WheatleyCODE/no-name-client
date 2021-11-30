@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import s from '@s/components/index.module.scss';
 import { MiniCart } from './MiniCart';
-import { IconButton } from '@components/UI';
+import { IconButton } from '@components';
+import s from '@s/components/index.module.scss';
 
 interface MobileCartProps {
   onCloseHandler: () => void;

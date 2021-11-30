@@ -9,6 +9,7 @@ interface MobileCategoriesProps {
 }
 
 export const MobileCategories: FC<MobileCategoriesProps> = ({ onCloseHandler }) => {
+  // ! mark
   const [activeCatalogIndx, setActiveCatalogInx] = useState<null | number>(null);
   const prevValue = useRef<null | number>(null);
 

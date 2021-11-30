@@ -8,6 +8,7 @@ interface CategoriesMenuProps {
 }
 
 export const CategoriesMenu: FC<CategoriesMenuProps> = ({ closeMenu }) => {
+  // ! mark
   const [activeCatalogIndx, setActiveCatalogInx] = useState(0);
 
   const onCloseMenuHandler = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {

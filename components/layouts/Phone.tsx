@@ -15,6 +15,7 @@ interface PhoneProps {
 }
 
 export const Phone: FC<PhoneProps> = ({ phone, adaptive = false }) => {
+  // ! mark
   const [showInfo, setShowInfo] = useState(false);
   const className = adaptive ? s.phoneAdaptive : s.phone;
   const socials = {
