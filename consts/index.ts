@@ -353,3 +353,26 @@ export const footerMenuItems = [
     items: ['Как удалить сколы', 'Как удалить царапины', 'Мне нужно индустриальное'],
   },
 ];
+
+export const imgSlides = [
+  {
+    name: 'Картинка природы',
+    src: 'https://shop.pearlbrands.co/faces/wp-content/uploads/sites/2/2020/06/Shiseido-brand-page-banner.jpg',
+  },
+  {
+    name: 'Картинка погоды',
+    src: 'https://www.elearningscript.com/wp-content/uploads/2020/04/best-elearning-software.jpg',
+  },
+  {
+    name: 'Картинка пингвина',
+    src: 'https://deefineblog.files.wordpress.com/2017/03/cropped-http-mkhmarketing-files_-wordpress-com201302art-of-social-media-5x7.jpg?w=1400&h=400&crop=1',
+  },
+  {
+    name: 'Картинка мандарина',
+    src: 'https://diceupblog.files.wordpress.com/2016/11/cropped-banner-e1478367491720.png',
+  },
+  {
+    name: 'Картинка картины',
+    src: 'https://jasatamanbali.files.wordpress.com/2018/01/e178d6ef5bc3e8053f6974eb239acfdd.jpg?w=1400&h=400&crop=1',
+  },
+];
