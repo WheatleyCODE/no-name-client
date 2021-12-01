@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { footerMenuItems } from 'consts';
-import { Promotion, FooterMenuList, CopyRight } from '@components';
+import { Promotion, FooterMenuList, CopyRight, Contacts } from '@components';
 import s from '@s/components/index.module.scss';
 
 export const Footer: FC = () => {
@@ -13,13 +13,7 @@ export const Footer: FC = () => {
           {footerMenuItems.map((item) => (
             <FooterMenuList key={item.title} item={item} />
           ))}
-          {/* <div className={s.socilaMedia}>
-            <ul>
-              <li>Ютуб</li>
-              <li>Вк</li>
-              <li>Твиттер</li>
-            </ul>
-          </div> */}
+          <Contacts />
         </div>
         <CopyRight />
       </div>

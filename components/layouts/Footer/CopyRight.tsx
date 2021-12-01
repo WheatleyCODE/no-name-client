@@ -1,6 +1,7 @@
 import { FC } from 'react';
+import { IconButton, Link } from '@components';
+import { PathRoutes } from 'consts';
 import s from '@s/components/index.module.scss';
-import { IconButton } from '@components/UI';
 
 interface CopyRightProps {}
 
@@ -14,9 +15,21 @@ export const CopyRight: FC<CopyRightProps> = () => {
   return (
     <div className={s.copyRight}>
       <ul className={s.menu}>
-        <li className={s.menuItm}>JET COLOR</li>
-        <li className={s.menuItm}>Информация</li>
-        <li className={s.menuItm}>Что-то еще</li>
+        <li className={s.menuItm}>
+          <Link className={s.linkWhite} href={PathRoutes.HOME}>
+            JET COLOR
+          </Link>
+        </li>
+        <li className={s.menuItm}>
+          <Link className={s.linkWhite} href={PathRoutes.HOME}>
+            Информация
+          </Link>
+        </li>
+        <li className={s.menuItm}>
+          <Link className={s.linkWhite} href={PathRoutes.HOME}>
+            Что-то еще
+          </Link>
+        </li>
       </ul>
       <div className={s.socialsButton}>
         {icons.map((icon) => (

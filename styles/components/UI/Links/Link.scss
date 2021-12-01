@@ -15,3 +15,39 @@
     border-bottom: 1px solid $colorLightPrimary;
   }
 }
+
+.linkOrange,
+.linkBlue,
+.linkWhite {
+  transition: all 0.1s;
+  color: $colorWhite;
+  display: inline-block;
+  border: none;
+  text-decoration: none;
+  line-height: normal;
+  padding: 5px 0px;
+
+  &:hover {
+    border: none;
+  }
+}
+
+.linkOrange {
+  &:hover {
+    color: $colorOrange;
+  }
+}
+
+.linkBlue {
+  &:hover {
+    color: $colorPrimary;
+  }
+}
+
+.linkWhite {
+  color: rgb(185, 185, 185);
+
+  &:hover {
+    color: $colorWhite;
+  }
+}

@@ -1,0 +1,24 @@
+@import '../../../variables.scss';
+
+.contacts {
+  max-width: 200px;
+  width: 100%;
+
+  .messagers {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .phoneNumber,
+  .email {
+    padding-top: 10px;
+    text-align: right;
+  }
+
+  .phoneNumber {
+    a {
+      color: $colorWhite;
+      font-size: 1.35rem;
+    }
+  }
+}
