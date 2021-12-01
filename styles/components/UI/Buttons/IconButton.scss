@@ -9,6 +9,15 @@
   transition: all 0.5s;
 }
 
+.iconButton.social {
+  transition: all 0.2s;
+  background-color: rgba(255, 255, 255, 0.1);
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+}
+
 .iconButton.big {
   color: $colorBlack;
   width: 100%;

@@ -9,12 +9,46 @@
 
   &:hover {
     background-color: colorBlack;
-    color: $colorWhite;
+    color: $colorBlack;
   }
 
   &:disabled {
     color: $colorLightGrey;
     border-color: $colorLightGrey;
+  }
+}
+
+.button.round,
+.button.roundBlue,
+.button.roundOrange,
+.button.roundWhite {
+  border-radius: 50px;
+  padding: 5px 30px;
+}
+
+.button.roundBlue,
+.button.roundOrange,
+.button.roundWhite {
+  border: none;
+}
+
+.button.roundBlue {
+  background-color: $colorPrimary;
+  color: $colorWhite;
+}
+
+.button.roundOrange {
+  background-color: $colorOrange;
+  color: $colorWhite;
+}
+
+.button.roundWhite {
+  transition: all 0.2s;
+  color: $colorOrange;
+  background-color: $colorWhite;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.8);
   }
 }
 

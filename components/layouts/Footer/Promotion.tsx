@@ -12,7 +12,7 @@ export const Promotion: FC<PromotionProps> = () => {
           <i className="far fa-badge-percent" />
           Акция!
         </h3>
-        <Button>Купить</Button>
+        <Button className={s.roundWhite}>Купить</Button>
       </div>
     </div>
   );
