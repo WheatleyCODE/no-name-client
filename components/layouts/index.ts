@@ -1,4 +1,4 @@
-export { Footer } from './Footer';
+export * from './Footer';
 export { HeadTag } from './HeadTag';
 export { Logo } from './Logo';
 export { MainLayout } from './MainLayout';

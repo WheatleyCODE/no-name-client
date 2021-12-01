@@ -41,6 +41,10 @@ a {
   color: $colorBlack;
 }
 
+li {
+  list-style: none;
+}
+
 ul[class],
 ol[class] {
   padding: 0;
@@ -96,7 +100,7 @@ select {
 }
 
 // Стили для слайдера
-$pad: calc(100vw - 1180px);
+$pad: calc(100% - 1260px);
 
 #__next .swiper.images {
   padding-right: calc($pad / 2);
@@ -121,7 +125,7 @@ $pad: calc(100vw - 1180px);
     right: 0;
 
     i {
-      margin-left: calc($pad / -5);
+      margin-left: calc($pad / -5) px;
     }
 
     background: linear-gradient(
@@ -143,7 +147,7 @@ $pad: calc(100vw - 1180px);
     left: 0;
 
     i {
-      margin-right: calc($pad / -5);
+      margin-right: calc($pad / -5) px;
     }
   }
 }
@@ -162,7 +166,7 @@ $pad: calc(100vw - 1180px);
   background-color: $colorOrange;
 }
 
-@media screen and (max-width: 1260px) {
+@media screen and (max-width: 1300px) {
   #__next .swiper.images {
     padding: 0 20px;
 
@@ -193,7 +197,7 @@ $pad: calc(100vw - 1180px);
   }
 }
 
-@media screen and (max-width: 1260px) {
+@media screen and (max-width: 1240px) {
   #__next .swiper.images {
     .swiper-pagination {
       bottom: 0px;

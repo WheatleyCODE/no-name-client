@@ -13,6 +13,7 @@ export const ImgSlider: FC = () => {
   return (
     <div className={s.imgSlider}>
       <Swiper
+        height={300}
         spaceBetween={30}
         navigation={true}
         slidesPerView={1}

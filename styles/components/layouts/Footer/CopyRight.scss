@@ -1,0 +1,14 @@
+.copyRight {
+  display: flex;
+  justify-content: space-between;
+
+  .menu {
+    display: flex;
+  }
+
+  .menuItm {
+    cursor: pointer;
+    color: $colorWhite;
+    margin-right: 20px;
+  }
+}

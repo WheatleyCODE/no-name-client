@@ -83,9 +83,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         <ProductList />
-        <div className={s.width}>
-          <Banner />
-        </div>
+        <Banner />
         <div className={s.width}>
           <div className={s.margin} />
           <div className={s.title}>
@@ -100,9 +98,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         <ProductSlider />
-        <div className={s.width}>
-          <Banner />
-        </div>
+        <Banner />
       </div>
 
       <CSSTransition in={show} timeout={200} classNames="modal" mountOnEnter unmountOnExit>
