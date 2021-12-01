@@ -22,3 +22,20 @@
     }
   }
 }
+
+@media screen and (max-width: 860px) {
+  .contacts {
+    padding-bottom: 25px;
+
+    .messagers {
+      padding-right: 35px;
+      justify-content: space-between;
+    }
+
+    .phoneNumber,
+    .email {
+      padding-top: 10px;
+      text-align: left;
+    }
+  }
+}

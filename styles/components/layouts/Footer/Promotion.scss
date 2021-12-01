@@ -26,4 +26,32 @@
       font-size: 1.6rem;
     }
   }
+
+  .mobileText {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .promotion {
+    button {
+      max-width: 110px;
+    }
+
+    .title {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .promotion {
+    .mobileText {
+      display: block;
+    }
+
+    .desctopText {
+      display: none;
+    }
+  }
 }

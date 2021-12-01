@@ -10,7 +10,8 @@ export const Promotion: FC<PromotionProps> = () => {
       <div className={s.width}>
         <h3 className={s.title}>
           <i className="far fa-badge-percent" />
-          Акция! Купи дешевле или дороже.
+          <span className={s.desctopText}>Акция! Купи дешевле или дороже.</span>
+          <span className={s.mobileText}>Акция!</span>
         </h3>
         <Button className={s.roundWhite}>Купить</Button>
       </div>

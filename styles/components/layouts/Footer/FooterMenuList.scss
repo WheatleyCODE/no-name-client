@@ -6,3 +6,15 @@
     font-size: 1.1rem;
   }
 }
+
+@media screen and (max-width: 1040px) {
+  .footerMenuList {
+    min-width: auto;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .footerMenuList {
+    padding-bottom: 15px;
+  }
+}

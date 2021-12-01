@@ -14,7 +14,7 @@ export const CopyRight: FC<CopyRightProps> = () => {
   ];
   return (
     <div className={s.copyRight}>
-      <ul className={s.menu}>
+      <ul className={s.footerMenu}>
         <li className={s.menuItm}>
           <Link className={s.linkWhite} href={PathRoutes.HOME}>
             JET COLOR
