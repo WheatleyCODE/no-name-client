@@ -1,12 +1,8 @@
 import { FC, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { transormPhone } from 'utils';
-import { messagers } from 'consts';
 import { Portal, Modal, Logo } from '@components';
-import viber from 'public/viber.svg';
-import telegram from 'public/telegram.svg';
-import whatsapp from 'public/whatsapp.svg';
-import Img from 'next/image';
+import { Messengers } from '@components';
 import s from '@s/components/index.module.scss';
 
 interface PhoneProps {
@@ -18,11 +14,6 @@ export const Phone: FC<PhoneProps> = ({ phone, adaptive = false }) => {
   // ! mark
   const [showInfo, setShowInfo] = useState(false);
   const className = adaptive ? s.phoneAdaptive : s.phone;
-  const socials = {
-    viber,
-    telegram,
-    whatsapp,
-  };
 
   const onPhoneClickeHandler = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
@@ -35,17 +26,7 @@ export const Phone: FC<PhoneProps> = ({ phone, adaptive = false }) => {
         {transormPhone(phone)}
       </a>
 
-      <ul className={s.messagers}>
-        {messagers.map((mes) => (
-          <li key={mes.name}>
-            <a target="_blank" href={mes.link} rel="noreferrer">
-              <div className={s.socialImgs}>
-                <Img width={'33px'} height={'33px'} src={socials[mes.img]} alt={mes.name} />
-              </div>
-            </a>
-          </li>
-        ))}
-      </ul>
+      <Messengers className={s.messengers} width={'33px'} height={'33px'} />
 
       <div onClick={() => setShowInfo(true)} className={s.phoneIcon}>
         <i className="fal fa-phone" />
@@ -63,23 +44,7 @@ export const Phone: FC<PhoneProps> = ({ phone, adaptive = false }) => {
               </div>
               <h2>Обращайтесь по всем вопросам в мессенджеры, это очень удобно!</h2>
               <div>
-                <ul className={s.messagers}>
-                  {messagers.map((mes) => (
-                    <li key={mes.name}>
-                      <a target="_blank" href={mes.link} rel="noreferrer">
-                        <div className={s.socialImgs}>
-                          <Img
-                            width={'45px'}
-                            height={'45px'}
-                            src={socials[mes.img]}
-                            alt={mes.name}
-                          />
-                        </div>
-                        <span>{mes.name}</span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+                <Messengers text className={s.messengers} width={'45px'} height={'45px'} />
               </div>
               <div className={s.modalPhoneInfoNumber}>
                 <h2>Или по телефону:</h2>

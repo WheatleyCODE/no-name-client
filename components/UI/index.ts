@@ -7,3 +7,4 @@ export { SearchInput } from './Inputs/SearchInput';
 export { ColorPanel } from './ColorPanel/ColorPanel';
 export { PageCloses } from './PageCloses';
 export { Banner } from './Banner';
+export { Messengers } from './Messengers';

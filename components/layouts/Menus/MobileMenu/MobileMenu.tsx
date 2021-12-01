@@ -1,10 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
-import viber from 'public/viber.svg';
-import telegram from 'public/telegram.svg';
-import whatsapp from 'public/whatsapp.svg';
 import {
   Portal,
   IconButton,
@@ -16,20 +12,40 @@ import {
   MobileLogin,
   MobileSearch,
   Confirm,
+  Messengers,
 } from '@components';
-import { menuItems, messagers, PathRoutes, PHONE } from 'consts';
+import { menuItems, PathRoutes, PHONE } from 'consts';
 import { transormPhone } from 'utils';
 import { useActions, useTypedSelector } from '@hooks';
 import s from '@s/components/index.module.scss';
 
 export const MobileMenu: FC = () => {
-  // ! mark
   const [show, setShow] = useState(false);
+  const [showUpprove, setShowUpprove] = useState(false);
+
   const [showCategories, setShowCategories] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
-  const [showUpprove, setShowUpprove] = useState(false);
+
+  const mobileModals = [
+    {
+      value: showCategories,
+      Component: <MobileCategories onCloseHandler={() => setShowCategories(false)} />,
+    },
+    {
+      value: showCart,
+      Component: <MobileCart onCloseHandler={() => setShowCart(false)} />,
+    },
+    {
+      value: showLogin,
+      Component: <MobileLogin onCloseHandler={() => setShowLogin(false)} />,
+    },
+    {
+      value: showSearch,
+      Component: <MobileSearch onCloseHandler={() => setShowCategories(false)} />,
+    },
+  ];
 
   const { isAuth } = useTypedSelector((state) => state.user);
   const { logoutAC } = useActions();
@@ -42,12 +58,6 @@ export const MobileMenu: FC = () => {
   const changePage = (path: PathRoutes) => {
     setShow(false);
     router.push(path);
-  };
-
-  const socials = {
-    viber,
-    telegram,
-    whatsapp,
   };
 
   useEffect(() => {
@@ -124,20 +134,7 @@ export const MobileMenu: FC = () => {
                 <div className={s.hr} />
                 <div className={s.socials}>
                   <span className={s.title}>Пишите нам в мессенджерах</span>
-                  <div className={s.svgs}>
-                    {messagers.map((el) => (
-                      <div className={s.svg} key={el.name}>
-                        <a target="_blank" href={el.link} rel="noreferrer">
-                          <Image
-                            width={'45px'}
-                            height={'45px'}
-                            src={socials[el.img]}
-                            alt={el.name}
-                          />
-                        </a>
-                      </div>
-                    ))}
-                  </div>
+                  <Messengers className={s.messengers} width={'45px'} height={'45px'} />
                   <div className={s.phone}>{transormPhone(PHONE)}</div>
                 </div>
               </ul>
@@ -145,6 +142,7 @@ export const MobileMenu: FC = () => {
           </div>
         </Portal>
       </CSSTransition>
+
       <CSSTransition in={showUpprove} timeout={200} classNames="modal" mountOnEnter unmountOnExit>
         <Portal>
           <Confirm onUpprove={onLogoutHandler} onCloseModal={() => setShowUpprove(false)}>
@@ -152,58 +150,23 @@ export const MobileMenu: FC = () => {
           </Confirm>
         </Portal>
       </CSSTransition>
-      <CSSTransition
-        in={showCategories}
-        timeout={200}
-        classNames="mobileModal"
-        mountOnEnter
-        unmountOnExit
-      >
-        <Portal>
-          <MobileMenuModal>
-            <MobileCategories onCloseHandler={() => setShowCategories((p) => !p)} />
-          </MobileMenuModal>
-        </Portal>
-      </CSSTransition>
-      <CSSTransition
-        in={showCart}
-        timeout={200}
-        classNames="mobileModal"
-        mountOnEnter
-        unmountOnExit
-      >
-        <Portal>
-          <MobileMenuModal>
-            <MobileCart onCloseHandler={() => setShowCart(false)} />
-          </MobileMenuModal>
-        </Portal>
-      </CSSTransition>
-      <CSSTransition
-        in={showLogin}
-        timeout={200}
-        classNames="mobileModal"
-        mountOnEnter
-        unmountOnExit
-      >
-        <Portal>
-          <MobileMenuModal>
-            <MobileLogin onCloseHandler={() => setShowLogin(false)} />
-          </MobileMenuModal>
-        </Portal>
-      </CSSTransition>
-      <CSSTransition
-        in={showSearch}
-        timeout={200}
-        classNames="mobileModal"
-        mountOnEnter
-        unmountOnExit
-      >
-        <Portal>
-          <MobileMenuModal>
-            <MobileSearch onCloseHandler={() => setShowSearch(false)} />
-          </MobileMenuModal>
-        </Portal>
-      </CSSTransition>
+
+      {mobileModals.map(({ value, Component }, i) => {
+        return (
+          <CSSTransition
+            key={i}
+            in={value}
+            timeout={200}
+            classNames="mobileModal"
+            mountOnEnter
+            unmountOnExit
+          >
+            <Portal>
+              <MobileMenuModal>{Component}</MobileMenuModal>
+            </Portal>
+          </CSSTransition>
+        );
+      })}
     </div>
   );
 };

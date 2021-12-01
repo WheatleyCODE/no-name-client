@@ -32,8 +32,8 @@ export const CopyRight: FC<CopyRightProps> = () => {
         </li>
       </ul>
       <div className={s.socialsButton}>
-        {icons.map((icon) => (
-          <IconButton className={s.social} key={icon} icon={icon} />
+        {icons.map((icon, i) => (
+          <IconButton className={s.social} key={i} icon={icon} />
         ))}
       </div>
     </div>

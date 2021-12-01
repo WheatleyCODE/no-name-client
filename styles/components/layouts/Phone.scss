@@ -29,7 +29,7 @@
     font-size: 0.87rem;
   }
 
-  .messagers {
+  .messengers {
     display: flex;
     padding-bottom: 5px;
     padding-top: 0px;
@@ -39,7 +39,7 @@
       margin: 0;
     }
 
-    .socialImgs {
+    li {
       padding: 0 3px;
       height: 30px;
 
@@ -86,12 +86,12 @@
     }
   }
 
-  .messagers {
+  .messengers {
     margin-top: 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid $colorLightGrey;
 
-    .socialImgs {
+    .li {
       @include flex-center;
     }
 
@@ -135,7 +135,7 @@
     width: 100%;
 
     .phoneNumber,
-    .messagers {
+    .messengers {
       display: none;
     }
 
@@ -194,7 +194,7 @@
       font-size: 1rem;
     }
 
-    .messagers {
+    .messengers {
       margin-top: 25px;
       padding-bottom: 10px;
 

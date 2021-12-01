@@ -39,7 +39,7 @@ export enum socials {
   WHATSAPP = 'whatsapp',
 }
 
-export const messagers = [
+export const messengers = [
   {
     name: 'Telegram',
     img: socials.TELEGRAM,
