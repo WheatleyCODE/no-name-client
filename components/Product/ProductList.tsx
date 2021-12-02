@@ -13,7 +13,7 @@ export const ProductList: FC<ProductListProps> = ({ test = false }) => {
     <div className={s.widthList}>
       <div className={s.productList}>
         {product.map((_, i) => (
-          <ProductCard key={i} />
+          <ProductCard test={test} key={i} />
         ))}
       </div>
     </div>

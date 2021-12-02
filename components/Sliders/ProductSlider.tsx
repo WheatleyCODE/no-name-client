@@ -11,7 +11,7 @@ interface ProsuctSliderProps {
 }
 
 export const ProductSlider: FC<ProsuctSliderProps> = ({ test = false }) => {
-  const product = test ? [1, 2, 3, 4] : [1, 2, 3, 4, 5, 6, 7, 8];
+  const product = test ? [1, 2, 3, 4, 5] : [1, 2, 3, 4, 5, 6, 7, 8];
 
   return (
     <div className={s.productSlider}>
@@ -36,7 +36,7 @@ export const ProductSlider: FC<ProsuctSliderProps> = ({ test = false }) => {
       >
         {product.map((_, i) => (
           <SwiperSlide key={i}>
-            <ProductCard test key={i} />
+            <ProductCard test={test} key={i} />
           </SwiperSlide>
         ))}
       </Swiper>

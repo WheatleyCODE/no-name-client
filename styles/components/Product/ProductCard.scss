@@ -19,17 +19,24 @@
 
   .name {
     font-size: 0.9rem;
-    padding: 10px;
+    padding-bottom: 10px;
+  }
+
+  .description {
+    font-size: 0.8rem;
+    opacity: 0.9;
   }
 
   .buy {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding-top: 20px;
+    padding-right: 10px;
 
     .price {
       display: flex;
       align-items: center;
+      font-size: 1.2rem;
     }
 
     .buyButton {
@@ -38,6 +45,41 @@
         border-radius: 20px;
         height: 35px;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 556px) {
+  .productCard {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .buy {
+      padding-top: 5px;
+      padding-right: 0px;
+    }
+
+    .price {
+      padding-left: 100px;
+    }
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .productCard {
+    .price {
+      padding-left: 20px;
     }
   }
 }

@@ -76,6 +76,7 @@ const Home: NextPage = () => {
         <CategoriesSlider />
       </div>
       <div className={s.mainLanding}>
+        <div className={s.stickyLinks} style={{ position: 'sticky', top: 0 }}>Этот див уедет в хедер</div>
         <div className={s.width}>
           <div className={s.margin} />
           <div className={s.title}>
@@ -97,7 +98,7 @@ const Home: NextPage = () => {
             <h2>Слайдер</h2>
           </div>
         </div>
-        <ProductSlider />
+        <ProductSlider test />
         <Banner />
       </div>
 

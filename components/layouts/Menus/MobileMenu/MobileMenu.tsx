@@ -62,9 +62,16 @@ export const MobileMenu: FC = () => {
 
   useEffect(() => {
     const $main = document.querySelector<HTMLElement>('main');
-    if (!$main) return;
+    const $footer = document.querySelector<HTMLElement>('footer');
+    if (!$main || !$footer) return;
 
-    show ? ($main.style.display = 'none') : ($main.style.display = 'block');
+    if (show) {
+      $main.style.display = 'none';
+      $footer.style.display = 'none';
+    } else {
+      $main.style.display = 'block';
+      $footer.style.display = 'block';
+    }
   }, [show]);
 
   return (

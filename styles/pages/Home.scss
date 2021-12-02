@@ -57,3 +57,16 @@
     }
   }
 }
+
+@media screen and (max-width: 556px) {
+  .mainLanding {
+    .title {
+      padding-top: 5px;
+      padding-bottom: 5px;
+
+      h2 {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}

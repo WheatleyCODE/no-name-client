@@ -197,6 +197,18 @@ $pad: calc(100% - 1260px);
   }
 }
 
+.swiper.products {
+  .swiper-button-next {
+    top: 20px;
+
+    background: none;
+  }
+
+  .swiper-button-prev {
+    top: 20px;
+  }
+}
+
 @media screen and (max-width: 1240px) {
   #__next .swiper.images {
     .swiper-pagination {
@@ -217,6 +229,20 @@ $pad: calc(100% - 1260px);
 
     .swiper-button-prev {
       left: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 556px) {
+  #__next .swiper.products {
+    .swiper-button-next {
+      top: 10px;
+
+      background: none;
+    }
+
+    .swiper-button-prev {
+      top: 10px;
     }
   }
 }
