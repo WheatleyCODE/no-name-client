@@ -7,7 +7,7 @@
 }
 
 .categoriesSlider {
-  padding-bottom: 15px;
+  // padding-bottom: 15px;
 }
 
 .mainLanding {
@@ -18,6 +18,7 @@
     max-width: 1300px;
     width: 100%;
     padding: 20px;
+    padding-bottom: 10px;
     padding-top: 0;
   }
 
@@ -25,48 +26,54 @@
     padding-top: 15px;
 
     h2 {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
   }
 }
 
-@media screen and (max-width: 1050px) {
-  .mainLanding {
-    .title {
-      padding-top: 15px;
+// @media screen and (max-width: 1050px) {
+//   .mainLanding {
+//     .title {
+//       padding-top: 15px;
 
-      h2 {
-        font-size: 1.5rem;
-      }
-    }
+//       h2 {
+//         font-size: 1.5rem;
+//       }
+//     }
 
-    .width {
-      padding-bottom: 15px;
-    }
+//     .width {
+//       // padding-bottom: 15px;
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 800px) {
+//   .mainLanding {
+//     .title {
+//       padding-top: 13px;
+
+//       h2 {
+//         font-size: 1.4rem;
+//       }
+//     }
+//   }
+// }
+
+@media screen and (max-width: 730px) {
+  .title.first {
+    display: none;
   }
 }
 
-@media screen and (max-width: 800px) {
-  .mainLanding {
-    .title {
-      padding-top: 13px;
+// @media screen and (max-width: 556px) {
+//   .mainLanding {
+//     .title {
+//       padding-top: 5px;
+//       padding-bottom: 5px;
 
-      h2 {
-        font-size: 1.4rem;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 556px) {
-  .mainLanding {
-    .title {
-      padding-top: 5px;
-      padding-bottom: 5px;
-
-      h2 {
-        font-size: 1.3rem;
-      }
-    }
-  }
-}
+//       h2 {
+//         font-size: 1.3rem;
+//       }
+//     }
+//   }
+// }

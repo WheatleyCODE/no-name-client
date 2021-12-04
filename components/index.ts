@@ -11,3 +11,4 @@ export { ProductSlider } from './Sliders/ProductSlider';
 export { CategoriesSlider } from './Sliders/CategoriesSlider';
 export { ProductCard } from './Product/ProductCard';
 export { ProductList } from './Product/ProductList';
+export { StickyLinks } from './StickyLinks';

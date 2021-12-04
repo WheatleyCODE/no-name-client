@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { NextPage } from 'next';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Fragment } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import {
   MainLayout,
@@ -11,6 +11,7 @@ import {
   Banner,
   ProductList,
   ProductSlider,
+  StickyLinks,
 } from '@components';
 import { useAuth, useTypedSelector } from '@hooks';
 import { wrapper } from '@store';
@@ -18,6 +19,8 @@ import { fetchUsersAC } from '@store/actions-creators/user';
 import { NextThunckDispatch } from '@store/reducers';
 import { UserService } from '@services/UserService';
 import s from '@s/pages/index.module.scss';
+import { titles } from 'consts';
+import { Element } from 'react-scroll';
 
 // Redux tests
 export const getServerSideProps = wrapper.getServerSideProps((store): any => async () => {
@@ -51,8 +54,8 @@ const Home: NextPage = () => {
     const next = document.querySelectorAll('.swiper-button-prev');
 
     if (prev !== null && next !== null) {
-      prev.forEach((node) => (node.innerHTML = '<i class="fal fa-chevron-right" />'));
-      next.forEach((node) => (node.innerHTML = '<i class="fal fa-chevron-left" />'));
+      prev.forEach((node) => (node.innerHTML = '<i class="fal fa-angle-right" />'));
+      next.forEach((node) => (node.innerHTML = '<i class="fal fa-angle-left" />'));
     }
   });
 
@@ -68,7 +71,7 @@ const Home: NextPage = () => {
       <div className={s.mainLanding}>
         <div className={s.width}>
           <div className={s.title}>
-            <h2> Категории</h2>
+            <h2>Категории</h2>
           </div>
         </div>
       </div>
@@ -76,30 +79,54 @@ const Home: NextPage = () => {
         <CategoriesSlider />
       </div>
       <div className={s.mainLanding}>
-        <div className={s.stickyLinks} style={{ position: 'sticky', top: 0 }}>Этот див уедет в хедер</div>
         <div className={s.width}>
           <div className={s.margin} />
           <div className={s.title}>
             <h2>Новое и популярное</h2>
           </div>
         </div>
-        <ProductList />
-        <Banner />
-        <div className={s.width}>
+        <ProductSlider tests test />
+      </div>
+      <div className={s.mainLanding}>
+        {/* <div className={s.width}>
           <div className={s.margin} />
           <div className={s.title}>
-            <h2>Класное молодежное</h2>
+            <h2>Новое и популярное</h2>
           </div>
         </div>
-        <ProductList test />
+        <ProductSlider tests test /> */}
+
+        <StickyLinks />
+
+        {titles.map((el, i) => (
+          <Fragment key={el.title}>
+            <Element className={s.testss} name={el.title}>
+              <div className={s.width}>
+                <div className={s.margin} />
+                <div className={s.title + ' ' + (i === 0 && s.first)}>
+                  <h2>{el.title}</h2>
+                </div>
+              </div>
+              <ProductList img={el.img} test={i % 2 === 0} />
+              {i % 2 === 0 && <Banner />}
+            </Element>
+          </Fragment>
+        ))}
         <div className={s.width}>
           <div className={s.margin} />
           <div className={s.title}>
             <h2>Слайдер</h2>
           </div>
         </div>
-        <ProductSlider test />
-        <Banner />
+        <ProductSlider />
+        {/* <div className={s.width}>
+          <div className={s.margin} />
+          <div className={s.title}>
+            <h2>Баллончики</h2>
+          </div>
+        </div>
+        <ProductList test />
+        <Banner /> */}
       </div>
 
       <CSSTransition in={show} timeout={200} classNames="modal" mountOnEnter unmountOnExit>

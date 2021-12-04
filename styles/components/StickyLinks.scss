@@ -1,0 +1,140 @@
+@import '../variables.scss';
+
+.stickyLinks {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  // margin: 20px 0;
+  margin-bottom: 15px;
+  background-color: $colorWhite;
+  cursor: pointer;
+
+  &.shadow {
+    height: auto;
+  }
+
+  .width {
+    max-width: 1300px;
+    width: 100%;
+    height: 56px;
+    padding: 0 5px;
+    overflow-x: auto;
+    display: flex;
+    align-items: center;
+    scroll-behavior: smooth;
+  }
+
+  .navLinks {
+    flex-shrink: 0;
+    margin: 0 5px;
+    padding: 5px 15px;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 20px;
+
+    transition: all 0.2s;
+  }
+
+  .navLinks.active {
+    background-color: rgb(255, 117, 18, 0.1);
+    color: $colorOrange;
+  }
+
+  .showLogo {
+    position: relative;
+    margin-left: -60px;
+    left: 0;
+
+    .logoContainer {
+      width: 45px;
+    }
+  }
+
+  .paddingLeft {
+    animation: paddingLeft 0.3s forwards;
+  }
+
+  .paddingBack {
+    animation: paddingBack 0.3s forwards;
+  }
+}
+
+@keyframes paddingLeft {
+  0% {
+    padding-left: 20px;
+  }
+
+  100% {
+    padding-left: 65px;
+  }
+}
+
+@keyframes paddingBack {
+  0% {
+    padding-left: 65px;
+  }
+
+  100% {
+    padding-left: 20px;
+  }
+}
+
+@media screen and (min-width: 730px) {
+  .stickyLinks {
+    position: relative;
+    margin: 30px 0;
+    z-index: 5;
+
+    &.shadow {
+      box-shadow: none;
+      border-bottom: none;
+      height: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .stickyLinks {
+    &.shadow {
+      box-shadow: none;
+      border-bottom: none;
+      box-shadow: 0 3px 7px 0 rgb(232, 232, 232);
+    }
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .stickyLinks {
+    top: 0;
+    z-index: 10;
+    // margin: 20px 0;
+    // height: 50px;
+
+    .width {
+      width: 100%;
+      // height: 50px;
+      // padding: 3px 10px;
+    }
+
+    .navLinks {
+      flex-shrink: 0;
+      padding: 5px 15px;
+      font-size: 0.9rem;
+    }
+
+    .navLinks.active {
+      background-color: rgb(255, 117, 18, 0.1);
+      color: $colorOrange;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .stickyLinks {
+    .navLinks {
+      letter-spacing: 0.1px;
+    }
+  }
+}

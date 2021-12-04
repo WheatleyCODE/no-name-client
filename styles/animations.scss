@@ -147,3 +147,21 @@
     transform: translateX(0%);
   }
 }
+
+.leftFade-enter-active {
+  animation: leftFade 0.3s forwards;
+}
+
+.leftFade-exit-active {
+  animation: leftFade 0.3s forwards reverse;
+}
+
+@keyframes leftFade {
+  0% {
+    transform: translateX(-60px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

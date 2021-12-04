@@ -17,18 +17,24 @@ export const CategoriesSlider: FC<CategoriesSliderProps> = () => {
     <div className={s.categoriesSlider}>
       <Swiper
         breakpoints={{
-          [830]: {
+          [1000]: {
             slidesPerView: 4,
+          },
+          [830]: {
+            slidesPerView: 3.2,
           },
           [730]: {
             spaceBetween: 20,
           },
           [590]: {
-            slidesPerView: 3,
+            slidesPerView: 2.2,
           },
         }}
+        touchAngle={30}
+        touchRatio={1.2}
         spaceBetween={10}
-        slidesPerView={2}
+        speed={300}
+        slidesPerView={1.4}
         className="categories"
       >
         {categoriesMenuItems.map((item) => (

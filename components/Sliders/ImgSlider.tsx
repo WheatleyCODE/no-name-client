@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { SwiperSlide, Swiper } from 'swiper/react';
-import s from '@s/components/index.module.scss';
 import { imgSlides } from 'consts';
+import s from '@s/components/index.module.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -18,6 +18,8 @@ export const ImgSlider: FC = () => {
         navigation={true}
         slidesPerView={1}
         initialSlide={2}
+        touchAngle={30}
+        touchRatio={1.2}
         loop
         pagination={{
           clickable: true,

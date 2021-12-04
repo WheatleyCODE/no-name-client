@@ -11,7 +11,7 @@
   img {
     height: 100%;
     border-radius: 10px;
-    box-shadow: 0 0 5px 0 grey;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 5px 10px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
   }
 }
 
@@ -21,7 +21,7 @@
 
   img {
     border-radius: 10px;
-    box-shadow: 0 0 5px 0 grey;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 5px 10px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
   }
 }
 
@@ -38,5 +38,11 @@
 
   .mobileBanner {
     display: block;
+  }
+}
+
+@media screen and (min-width: 730px) {
+  .banner {
+    padding: 30px 20px;
   }
 }

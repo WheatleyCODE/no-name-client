@@ -70,7 +70,7 @@ export const MobileMenu: FC = () => {
       $footer.style.display = 'none';
     } else {
       $main.style.display = 'block';
-      $footer.style.display = 'block';
+      $footer.style.display = 'flex';
     }
   }, [show]);
 
