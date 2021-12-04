@@ -1,5 +1,5 @@
 import { FC, useEffect, useRef, useState } from 'react';
-import { Link, Events } from 'react-scroll';
+import { Link, Events, animateScroll } from 'react-scroll';
 import { CSSTransition } from 'react-transition-group';
 import { Logo } from '@components';
 import { titles } from 'consts';
@@ -107,14 +107,19 @@ export const StickyLinks: FC<StickyLinksProps> = () => {
       <ul ref={ref} className={s.width + ' ' + (showLogo ? s.paddingLeft : s.paddingBack)}>
         <CSSTransition in={showLogo} timeout={200} classNames="leftFade">
           <div className={s.showLogo}>
-            <Logo noText />
+            <Logo
+              onClickHandler={() => {
+                animateScroll.scrollToTop();
+              }}
+              noText
+            />
           </div>
         </CSSTransition>
         {titles.map((title, i) => (
           <Link
             to={title.title}
             spy
-            offset={-70}
+            offset={-60}
             smooth
             onSetActive={() => onActivateLink(i)}
             onClick={() => checkSteps(i)}

@@ -61,19 +61,18 @@
 
 @media screen and (max-width: 730px) {
   .title.first {
-    display: none;
+    // display: none;
   }
 }
 
-// @media screen and (max-width: 556px) {
-//   .mainLanding {
-//     .title {
-//       padding-top: 5px;
-//       padding-bottom: 5px;
+@media screen and (max-width: 556px) {
+  .mainLanding {
+    .title.small {
+      padding-bottom: 15px;
 
-//       h2 {
-//         font-size: 1.3rem;
-//       }
-//     }
-//   }
-// }
+      // h2 {
+      //   font-size: 1.3rem;
+      // }
+    }
+  }
+}

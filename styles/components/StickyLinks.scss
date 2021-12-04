@@ -83,6 +83,7 @@
 
 @media screen and (min-width: 730px) {
   .stickyLinks {
+    display: none;
     position: relative;
     margin: 30px 0;
     z-index: 5;

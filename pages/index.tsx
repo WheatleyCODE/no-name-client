@@ -103,7 +103,7 @@ const Home: NextPage = () => {
             <Element className={s.testss} name={el.title}>
               <div className={s.width}>
                 <div className={s.margin} />
-                <div className={s.title + ' ' + (i === 0 && s.first)}>
+                <div className={s.title + ' ' + s.small + ' ' + (i === 0 && s.first)}>
                   <h2>{el.title}</h2>
                 </div>
               </div>
