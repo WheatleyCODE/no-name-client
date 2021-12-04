@@ -4,8 +4,14 @@
 
   i {
     position: absolute;
-    color: $colorBlack;
-    font-size: 2.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $colorWhite;
+    font-size: 2rem;
+    // padding-left: 5px;
+    // height: 40px;
+    // width: 40px;
   }
 
   img {
@@ -37,7 +43,7 @@
 
     i {
       position: absolute;
-      color: $colorBlack;
+      color: $colorWhite;
       font-size: 1.4rem;
     }
 

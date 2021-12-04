@@ -178,15 +178,21 @@ $pad: calc(100% - 1260px);
     .swiper-button-next {
       right: 50px;
       padding-right: 0px;
-
       background: none;
+
+      i {
+        padding-left: 3px;
+      }
     }
 
     .swiper-button-prev {
       padding-left: 0px;
       background: none;
-
       left: 50px;
+
+      i {
+        padding-right: 3px;
+      }
     }
   }
 

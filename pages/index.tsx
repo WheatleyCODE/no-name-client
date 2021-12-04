@@ -54,8 +54,8 @@ const Home: NextPage = () => {
     const next = document.querySelectorAll('.swiper-button-prev');
 
     if (prev !== null && next !== null) {
-      prev.forEach((node) => (node.innerHTML = '<i class="fal fa-angle-right" />'));
-      next.forEach((node) => (node.innerHTML = '<i class="fal fa-angle-left" />'));
+      prev.forEach((node) => (node.innerHTML = '<i class="fad fa-angle-right"></i>'));
+      next.forEach((node) => (node.innerHTML = '<i class="fad fa-angle-left"></i>'));
     }
   });
 
