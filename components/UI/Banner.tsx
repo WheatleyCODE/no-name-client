@@ -8,13 +8,13 @@ export const Banner: FC<BannerProps> = () => {
     <>
       <div className={s.banner}>
         <img
-          src="https://sc01.alicdn.com/kf/UTB8c9diGCnEXKJk43Ubq6zLppXae/178192602/UTB8c9diGCnEXKJk43Ubq6zLppXae.jpg"
+          src="https://www.stostayer.ru/assets/c26ed96d63a4484da19774f4706e2e68/1400x300/kuzov_wide_1.jpg"
           alt="Баннер"
         />
       </div>
       <div className={s.mobileBanner}>
         <img
-          src="https://payju.ir/sites/default/files/article/thumbnail/meditation-3final.jpg"
+          src="https://www.stostayer.ru/assets/c26ed96d63a4484da19774f4706e2e68/1400x300/kuzov_wide_1.jpg"
           alt="Баннер"
         />
       </div>

@@ -378,25 +378,4 @@ export const imgSlides = [
   },
 ];
 
-export const titles = [
-  {
-    title: 'Подкраска сколов',
-    img: 'https://a.allegroimg.com/original/1149d7/99e63a9f4cf39822b782db9bed38/Buteleczka-zaprawkowa-z-pedzelkiem-60ml-Finixa-TUB',
-  },
-  {
-    title: 'Баллончики',
-    img: 'https://cultra.ru/images/detailed/16/2682qCj6fhU[1]_jp8k-2n.jpg',
-  },
-  {
-    title: 'Эмаль по коду',
-    img: 'https://akrilgermet.ru/wp-content/uploads/2018/04/7028241.png',
-  },
-  {
-    title: 'Комплекты / Наборы',
-    img: 'https://images.ru.prom.st/784296244_w500_h500_arhivnye-korobki-s.jpg',
-  },
-  {
-    title: 'Расходные материалы',
-    img: 'https://колориставто.рф/wp-content/uploads/2021/04/5850471-1.jpg',
-  },
-];
+export { data, popularData } from './MockData';

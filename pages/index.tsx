@@ -2,6 +2,7 @@
 import type { NextPage } from 'next';
 import { useEffect, useState, Fragment } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { Element } from 'react-scroll';
 import {
   MainLayout,
   Portal,
@@ -18,9 +19,8 @@ import { wrapper } from '@store';
 import { fetchUsersAC } from '@store/actions-creators/user';
 import { NextThunckDispatch } from '@store/reducers';
 import { UserService } from '@services/UserService';
+import { data, popularData } from 'consts';
 import s from '@s/pages/index.module.scss';
-import { titles } from 'consts';
-import { Element } from 'react-scroll';
 
 // Redux tests
 export const getServerSideProps = wrapper.getServerSideProps((store): any => async () => {
@@ -85,48 +85,34 @@ const Home: NextPage = () => {
             <h2>Новое и популярное</h2>
           </div>
         </div>
-        <ProductSlider tests test />
+        <ProductSlider isHeight isMobile products={popularData.products} />
       </div>
       <div className={s.mainLanding}>
-        {/* <div className={s.width}>
-          <div className={s.margin} />
-          <div className={s.title}>
-            <h2>Новое и популярное</h2>
-          </div>
-        </div>
-        <ProductSlider tests test /> */}
-
         <StickyLinks />
-
-        {titles.map((el, i) => (
-          <Fragment key={el.title}>
-            <Element className={s.testss} name={el.title}>
-              <div className={s.width}>
-                <div className={s.margin} />
-                <div className={s.title + ' ' + s.small + ' ' + (i === 0 && s.first)}>
-                  <h2>{el.title}</h2>
+        {data.map((el, i) => {
+          return (
+            <Fragment key={el.title}>
+              <Element className={s.testss} name={el.title}>
+                <div className={s.width}>
+                  <div className={s.margin} />
+                  <div className={s.title + ' ' + s.small + ' ' + (i === 0 && s.first)}>
+                    <h2>{el.title}</h2>
+                  </div>
                 </div>
-              </div>
-              <ProductList img={el.img} test={i % 2 === 0} />
-              {i % 2 === 0 && <Banner />}
-            </Element>
-          </Fragment>
-        ))}
+                <ProductList products={el.products} />
+                {i % 2 === 0 && <Banner />}
+              </Element>
+            </Fragment>
+          );
+        })}
+
         <div className={s.width}>
           <div className={s.margin} />
           <div className={s.title}>
             <h2>Слайдер</h2>
           </div>
         </div>
-        <ProductSlider />
-        {/* <div className={s.width}>
-          <div className={s.margin} />
-          <div className={s.title}>
-            <h2>Баллончики</h2>
-          </div>
-        </div>
-        <ProductList test />
-        <Banner /> */}
+        <ProductSlider isHeight products={popularData.products} />
       </div>
 
       <CSSTransition in={show} timeout={200} classNames="modal" mountOnEnter unmountOnExit>

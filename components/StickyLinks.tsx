@@ -2,7 +2,7 @@ import { FC, useEffect, useRef, useState } from 'react';
 import { Link, Events, animateScroll } from 'react-scroll';
 import { CSSTransition } from 'react-transition-group';
 import { Logo } from '@components';
-import { titles } from 'consts';
+import { data } from 'consts';
 import s from '@s/components/index.module.scss';
 
 interface StickyLinksProps {}
@@ -115,9 +115,9 @@ export const StickyLinks: FC<StickyLinksProps> = () => {
             />
           </div>
         </CSSTransition>
-        {titles.map((title, i) => (
+        {data.map((obj, i) => (
           <Link
-            to={title.title}
+            to={obj.title}
             spy
             offset={-60}
             smooth
@@ -125,10 +125,10 @@ export const StickyLinks: FC<StickyLinksProps> = () => {
             onClick={() => checkSteps(i)}
             activeClass={s.active}
             duration={500}
-            key={title.title}
+            key={obj.title}
             className={s.navLinks}
           >
-            <h4>{title.title}</h4>
+            <h4>{obj.title}</h4>
           </Link>
         ))}
       </ul>

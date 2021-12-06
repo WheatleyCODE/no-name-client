@@ -2,32 +2,34 @@ import { FC } from 'react';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { ProductCard } from '@components';
+import { Product } from '@t';
 import s from '@s/components/index.module.scss';
 
 SwiperCore.use([Navigation, Pagination]);
 
 interface ProsuctSliderProps {
-  test?: boolean;
-  tests?: boolean;
+  isMobile?: boolean;
+  isHeight?: boolean;
+  products: Product[];
 }
 
-export const ProductSlider: FC<ProsuctSliderProps> = ({ test = false, tests = false }) => {
-  const product = test ? [1, 2, 3, 4, 5] : [1, 2, 3, 4, 5, 6, 7, 8];
+export const ProductSlider: FC<ProsuctSliderProps> = (props) => {
+  const { products, isMobile = false, isHeight = false } = props;
 
   return (
     <div className={s.productSlider}>
       <Swiper
         breakpoints={{
           [1057]: {
-            slidesPerView: tests ? 3 : 4,
+            slidesPerView: isMobile ? 3 : 4,
           },
 
           [806]: {
-            slidesPerView: tests ? 2 : 3,
+            slidesPerView: isMobile ? 2 : 3,
           },
 
           [556]: {
-            slidesPerView: tests ? 1 : 2,
+            slidesPerView: isMobile ? 1 : 2,
           },
         }}
         spaceBetween={20}
@@ -37,13 +39,9 @@ export const ProductSlider: FC<ProsuctSliderProps> = ({ test = false, tests = fa
         touchRatio={1.2}
         className="products"
       >
-        {product.map((_, i) => (
+        {products.map((product, i) => (
           <SwiperSlide key={i}>
-            <ProductCard
-              img={'https://skladom.ru/images/detailed/282/82f3c59d967e44ee389b38d88ff41696.jpg'}
-              mobile={tests}
-              key={i}
-            />
+            <ProductCard product={product} isMobile={isMobile} isHeight={isHeight} key={i} />
           </SwiperSlide>
         ))}
       </Swiper>

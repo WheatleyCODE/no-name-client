@@ -1,31 +1,50 @@
 import { FC } from 'react';
 import { Button } from '@components';
+import { Product, ProductType } from '@t';
 import s from '@s/components/index.module.scss';
 
 interface ProductCardProps {
-  mobile?: boolean;
-  img?: string;
+  isMobile?: boolean;
+  isHeight?: boolean;
+  product: Product;
 }
 
-export const ProductCard: FC<ProductCardProps> = ({ mobile = false, img }) => {
+export const ProductCard: FC<ProductCardProps> = (props) => {
+  const { isMobile = false, product, isHeight = false } = props;
+  const { name, description, imgUrl, type, price } = product;
+
+  let button;
+  switch (type) {
+    case ProductType.PRODUCT:
+      button = <Button className={s.roundOrangeTwo}>Выбрать</Button>;
+      break;
+
+    case ProductType.SET:
+      button = <Button className={s.roundOrangeTwo}>Собрать</Button>;
+      break;
+
+    default:
+      button = <Button className={s.roundOrange}>Вкорзину</Button>;
+      break;
+  }
   return (
-    <div className={mobile ? s.productCardMobile : s.productCard}>
+    <div
+      className={
+        (isMobile ? s.productCardMobile : s.productCard) + ' ' + (isHeight ? s.height : '')
+      }
+    >
       <div className={s.flex}>
         <div className={s.image}>
-          <img src={img} alt="Картинка"/>
+          <img src={imgUrl} alt={name} />
         </div>
         <div>
-          <div className={s.name}>Штрих-корректор</div>
-          <div className={s.description}>
-            Краска предназначенная для ремонта сколов и царапин на ЛКМ лялляля
-          </div>
+          <div className={s.name}>{name}</div>
+          <div className={s.description}>{description}</div>
         </div>
       </div>
       <div className={s.buy}>
-        <div className={s.price}>5799 ₽</div>
-        <div className={s.buyButton}>
-          <Button className={s.roundOrange}>Купить</Button>
-        </div>
+        <div className={s.price}>{price} ₽</div>
+        <div className={s.buyButton}>{button}</div>
       </div>
     </div>
   );
