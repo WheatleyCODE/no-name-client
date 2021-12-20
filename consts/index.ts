@@ -8,6 +8,7 @@ export enum PathRoutes {
   RESET = '/reset',
   CART = '/cart',
   CAR_COLOR = '/car_color',
+  QUESTIONS = 'questions',
 }
 
 export const menuItems = [

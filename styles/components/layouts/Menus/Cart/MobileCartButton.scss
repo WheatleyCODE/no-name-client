@@ -1,0 +1,43 @@
+@import '../../../../variables.scss';
+@import '../../../../mixins.scss';
+
+.mobileCartButton {
+  @include flex-center;
+  display: none;
+  transition: all 0.2s;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 55px;
+  height: 55px;
+  background-color: $colorOrange;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-bottom: 40px;
+  z-index: 5;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $colorLightOrange;
+  }
+
+  i {
+    font-size: 1.4rem;
+    color: $colorWhite !important;
+  }
+
+  .cartCounter {
+    background-color: $colorWhite;
+    border: 1px solid $colorOrange;
+    color: $colorOrange;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .mobileCartButton {
+    display: flex;
+  }
+}

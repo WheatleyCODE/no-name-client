@@ -24,7 +24,7 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
       break;
 
     default:
-      button = <Button className={s.roundOrange}>Вкорзину</Button>;
+      button = <Button className={s.roundOrange}>В корзину</Button>;
       break;
   }
   return (

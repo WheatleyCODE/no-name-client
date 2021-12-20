@@ -1,0 +1,99 @@
+@import '../mixins.scss';
+
+.contacts {
+  @include flex-center;
+
+  .title {
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+
+  .width {
+    max-width: 1300px;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .info {
+    display: inline-block;
+    min-width: 332px;
+  }
+
+  .lable {
+    border-bottom: 1px solid $colorLightGrey;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: $colorBlack;
+
+    i {
+      width: 35px;
+      font-size: 1.3rem;
+    }
+  }
+
+  .section {
+    margin-bottom: 30px;
+  }
+
+  .messangers {
+    display: flex;
+
+    li {
+      margin-right: 10px;
+    }
+  }
+
+  .flex {
+    display: flex;
+    width: 100%;
+    padding-left: 15px;
+  }
+
+  .map {
+    width: 100%;
+    height: 460px;
+    background-color: rgba(180, 70, 70, 0.257);
+    margin-left: 30px;
+    border-radius: 7px;
+  }
+
+  .adress {
+    margin-top: 3px;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .contacts {
+    .flex {
+      flex-wrap: wrap;
+    }
+
+    .info {
+      display: inline-block;
+      min-width: auto;
+    }
+
+    .map {
+      background-color: rgba(180, 70, 70, 0.557);
+      margin-left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contacts {
+    .title {
+      margin-top: 20px;
+      font-size: 1.6rem;
+    }
+
+    .flex {
+      padding-left: 0;
+    }
+  }
+
+  .adress {
+    font-size: 0.9rem;
+  }
+}

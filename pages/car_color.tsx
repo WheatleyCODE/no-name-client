@@ -9,7 +9,14 @@ const CarColor: NextPage = () => {
       title="Узнать цвет автомобиля"
       keywords={['Как узнать цвет автомобиля', 'noname']}
     >
-      <h1>CarColor</h1>
+      <div className={s.color}>
+        <div className={s.width}>
+          <h1 className={s.title}>Как узнать код цвета автомобиля?</h1>
+          <div className={s.carNames}>Names</div>
+          <div className={s.carImg}>Img</div>
+          <div className={s.text}>Text</div>
+        </div>
+      </div>
     </MainLayout>
   );
 };

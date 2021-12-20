@@ -1,0 +1,65 @@
+@import '../mixins.scss';
+@import '../variables.scss';
+
+.questions {
+  @include flex-center;
+
+  .title {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 1.6rem;
+  }
+
+  .width {
+    max-width: 1300px;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .question {
+    background-color: rgba(128, 128, 128, 0.1);
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    padding: 10px 10px;
+    margin: 10px 0;
+    cursor: pointer;
+
+    &:hover i {
+      color: $colorOrange;
+    }
+
+    i {
+      margin: 0 15px;
+    }
+  }
+
+  .moreQuestions {
+    a {
+      display: inline-block;
+    }
+  }
+
+  .pageDescription {
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .questions {
+    .title {
+      margin-top: 20px;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .questions {
+    .title {
+      margin-top: 20px;
+      font-size: 1.1rem;
+    }
+  }
+}

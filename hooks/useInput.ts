@@ -17,7 +17,7 @@ export interface IUnput {
 export enum InputType {
   EMAIL = 'email',
   PASSWORD = 'password',
-  PROMOCODE = 'text',
+  PROMOCODE = 'promo',
   TEXT = 'text',
 }
 

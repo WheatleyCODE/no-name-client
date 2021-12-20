@@ -7,6 +7,7 @@ export { Cart } from './Menus/Cart/Cart';
 export { MiniCart } from './Menus/Cart/MiniCart';
 export { MobileCart } from './Menus/Cart/MobileCart';
 export { CartCounter } from './Menus/Cart/CartCounter';
+export { MobileCartButton } from './Menus/Cart/MobileCartButton';
 export { Categories } from './Menus/Categories/Categories';
 export { CategoriesMenu } from './Menus/Categories/CategoriesMenu';
 export { MobileCategories } from './Menus/Categories/MobileCategories';

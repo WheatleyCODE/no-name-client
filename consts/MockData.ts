@@ -11,7 +11,7 @@ export const data = [
         type: ProductType.PRODUCT,
         name: 'Штрих-корректор c эмалью по коду цвета автомобиля',
         description:
-          'Эмаль по коду цвета автомобиля во флаконе с кисточкой, предназначенная для локального ремонта или подкраски сколов и царапин',
+          'Эмаль по коду цвета автомобиля во флаконе с кисточкой, предназначенная для ремонта сколов и царапин',
         imgUrl:
           'https://a.allegroimg.com/original/1149d7/99e63a9f4cf39822b782db9bed38/Buteleczka-zaprawkowa-z-pedzelkiem-60ml-Finixa-TUB',
         productUrl: 'corrector',
@@ -481,7 +481,7 @@ export const popularData = {
       type: ProductType.PRODUCT,
       name: 'Штрих-корректор c эмалью по коду цвета автомобиля',
       description:
-        'Эмаль по коду цвета автомобиля во флаконе с кисточкой, предназначенная для локального ремонта или подкраски сколов и царапин',
+        'Эмаль по коду цвета автомобиля во флаконе с кисточкой, предназначенная для ремонта сколов и царапин',
       imgUrl:
         'https://a.allegroimg.com/original/1149d7/99e63a9f4cf39822b782db9bed38/Buteleczka-zaprawkowa-z-pedzelkiem-60ml-Finixa-TUB',
       productUrl: 'color',
@@ -490,8 +490,10 @@ export const popularData = {
     {
       type: ProductType.PRODUCT,
       name: 'Баллончик c эмалью по коду цвета автомобиля',
-      description:
-        'Эмаль по коду цвета автомобиля по коду цвета автомобиля в баллончике, предназначенная для универсального использования',
+      // description:
+      //   'Эмаль по коду цвета автомобиля в баллончике,
+      // предназначенная для универсального использования',
+      description: 'лол',
       imgUrl: 'https://cultra.ru/images/detailed/16/2682qCj6fhU[1]_jp8k-2n.jpg',
       productUrl: 'color',
       price: 310,

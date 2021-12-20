@@ -18,6 +18,7 @@ import { menuItems, PathRoutes, PHONE } from 'consts';
 import { transormPhone } from 'utils';
 import { useActions, useTypedSelector } from '@hooks';
 import s from '@s/components/index.module.scss';
+import { MobileCartButton } from '../Cart/MobileCartButton';
 
 export const MobileMenu: FC = () => {
   const [show, setShow] = useState(false);
@@ -43,7 +44,7 @@ export const MobileMenu: FC = () => {
     },
     {
       value: showSearch,
-      Component: <MobileSearch onCloseHandler={() => setShowCategories(false)} />,
+      Component: <MobileSearch onCloseHandler={() => setShowSearch(false)} />,
     },
   ];
 
@@ -169,11 +170,16 @@ export const MobileMenu: FC = () => {
             unmountOnExit
           >
             <Portal>
-              <MobileMenuModal>{Component}</MobileMenuModal>
+              <MobileMenuModal fixed={i === 1}>{Component}</MobileMenuModal>
             </Portal>
           </CSSTransition>
         );
       })}
+      <MobileCartButton
+        openCartHandler={() => {
+          setShowCart(true);
+        }}
+      />
     </div>
   );
 };

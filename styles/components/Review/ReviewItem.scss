@@ -1,0 +1,55 @@
+.reviewItem {
+  .rev {
+    background-color: rgba(128, 128, 128, 0.05);
+    padding: 25px 20px;
+    border-radius: 8px;
+  }
+
+  margin-bottom: 20px;
+  border-radius: 10px;
+
+  .userName,
+  .rate {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .rate {
+    margin-left: 10px;
+  }
+
+  .text {
+    color: $colorBlack;
+    font-family: Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+  }
+
+  .star {
+    display: inline-block;
+    margin-right: 3px;
+
+    i {
+      color: orange;
+    }
+  }
+
+  .answer {
+    margin-left: 30px;
+    margin-top: 5px;
+    background-color: rgba(128, 128, 128, 0.1);
+    border-radius: 5px;
+    padding: 10px 20px;
+
+    .proove {
+      display: inline-block;
+      margin-left: 10px;
+
+      i {
+        color: green;
+      }
+    }
+  }
+}

@@ -55,6 +55,7 @@
 
     .buyButton {
       button {
+        padding: 0;
         width: 130px;
         border-radius: 20px;
         height: 35px;
@@ -64,11 +65,26 @@
 }
 
 .productCard.height {
-  min-height: 450px;
-}
+  .description {
+    height: 20px;
+    overflow: hidden;
+  }
 
+  .name {
+    height: 20px;
+    overflow: hidden;
+  }
+}
 .productCardMobile.height {
-  min-height: 220px;
+  .description {
+    height: 20px;
+    overflow: hidden;
+  }
+
+  .name {
+    height: 20px;
+    overflow: hidden;
+  }
 }
 
 .productCardMobile {
@@ -120,10 +136,6 @@
 }
 
 @media screen and (max-width: 556px) {
-  .productCard.height {
-    min-height: 190px;
-  }
-
   .productCard {
     padding: 0;
     display: flex;
@@ -167,6 +179,7 @@
     .buy {
       .buyButton {
         button {
+          padding: 0;
           height: 30px;
           padding-top: 0;
           padding-bottom: 0;

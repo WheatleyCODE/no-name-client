@@ -10,7 +10,7 @@ interface FooterMenuItemProps {
 export const FooterMenuItem: FC<FooterMenuItemProps> = ({ item }) => {
   return (
     <li className={s.footerMenuItem}>
-      <Link className={s.linkWhite} href={PathRoutes.HOME}>
+      <Link className={s.linkWhite} href={PathRoutes.QUESTIONS}>
         {item}
       </Link>
     </li>

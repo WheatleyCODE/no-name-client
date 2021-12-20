@@ -12,3 +12,6 @@ export { CategoriesSlider } from './Sliders/CategoriesSlider';
 export { ProductCard } from './Product/ProductCard';
 export { ProductList } from './Product/ProductList';
 export { StickyLinks } from './StickyLinks';
+export { ReviewItem } from './Review/ReviewItem';
+export { ReviewList } from './Review/ReviewList';
+export { ReviewWrite } from './Review/ReviewWrite';
