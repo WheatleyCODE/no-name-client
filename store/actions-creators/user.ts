@@ -10,7 +10,6 @@ export const fetchUsersAC = () => {
   return async (dispatch: Dispatch<UserAction>) => {
     try {
       dispatch({ type: UserActionTypes.FETCH_USERS });
-
       const response = await axios.get('https://jsonplaceholder.typicode.com/users');
 
       dispatch({
@@ -57,6 +56,7 @@ export const loginAC = (email: string, password: string, redirect: () => void) =
       dispatch(setUserAC(res.data.user));
       redirect();
     } catch (e: any) {
+      console.log(e);
       dispatch(setAuthErrorAC(e?.response?.data?.message));
     }
   };
@@ -98,6 +98,7 @@ export const checkAuthAC = () => {
       const res = await axios.get<AuthResponse>(`${API_URL_IP}/api/auth/refresh`, {
         withCredentials: true,
       });
+
       console.log(res);
       localStorage.setItem('token', res.data.accessToken);
       dispatch(setAuthAC(true));

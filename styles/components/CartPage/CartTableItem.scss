@@ -1,0 +1,65 @@
+.cartTableItem {
+  display: flex;
+  margin-bottom: 20px;
+  padding: 0 5px;
+  border-radius: 7px;
+  font-size: 0.9rem;
+  .img,
+  .title,
+  .price,
+  .count,
+  .sum {
+    @include flex-center;
+    justify-content: flex-start;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 500px;
+    font-size: 1rem;
+    align-items: flex-start;
+
+    .name {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .description {
+      font-size: 0.8rem;
+      padding-right: 20px;
+    }
+  }
+
+  .price {
+    width: 200px;
+  }
+
+  .count {
+    width: 200px;
+  }
+
+  .sum {
+    width: 200px;
+    border: none;
+  }
+
+  .imges {
+    height: 100px;
+    min-width: 100px;
+    margin-right: 50px;
+
+    img {
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .cartTableItem {
+    .imges {
+      margin-right: 10px;
+    }
+  }
+}

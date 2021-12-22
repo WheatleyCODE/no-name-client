@@ -1,0 +1,21 @@
+.promocode {
+  display: flex;
+  max-width: 500px;
+
+  input {
+    height: 50px;
+    border-radius: 10px 0 0 10px;
+    padding-left: 20px;
+  }
+
+  .buttonBlock {
+    padding-top: 19px;
+
+    button {
+      height: 100%;
+      border-radius: 0 10px 10px 0;
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+  }
+}

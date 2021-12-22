@@ -68,7 +68,7 @@ export const Cart: FC = () => {
         timeout={150}
         classNames={'ctgr'}
       >
-        <MiniCart onMouseHandlers={onMouseHandlersCart} />
+        <MiniCart desctop onMouseHandlers={onMouseHandlersCart} />
       </CSSTransition>
     </div>
   );

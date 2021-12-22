@@ -14,8 +14,6 @@ interface LoginFormProps {
 export const LoginForm: FC<LoginFormProps> = (props) => {
   const { reg = false, onCloseHandler = null, noTitle = false } = props;
 
-  console.log(noTitle);
-
   const email = useInput('', 'Почта', InputType.EMAIL);
   const password = useInput('', 'Пароль', InputType.PASSWORD);
   const repeat = useInput('', 'Повторите пароль', InputType.PASSWORD);

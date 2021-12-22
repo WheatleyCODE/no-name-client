@@ -1,0 +1,43 @@
+.cart {
+  @include flex-center;
+
+  .width {
+    max-width: 1300px;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .title {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 1.6rem;
+  }
+
+  .cartPageMain {
+  }
+
+  .cartPagePromo {
+    margin-top: 10px;
+
+    .title {
+      font-size: 1.3rem;
+      margin: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  .cartPageFooter {
+    margin-top: 50px;
+    height: 200px;
+    background-color: aquamarine;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cart {
+    .title {
+      margin-top: 20px;
+      font-size: 1.6rem;
+    }
+  }
+}

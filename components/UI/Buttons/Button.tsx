@@ -3,7 +3,7 @@ import s from '@s/components/index.module.scss';
 
 interface ButtonProps {
   disable?: boolean;
-  onClickHandler?: () => void;
+  onClickHandler?: (e?: any) => void;
   className?: string;
   onMouseHadlers?: {
     onMouseEnter?: () => void;

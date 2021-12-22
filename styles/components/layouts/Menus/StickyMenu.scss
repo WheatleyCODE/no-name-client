@@ -4,7 +4,7 @@
 .sticky {
   display: block;
   position: relative;
-  z-index: 20;
+  border-bottom: 1px solid $colorWhite;
 
   div {
     display: flex;
@@ -13,7 +13,7 @@
 
   @include flex-center;
   position: sticky;
-  z-index: 10;
+  z-index: 20;
   top: 0;
   height: $headerStickyMenu;
   background-color: $colorWhite;
@@ -29,7 +29,7 @@
 
 .shadow {
   height: 61px;
-  box-shadow: $boxShadow;
+  // box-shadow: $boxShadow;
   border-bottom: 1px solid $colorLightGrey;
 }
 

@@ -8,17 +8,19 @@
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 55px;
-  height: 55px;
+  width: 50px;
+  height: 50px;
   background-color: $colorOrange;
   border-radius: 50%;
   margin-right: 20px;
   margin-bottom: 40px;
-  z-index: 5;
+  box-shadow: 0 2px 5px 0 black;
+  z-index: 15;
   cursor: pointer;
 
   &:hover {
-    background-color: $colorLightOrange;
+    background-color: $colorDarkOrange;
+    box-shadow: 0 1px 3px 0 rgb(37, 37, 37);
   }
 
   i {
@@ -30,9 +32,10 @@
     background-color: $colorWhite;
     border: 1px solid $colorOrange;
     color: $colorOrange;
+    font-size: 0.75rem;
     border-radius: 50%;
-    height: 25px;
-    width: 25px;
+    height: 23px;
+    width: 23px;
   }
 }
 

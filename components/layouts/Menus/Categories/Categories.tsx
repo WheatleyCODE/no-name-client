@@ -7,12 +7,16 @@ interface CategoriesProps {
   noText?: boolean;
 }
 
-export const Categories: FC<CategoriesProps> = ({ noText = false }) => {
+export const Categories: FC<CategoriesProps> = ({ noText = false, onOpenWindow }) => {
   const [showMenu, setShowMenu] = useState(false);
+
+  const onClickHandler = () => {
+    setShowMenu((p) => !p);
+  };
 
   return (
     <div className={s.categories}>
-      <Button onClickHandler={() => setShowMenu((p) => !p)} className={s.blue}>
+      <Button onClickHandler={onClickHandler} className={s.blue}>
         <div style={{ width: noText ? '20px' : '137.5px' }}>
           <CSSTransition
             in={!noText}

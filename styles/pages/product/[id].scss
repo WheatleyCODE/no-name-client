@@ -1,0 +1,85 @@
+@import '../../mixins.scss';
+
+.product {
+  @include flex-center;
+
+  .title {
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+
+  .width {
+    max-width: 1300px;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .productMain {
+    display: flex;
+
+    .image {
+      display: flex;
+      justify-content: center;
+      width: 50%;
+      // background-color: rgba(0, 55, 255, 0.339);
+
+      .img {
+        img {
+          margin: auto;
+        }
+
+        .imgDesc {
+          margin-top: 20px;
+        }
+      }
+    }
+
+    .text {
+      width: 50%;
+    }
+  }
+
+  .productFooter {
+    width: 100%;
+  }
+
+  .description {
+    padding-top: 20px;
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    .slider {
+      margin-top: 20px;
+    }
+
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .product {
+    .title {
+      margin-top: 20px;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .product {
+    .productMain {
+      display: flex;
+      flex-direction: column;
+
+      .image {
+        width: 100%;
+      }
+
+      .text {
+        width: 100%;
+      }
+    }
+  }
+}

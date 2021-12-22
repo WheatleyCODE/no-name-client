@@ -2,13 +2,16 @@ import { FC, useEffect } from 'react';
 import SwiperCore, { EffectFade, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
-import { categoriesMenuItems } from 'consts';
+import { categoriesMenuItems, PathRoutes } from 'consts';
 import img from 'public/test.jpg';
+import { useRouter } from 'next/router';
 import s from '@s/components/index.module.scss';
 
 interface CategoriesSliderProps {}
 
 export const CategoriesSlider: FC<CategoriesSliderProps> = () => {
+  const router = useRouter();
+
   useEffect(() => {
     SwiperCore.use([EffectFade, Navigation, Pagination]);
   }, []);
@@ -39,7 +42,12 @@ export const CategoriesSlider: FC<CategoriesSliderProps> = () => {
       >
         {categoriesMenuItems.map((item) => (
           <SwiperSlide key={item.icon}>
-            <div className={s.categoriesSlide}>
+            <div
+              onClick={() => {
+                router.push(PathRoutes.PRODUCTS);
+              }}
+              className={s.categoriesSlide}
+            >
               <div className={s.circle}>
                 <Image alt="Картинка" src={img} />
               </div>

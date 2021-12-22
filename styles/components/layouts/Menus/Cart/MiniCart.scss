@@ -7,6 +7,7 @@
   top: 48px;
   right: 0;
   width: 300px;
+  // height: 500px;
   background-color: rgb(248, 248, 248);
   border-radius: 8px;
 
@@ -15,24 +16,26 @@
     flex-direction: column;
     width: 100%;
     border-radius: 5px;
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
 
     .mainItem {
       width: 100%;
       padding: 3px;
-      height: 80px;
+      min-height: 80px;
       border-radius: 5px;
       background-color: rgba(0, 0, 0, 0.023);
       margin-bottom: 10px;
     }
+  }
 
-    .cartLink {
-      display: flex;
-      justify-content: center;
-      border-top: 1px solid $colorLightGrey;
-      width: 100%;
-      font-size: 0.8rem;
-      padding-top: 18px;
-    }
+  .cartLink {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid $colorLightGrey;
+    width: 100%;
+    font-size: 0.8rem;
+    padding-top: 18px;
   }
 
   .cartFooter {
@@ -50,5 +53,28 @@
         margin-left: 10px;
       }
     }
+  }
+}
+
+.miniCart.desctop {
+  height: 600px;
+  padding-right: 5px;
+
+  .cartMain {
+    padding-right: 5px;
+  }
+
+  .cartMain::-webkit-scrollbar {
+    width: 6px; /* ширина scrollbar */
+  }
+
+  .cartMain::-webkit-scrollbar-track {
+    background: $colorLightGrey; /* цвет дорожки */
+  }
+
+  .cartMain::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); /* цвет плашки */
+    border-radius: 20px; /* закругления плашки */
+    // border: 3px solid orange; /* padding вокруг плашки */
   }
 }

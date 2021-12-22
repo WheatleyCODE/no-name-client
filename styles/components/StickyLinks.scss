@@ -6,7 +6,7 @@
   justify-content: center;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 12;
   margin-bottom: 6px;
   background-color: $colorWhite;
   cursor: pointer;
@@ -24,6 +24,12 @@
     display: flex;
     align-items: center;
     scroll-behavior: smooth;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
   }
 
   .navLinks {
@@ -83,9 +89,24 @@
 @media screen and (min-width: 730px) {
   .stickyLinks {
     position: sticky;
+    font-size: 0.8rem;
+
+    ul {
+      width: 100%;
+    }
+
+    ul .navLinks {
+      margin: 0;
+      padding: 0;
+      background-color: $colorWhite;
+      margin-left: 15px;
+    }
+
+    ul .navLinks.active {
+      background-color: $colorWhite;
+    }
 
     top: 59px;
-    z-index: 50;
 
     &.shadow {
       box-shadow: 0 5px 5px 0 rgb(232, 232, 232);
@@ -103,6 +124,28 @@
 
     .paddingBack {
       animation: none;
+    }
+  }
+}
+
+@media screen and (min-width: 1030px) {
+  .stickyLinks {
+    position: sticky;
+    font-size: 1rem;
+
+    ul {
+      width: 100%;
+    }
+
+    ul .navLinks {
+      margin: 0;
+      padding: 0;
+      background-color: $colorWhite;
+      margin-left: 15px;
+    }
+
+    ul .navLinks.active {
+      background-color: $colorWhite;
     }
   }
 }

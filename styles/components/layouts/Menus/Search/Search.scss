@@ -3,6 +3,7 @@
 
 .search {
   @include flex-center;
+  position: relative;
   background: linear-gradient(90deg, $colorPrimary 0%, $colorOrange 100%);
   height: 36px;
   width: 375px;
@@ -16,6 +17,30 @@
     padding: 5px 10px;
     padding-left: 15px;
     border-radius: 6px;
+  }
+
+  .searchResults {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    top: 40px;
+    height: auto;
+    width: 100%;
+    background-color: $colorWhite;
+    box-shadow: 0 2px 5px 0 $colorLightGrey;
+    border-radius: 7px;
+    color: $colorBlack;
+    padding: 10px;
+    padding-bottom: 0;
+
+    .item {
+      background-color: rgba(0, 0, 0, 0.05);
+      width: 100%;
+      padding: 40px 0;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
   }
 
   .iconButton {
