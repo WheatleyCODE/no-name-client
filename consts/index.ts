@@ -66,7 +66,7 @@ export const MAX_MOBILE_HEIGHT = 436;
 
 export const categoriesMenuItems = [
   {
-    name: 'Кисточки для подкраски',
+    name: 'Штрих-корректоры',
     icon: 'fal fa-paint-brush',
     items: [
       {
@@ -114,7 +114,7 @@ export const categoriesMenuItems = [
     ],
   },
   {
-    name: 'Маркеры для подкраски',
+    name: 'Маркеры',
     icon: 'fal fa-highlighter',
     items: [
       {

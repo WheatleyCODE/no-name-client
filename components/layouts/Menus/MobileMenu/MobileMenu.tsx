@@ -176,6 +176,7 @@ export const MobileMenu: FC = () => {
         );
       })}
       <MobileCartButton
+        pathName={router.pathname}
         openCartHandler={() => {
           setShowCart(true);
         }}

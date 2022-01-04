@@ -17,7 +17,12 @@ export const Promocode: FC<PromocodeProps> = () => {
         icon={'none'}
       />
       <div className={s.buttonBlock}>
-        <Button className={s.bluePull}>Активировать</Button>
+        <Button className={s.bluePull}>
+          <span className={s.text}>Активировать</span>
+          <span className={s.icon}>
+            <i className="fal fa-arrow-alt-right" />
+          </span>
+        </Button>
       </div>
     </div>
   );

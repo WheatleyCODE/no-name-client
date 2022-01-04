@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { Product, ProductType } from '@t';
 import { PathRoutes } from 'consts';
 import s from '@s/components/index.module.scss';
+import { transformPrice } from 'utils';
 
 interface ProductCardProps {
   isMobile?: boolean;
@@ -15,6 +16,8 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
   const router = useRouter();
   const { isMobile = false, product, isHeight = false } = props;
   const { name, description, imgUrl, type, price } = product;
+
+  console.log(isMobile, 'dsddadadad')
 
   const onClickBatton = (e: any) => {
     e.stopPropagation();
@@ -63,7 +66,7 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
         </div>
       </div>
       <div className={s.buy}>
-        <div className={s.price}>{price} ₽</div>
+        <div className={s.price}>{transformPrice(price)}</div>
         <div className={s.buyButton}>{button}</div>
       </div>
     </div>

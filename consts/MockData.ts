@@ -244,7 +244,7 @@ export const data = [
     ],
   },
   {
-    title: 'Краска',
+    title: 'Эмаль по коду',
     isSlider: false,
     products: [
       {

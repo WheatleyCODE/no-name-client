@@ -1,0 +1,52 @@
+.productMenuMobile {
+  display: none;
+
+  button {
+    padding: 4px 9px;
+    font-size: 0.95rem;
+
+    i {
+      margin-left: 10px;
+    }
+  }
+}
+
+.productMenuMobileModal {
+  .ul li {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  li.active {
+    color: $colorOrange;
+  }
+
+  ul li {
+    transition: all 0.2s;
+    padding: 5px;
+    padding-left: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+
+    &:hover {
+      color: $colorOrange;
+    }
+
+    i {
+      width: 30px;
+      color: $colorBlack;
+    }
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $colorLightGrey;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .productMenuMobile {
+    display: block;
+  }
+}

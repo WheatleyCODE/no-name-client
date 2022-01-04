@@ -11,6 +11,7 @@ const Articles: NextPage<ArticlesProps> = () => {
     'Статья один',
     'Еще одна',
     'Нет шансов',
+    'Как стать ниндзя?',
   ];
   return (
     <MainLayout description="Контакты" title="Контакты" keywords={['Контакты', 'noname']}>

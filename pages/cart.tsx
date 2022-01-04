@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { CartTable, MainLayout, Promocode } from '@components';
+import { CartTable, MainLayout, Promocode, ToOrder } from '@components';
 import s from '@s/pages/index.module.scss';
 
 const Cart: NextPage = () => {
@@ -15,7 +15,9 @@ const Cart: NextPage = () => {
             <h3 className={s.title}>Промокод</h3>
             <Promocode />
           </div>
-          <div className={s.cartPageFooter}>footer</div>
+          <div className={s.cartPageFooter}>
+            <ToOrder />
+          </div>
         </div>
       </div>
     </MainLayout>

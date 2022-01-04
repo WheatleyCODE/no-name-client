@@ -12,9 +12,10 @@ export const SearchInput: FC<SearchInputProps> = ({ value, onChange }) => {
       <input
         onChange={(e) => onChange(e)}
         value={value}
-        placeholder="Код цвета, Марка автомобиля, RAL"
+        placeholder="Код краски, RAL"
         type="text"
       />
+      <i className="far fa-search" />
     </div>
   );
 };

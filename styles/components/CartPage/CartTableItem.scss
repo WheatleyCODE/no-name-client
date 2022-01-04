@@ -1,4 +1,5 @@
 .cartTableItem {
+  position: relative;
   display: flex;
   margin-bottom: 20px;
   padding: 0 5px;
@@ -11,6 +12,20 @@
   .sum {
     @include flex-center;
     justify-content: flex-start;
+  }
+
+  .delete {
+    transition: all 0.2s;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: rgb(64, 64, 64);
+
+    &:hover {
+      color: $colorOrange;
+    }
   }
 
   .title {
@@ -30,6 +45,20 @@
       font-size: 0.8rem;
       padding-right: 20px;
     }
+
+    .params {
+      margin-top: 10px;
+      font-size: 0.8rem;
+
+      li {
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .group {
+    display: flex;
+    // width: 650px;
   }
 
   .price {
@@ -52,6 +81,60 @@
 
     img {
       height: 100%;
+    }
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .itemMobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .cartTableItem {
+    display: flex;
+    flex-direction: column;
+
+    .price,
+    .count,
+    .sum {
+      display: none;
+    }
+
+    .title,
+    .imges {
+      display: none;
+    }
+
+    .itemMobile {
+      display: flex;
+
+      .title,
+      .imges {
+        display: block;
+      }
+
+      .name {
+        font-size: 0.85rem;
+      }
+    }
+
+    .mobile {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      .price,
+      .count,
+      .sum {
+        display: block;
+        width: auto;
+      }
     }
   }
 }

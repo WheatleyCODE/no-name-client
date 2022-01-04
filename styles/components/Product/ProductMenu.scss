@@ -1,0 +1,40 @@
+.productMenu {
+  position: sticky;
+  top: 70px;
+  padding-top: 20px;
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 300px;
+
+  .ul li {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  li.active {
+    color: $colorOrange;
+  }
+
+  ul li {
+    transition: all 0.2s;
+    padding: 5px;
+    padding-left: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+
+    &:hover {
+      color: $colorOrange;
+    }
+
+    i {
+      width: 30px;
+      color: $colorBlack;
+    }
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .productMenu {
+    display: none;
+  }
+}

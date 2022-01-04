@@ -1,8 +1,8 @@
 import { NextPage } from 'next';
 import { MainLayout, ProductOptions, ProductSlider } from '@components';
 import { useRouter } from 'next/router';
-import s from '@s/pages/index.module.scss';
 import { popularData } from 'consts';
+import s from '@s/pages/index.module.scss';
 
 const Product: NextPage = () => {
   const router = useRouter();

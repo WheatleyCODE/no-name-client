@@ -1,0 +1,39 @@
+.qstin {
+  margin-bottom: 20px;
+  border: 1px solid $colorLightGrey;
+  border-radius: 8px;
+
+  .question {
+    display: flex;
+    align-items: center;
+    padding: 15px 10px;
+    cursor: pointer;
+
+    i {
+      min-width: 45px;
+      padding-left: 8px;
+    }
+  }
+
+  .answer {
+    padding: 5px 20px;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.045);
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    letter-spacing: 0.1px;
+    border-top: 1px solid $colorLightGrey;
+
+    span {
+      display: block;
+      font-size: 0.95rem;
+      padding: 15px 20px;
+      border-radius: 10px;
+    }
+
+    i {
+      margin-right: 10px;
+    }
+  }
+}

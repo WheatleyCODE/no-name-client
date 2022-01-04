@@ -16,12 +16,19 @@
 
   .art {
     display: flex;
+    cursor: pointer;
     margin-bottom: 20px;
     border-radius: 10px;
-    padding: 15px 20px;
+    padding: 20px 20px;
+    border: 1px solid $colorLightGrey;
+
+    &:hover .text h3 {
+      color: $colorOrange;
+    }
 
     .img {
-      margin-right: 10px;
+      margin-right: 20px;
+      margin-left: 5px;
     }
 
     .text {
@@ -29,11 +36,13 @@
     }
 
     .description {
+      margin-top: 10px;
       font-weight: 100;
       font-family: Helvetica, sans-serif;
     }
 
     h3 {
+      transition: color 0.2s;
       border-bottom: 1px solid $colorLightGrey;
       margin-bottom: 5px;
       padding-bottom: 3px;
@@ -50,6 +59,14 @@
       margin-bottom: 20px;
       font-size: 1.6rem;
     }
+
+    .art {
+      padding: 15px 20px;
+      .img {
+        margin-right: 10px;
+        margin-left: 5px;
+      }
+    }
   }
 }
 
@@ -61,6 +78,11 @@
 
     .description {
       font-size: 0.9rem;
+    }
+
+    .img {
+      margin-right: 10px;
+      margin-left: 0px;
     }
   }
 }

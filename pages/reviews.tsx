@@ -38,11 +38,43 @@ const Reviews: NextPage = () => {
     },
   ];
 
+  const getStars = (num: number) => {
+    const starsArr = [];
+
+    for (let i = 0; i < num; i++) {
+      starsArr.push(
+        <div className={s.star}>
+          <i className="fal fa-star" />
+        </div>
+      );
+    }
+    return starsArr;
+  };
+
   return (
     <MainLayout description="Отзывы" title="Отзывы" keywords={['Отзывы', 'noname']}>
       <div className={s.reviews}>
         <div className={s.width}>
           <h1 className={s.title}>Отзывы о сайте</h1>
+          <div className={s.lableStars}>
+            <h3>Фильтры</h3>
+          </div>
+          <div className={s.filters}>
+            <div className={s.stars}>
+              <div className={s.lable}>Звезды</div>
+              <div className={s.star}>{getStars(5)}</div>
+              <div className={s.star}>{getStars(4)}</div>
+              <div className={s.star}>{getStars(3)}</div>
+              <div className={s.star}>{getStars(2)}</div>
+              <div className={s.star}>{getStars(1)}</div>
+            </div>
+            <div className={s.date}>
+              <select>
+                <option>Последние</option>
+                <option>Полезные</option>
+              </select>
+            </div>
+          </div>
           <ReviewList reviews={reviews} />
 
           {isAuth && <ReviewWrite />}

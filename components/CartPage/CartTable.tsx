@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { CartTableItem } from '@components';
 import s from '@s/components/index.module.scss';
+import { transformPrice } from 'utils';
 
 interface CartTableProps {}
 
@@ -23,15 +24,23 @@ export const CartTable: FC<CartTableProps> = () => {
         <div className={s.img}></div>
         <div className={s.title}></div>
         <div className={s.price}></div>
-        <div className={s.count}>Кол-во</div>
-        <div className={s.sum}>Итого</div>
+        <div className={s.count}>
+          <span>Кол-во</span>
+        </div>
+        <div className={s.sum}>
+          <span>Итого</span>
+        </div>
       </div>
       <div className={s.tableFooter}>
         <div className={s.img}></div>
         <div className={s.title}></div>
         <div className={s.price}></div>
-        <div className={s.count}>60</div>
-        <div className={s.sum}>21000</div>
+        <div className={s.count}>
+          <span>60</span>
+        </div>
+        <div className={s.sum}>
+          <span>{transformPrice(20000)}</span>
+        </div>
       </div>
     </div>
   );

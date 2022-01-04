@@ -165,3 +165,27 @@
     transform: translateX(0);
   }
 }
+
+.width-enter-active {
+  animation: widthFn 0.2s forwards ease-in;
+}
+
+.width-exit-active {
+  animation: widthFn 0.2s forwards reverse ease-in;
+}
+
+@keyframes widthFn {
+  0% {
+    height: 0px;
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    height: 70px;
+  }
+}

@@ -14,6 +14,45 @@
     margin-bottom: 30px;
   }
 
+  .filters {
+    display: flex;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+
+    .stars {
+      display: flex;
+
+      .lable {
+        margin-right: 20px;
+      }
+
+      .star {
+        color: orange;
+        cursor: pointer;
+      }
+    }
+
+    .date {
+      display: flex;
+      flex-direction: column;
+      margin-left: 20px;
+
+      select {
+        outline: none;
+        padding: 4px 7px;
+        border-radius: 5px;
+        font-size: 0.95rem;
+        background-color: $colorWhite;
+      }
+    }
+  }
+
+  .lableStars {
+    padding: 7px 20px;
+    border-bottom: 1px solid $colorLightGrey;
+  }
+
   .needLogin {
     @include flex-center;
     margin: auto;
@@ -34,12 +73,67 @@
   }
 }
 
+@media screen and (max-width: 730px) {
+  .reviews {
+    .filters {
+      padding-left: 0px;
+      padding-right: 0px;
+      justify-content: space-between;
+    }
+
+    .lableStars {
+      padding-left: 0;
+    }
+  }
+}
+
 @media screen and (max-width: 600px) {
   .reviews {
     .title {
       margin-top: 20px;
       margin-bottom: 15px;
       font-size: 1.6rem;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .reviews {
+    .filters {
+      padding: 0;
+      padding-top: 10px;
+
+      .stars {
+        display: flex;
+
+        .lable {
+          margin-right: 10px;
+        }
+
+        .star {
+          font-size: 0.95rem;
+          color: orange;
+          cursor: pointer;
+        }
+      }
+
+      .date {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+
+        select {
+          outline: none;
+          padding: 2px 0px;
+          border-radius: 5px;
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .lableStars {
+      padding-left: 0;
+      font-size: 0.9rem;
     }
   }
 }

@@ -1,6 +1,5 @@
 .products {
   padding-bottom: 20px;
-  // background-color: rgba(21, 255, 0, 0.285);
 
   .width {
     max-width: 1300px;
@@ -14,22 +13,32 @@
     font-size: 1.6rem;
   }
 
+  .test {
+    background-color: blue;
+    display: flex;
+  }
+
   .productsHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 60px;
+    border-bottom: 1px solid $colorLightGrey;
 
     .buttons {
       display: flex;
       cursor: pointer;
+
+      .active i {
+        color: $colorOrange;
+      }
 
       i {
         transition: all 0.2s;
         display: flex;
         justify-content: center;
         font-size: 1.5rem;
-        color: rgb(154, 154, 154);
+        color: rgb(217, 217, 217);
         width: 40px;
 
         &:hover {
@@ -41,46 +50,36 @@
 
   .productsMain {
     display: flex;
-  }
-
-  .productsMenu {
-    width: 340px;
-    // background-color: rgba(0, 0, 255, 0.301);
-    height: 800px;
+    padding-top: 20px;
+    margin-left: 250px;
+    margin-top: -300px;
   }
 
   .productsBoard {
-    width: 100%;
-    height: 800px;
-    // background-color: rgba(255, 228, 196, 0.315);
-  }
+    display: flex;
 
-  .productsMenu {
-    padding-top: 10px;
-
-    ul li {
-      transition: all 0.2s;
-      padding: 5px;
-      padding-left: 10px;
-      margin-top: 10px;
-      cursor: pointer;
-
-      &:hover {
-        color: $colorOrange;
-      }
-
-      i {
-        width: 30px;
-        color: $colorBlack;
-      }
+    .productCard {
+      width: 100% !important;
+      background-color: red;
     }
   }
 }
 
 @media screen and (max-width: 730px) {
   .products {
-    .productsMenu {
+    .productsMain {
+      margin-left: 0;
+      margin-top: 0;
+    }
+
+    .space {
       display: none;
+    }
+
+    .productsHeader {
+      .buttons {
+        display: none;
+      }
     }
   }
 }

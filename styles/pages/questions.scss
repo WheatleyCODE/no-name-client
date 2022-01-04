@@ -16,24 +16,6 @@
     padding: 0 20px;
   }
 
-  .question {
-    background-color: rgba(128, 128, 128, 0.1);
-    display: flex;
-    align-items: center;
-    border-radius: 8px;
-    padding: 10px 10px;
-    margin: 10px 0;
-    cursor: pointer;
-
-    &:hover i {
-      color: $colorOrange;
-    }
-
-    i {
-      margin: 0 15px;
-    }
-  }
-
   .moreQuestions {
     a {
       display: inline-block;
