@@ -1,6 +1,4 @@
 .products {
-  padding-bottom: 20px;
-
   .width {
     max-width: 1300px;
     width: 100%;
@@ -9,8 +7,8 @@
 
   .title {
     margin-top: 40px;
-    margin-bottom: 30px;
-    font-size: 1.6rem;
+    margin-bottom: 0px;
+    font-size: 1.5rem;
   }
 
   .test {
@@ -22,7 +20,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
+    height: 50px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
     border-bottom: 1px solid $colorLightGrey;
 
     .buttons {
@@ -70,6 +70,18 @@
     .productsMain {
       margin-left: 0;
       margin-top: 0;
+    }
+
+    .title {
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      margin-top: 30px;
+      font-size: 1.3rem;
+      border-bottom: 1px solid $colorLightGrey;
+    }
+
+    .productsHeader {
+      border: none;
     }
 
     .space {

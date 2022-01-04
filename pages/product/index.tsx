@@ -1,15 +1,9 @@
 import { NextPage } from 'next';
-import {
-  MainLayout,
-  ProductList,
-  ProductMenu,
-  ProductMenuMobile,
-  ProductsBoard,
-} from '@components';
+import { MainLayout, ProductMenu, ProductMenuMobile, ProductsBoard } from '@components';
 import { useRouter } from 'next/router';
 import { data } from 'consts';
-import s from '@s/pages/index.module.scss';
 import { useState } from 'react';
+import s from '@s/pages/index.module.scss';
 
 const Product: NextPage = () => {
   const router = useRouter();
@@ -18,7 +12,7 @@ const Product: NextPage = () => {
 
   return (
     <MainLayout description="Категории" title="Категории" keywords={['Товар', 'noname']}>
-      <div className={s.product}>
+      <div className={s.products}>
         <div className={s.width}>
           <h1 className={s.title}>{data[activeCategories].title}</h1>
           <div className={s.products}>

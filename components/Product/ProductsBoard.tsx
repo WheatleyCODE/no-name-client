@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Product } from '@t';
-import s from '@s/components/index.module.scss';
 import { ProductList } from './ProductList';
+import s from '@s/components/index.module.scss';
 
 interface ProductsBoardProps {
   isMobile: boolean;

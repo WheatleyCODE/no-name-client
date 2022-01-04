@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import s from '@s/components/index.module.scss';
 import { ReviewItem } from '@components';
+import s from '@s/components/index.module.scss';
 
 interface ReviewListProps {
   reviews: any;

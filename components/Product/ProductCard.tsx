@@ -3,8 +3,8 @@ import { Button } from '@components';
 import { useRouter } from 'next/router';
 import { Product, ProductType } from '@t';
 import { PathRoutes } from 'consts';
-import s from '@s/components/index.module.scss';
 import { transformPrice } from 'utils';
+import s from '@s/components/index.module.scss';
 
 interface ProductCardProps {
   isMobile?: boolean;

@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
-import s from '@s/components/index.module.scss';
 import { transformPrice } from 'utils';
 import { ProductCounter } from '@components/Product/ProductCounter';
+import s from '@s/components/index.module.scss';
 
 interface CartTableItemProps {}
 

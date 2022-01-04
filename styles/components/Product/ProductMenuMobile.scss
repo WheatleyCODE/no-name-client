@@ -2,11 +2,13 @@
   display: none;
 
   button {
-    padding: 4px 9px;
-    font-size: 0.95rem;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
 
     i {
       margin-left: 10px;
+      font-size: 1.1rem;
     }
   }
 }

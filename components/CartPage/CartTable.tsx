@@ -1,13 +1,12 @@
 import { FC } from 'react';
 import { CartTableItem } from '@components';
-import s from '@s/components/index.module.scss';
 import { transformPrice } from 'utils';
+import s from '@s/components/index.module.scss';
 
 interface CartTableProps {}
 
 export const CartTable: FC<CartTableProps> = () => {
   const data = [1, 2, 3, 4];
-
   return (
     <div className={s.cartTable}>
       <div className={s.tableHead}>

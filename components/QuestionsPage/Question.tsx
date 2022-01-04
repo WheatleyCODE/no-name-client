@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
-import s from '@s/components/index.module.scss';
 import { CSSTransition } from 'react-transition-group';
+import s from '@s/components/index.module.scss';
 
 interface QustionProps {
   quest: {

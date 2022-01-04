@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import s from '@s/components/index.module.scss';
 import { transformPrice } from 'utils';
-import { Button } from '@components/UI';
+import { Button } from '@components';
+import s from '@s/components/index.module.scss';
 
 interface ToOrderProps {}
 
