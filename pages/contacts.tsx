@@ -3,6 +3,7 @@ import { MainLayout, Messengers } from '@components';
 import s from '@s/pages/index.module.scss';
 import { PHONE } from 'consts';
 import { transormPhone } from 'utils';
+import { YMaps, Map } from 'react-yandex-maps';
 
 const Contacts: NextPage = () => {
   return (
@@ -44,7 +45,14 @@ const Contacts: NextPage = () => {
                 <div className={s.adress}>г. Нижний Новгород, ул. Радионова 38</div>
               </div>
             </div>
-            <div className={s.map}>map</div>
+            <div className={s.map}>
+              <YMaps>
+                <div>
+                  My awesome application with maps!
+                  <Map defaultState={{ center: [55.75, 37.57], zoom: 9 }} />
+                </div>
+              </YMaps>
+            </div>
           </div>
         </div>
       </div>

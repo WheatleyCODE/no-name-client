@@ -86,7 +86,6 @@
     padding: 6px 0;
     font-size: 1.08rem;
     cursor: pointer;
-    border-bottom: 1px solid $colorLightGrey;
 
     &:hover {
       color: $colorOrange;
@@ -152,6 +151,10 @@
       h3 {
         font-size: 0.9rem;
         padding-top: 20px;
+      }
+
+      li {
+        height: 38px;
       }
     }
 

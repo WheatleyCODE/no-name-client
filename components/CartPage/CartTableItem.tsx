@@ -4,7 +4,6 @@ import { ProductCounter } from '@components/Product/ProductCounter';
 import s from '@s/components/index.module.scss';
 
 interface CartTableItemProps {}
-
 export const CartTableItem: FC<CartTableItemProps> = () => {
   const [count, setCount] = useState(8);
 

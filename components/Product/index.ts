@@ -5,3 +5,4 @@ export { ProductMenu } from './ProductMenu';
 export { ProductMenuMobile } from './ProductMenuMobile';
 export { ProductOptions } from './ProductOptions';
 export { ProductsBoard } from './ProductsBoard';
+export { ProductCardFooter } from './ProductCardFooter';

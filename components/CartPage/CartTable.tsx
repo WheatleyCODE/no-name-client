@@ -4,7 +4,6 @@ import { transformPrice } from 'utils';
 import s from '@s/components/index.module.scss';
 
 interface CartTableProps {}
-
 export const CartTable: FC<CartTableProps> = () => {
   const data = [1, 2, 3, 4];
   return (

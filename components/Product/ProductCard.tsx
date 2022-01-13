@@ -17,8 +17,6 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
   const { isMobile = false, product, isHeight = false } = props;
   const { name, description, imgUrl, type, price } = product;
 
-  console.log(isMobile, 'dsddadadad')
-
   const onClickBatton = (e: any) => {
     e.stopPropagation();
   };
@@ -56,6 +54,12 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
       }
       onClick={() => router.push(PathRoutes.PRODUCT)}
     >
+      {type === ProductType.SET && (
+        <div className={s.sale}>
+          -<span className={s.number}>35</span>
+          <i className="far fa-percent"></i>
+        </div>
+      )}
       <div className={s.flex}>
         <div className={s.image}>
           <img src={imgUrl} alt={name} />
@@ -66,6 +70,11 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
         </div>
       </div>
       <div className={s.buy}>
+        {type === ProductType.SET && (
+          <div className={s.prevPrice}>
+            <span>{transformPrice(5000)}</span>
+          </div>
+        )}
         <div className={s.price}>{transformPrice(price)}</div>
         <div className={s.buyButton}>{button}</div>
       </div>
