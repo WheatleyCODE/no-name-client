@@ -3,7 +3,18 @@ import { MainLayout, Messengers } from '@components';
 import s from '@s/pages/index.module.scss';
 import { PHONE } from 'consts';
 import { transormPhone } from 'utils';
-import { YMaps, Map } from 'react-yandex-maps';
+import { YMaps, Map, Placemark } from 'react-yandex-maps';
+
+const mapData = {
+  center: [56.287187, 43.889574],
+  zoom: 10,
+};
+
+const coordinates = [
+  [56.287187, 43.889574],
+  [56.248916, 43.867349],
+  [56.315520, 44.068815],
+];
 
 const Contacts: NextPage = () => {
   return (
@@ -47,10 +58,11 @@ const Contacts: NextPage = () => {
             </div>
             <div className={s.map}>
               <YMaps>
-                <div>
-                  My awesome application with maps!
-                  <Map defaultState={{ center: [55.75, 37.57], zoom: 9 }} />
-                </div>
+                <Map height="100%" width="100%" defaultState={mapData}>
+                  {coordinates.map((coordinate, i) => (
+                    <Placemark key={i} geometry={coordinate} />
+                  ))}
+                </Map>
               </YMaps>
             </div>
           </div>

@@ -1,8 +1,9 @@
 import type { NextPage } from 'next';
-import { Link, MainLayout, ReviewList, ReviewWrite } from '@components';
+import { Link, Loader, MainLayout, ReviewList, ReviewWrite } from '@components';
 import s from '@s/pages/index.module.scss';
 import { useAuth } from '@hooks';
 import { PathRoutes } from 'consts';
+import { useState } from 'react';
 
 const Reviews: NextPage = () => {
   const { isAuth } = useAuth();
@@ -38,16 +39,31 @@ const Reviews: NextPage = () => {
     },
   ];
 
-  const getStars = (num: number) => {
+  const [activeStarIndex, setActiveStarIndex] = useState(0);
+
+  const getStars = (num: number, active?: boolean) => {
     const starsArr = [];
+
+    if (active) {
+      for (let i = 0; i < num; i++) {
+        starsArr.push(
+          <div key={i} className={s.star}>
+            <i className="fas fa-star" />
+          </div>
+        );
+      }
+
+      return starsArr;
+    }
 
     for (let i = 0; i < num; i++) {
       starsArr.push(
-        <div className={s.star}>
+        <div key={i} className={s.star}>
           <i className="fal fa-star" />
         </div>
       );
     }
+
     return starsArr;
   };
 
@@ -61,12 +77,19 @@ const Reviews: NextPage = () => {
           </div>
           <div className={s.filters}>
             <div className={s.stars}>
-              <div className={s.lable}>Звезды</div>
-              <div className={s.star}>{getStars(5)}</div>
-              <div className={s.star}>{getStars(4)}</div>
-              <div className={s.star}>{getStars(3)}</div>
-              <div className={s.star}>{getStars(2)}</div>
-              <div className={s.star}>{getStars(1)}</div>
+              {[1, 2, 3, 4, 5].map((el, i) => {
+                return (
+                  <div onClick={() => setActiveStarIndex(i + 1)} key={el} className={s.star}>
+                    <div className={s.flex}>{getStars(el, el === activeStarIndex)}</div>
+                  </div>
+                );
+              })}
+              <div className={s.lable}>
+                <span>Звезды</span>
+                {activeStarIndex !== 0 && (
+                  <span className={s.reset} onClick={() => setActiveStarIndex(0)}>Сбросить</span>
+                )}
+              </div>
             </div>
             <div className={s.date}>
               <select>
@@ -75,7 +98,8 @@ const Reviews: NextPage = () => {
               </select>
             </div>
           </div>
-          <ReviewList reviews={reviews} />
+          {activeStarIndex !== 0 && <Loader />}
+          {activeStarIndex === 0 && <ReviewList reviews={reviews} />}
 
           {isAuth && <ReviewWrite />}
           {!isAuth && (

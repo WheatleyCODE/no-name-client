@@ -9,7 +9,7 @@ const Product: NextPage = () => {
   const [activeImg, setActiveImg] = useState(0);
 
   const linksArr = [
-    'https://a.allegroimg.com/original/1149d7/99e63a9f4cf39822b782db9bed38/Buteleczka-zaprawkowa-z-pedzelkiem-60ml-Finixa-TUB',
+    'https://images.ru.prom.st/713797453_w640_h640_shtrih-korrektor-kraski-30.jpg',
     'https://cultra.ru/images/detailed/16/2682qCj6fhU[1]_jp8k-2n.jpg',
     'https://media.istockphoto.com/photos/paint-can-picture-id463906091?k=20&m=463906091&s=612x612&w=0&h=TDJ27IMYGL16OaNDB37ABuEwxTzooIaMMP72ovZYXEE=',
   ];

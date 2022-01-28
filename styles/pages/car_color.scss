@@ -1,6 +1,15 @@
 .color {
   @include flex-center;
 
+  .number {
+    margin-right: 5px;
+    font-size: 1.1rem;
+  }
+
+  .brandName {
+    margin-right: 10px;
+  }
+
   .width {
     max-width: 1300px;
     width: 100%;
@@ -14,13 +23,24 @@
   }
 
   .carImg {
+    position: relative;
     display: flex;
     justify-content: center;
     width: 100%;
     margin-bottom: 30px;
+    height: 600px;
 
     img {
+      position: absolute;
       max-height: 600px;
+    }
+
+    .display {
+      opacity: 1;
+    }
+
+    .show {
+      opacity: 0;
     }
   }
 
@@ -107,12 +127,14 @@
 
 @media screen and (max-width: 730px) {
   .color {
-    .carName {
-      padding: 3px 5px;
-      width: calc(15% + 5px);
+    .carNames {
+      .carName {
+        padding: 3px 5px;
+        // width: calc(15% + 5px);
 
-      i {
-        display: none;
+        i {
+          display: none;
+        }
       }
     }
   }
@@ -120,9 +142,15 @@
 
 @media screen and (max-width: 640px) {
   .color {
+    .carImg {
+      height: 500px;
+    }
+
+    .carNames {
+    }
     .carName {
       padding: 3px 5px;
-      width: calc(18% + 5px);
+      // width: calc(18% + 5px);
 
       i {
         display: none;
@@ -133,12 +161,18 @@
 
 @media screen and (max-width: 540px) {
   .color {
-    .carName {
-      padding: 3px 5px;
-      width: calc(22% + 5px);
+    .carImg {
+      height: 450px;
+    }
 
-      i {
-        display: none;
+    .carNames {
+      .carName {
+        padding: 3px 5px;
+        // width: calc(22% + 5px);
+
+        i {
+          display: none;
+        }
       }
     }
   }
@@ -146,12 +180,15 @@
 
 @media screen and (max-width: 540px) {
   .color {
-    .carName {
-      padding: 3px 5px;
-      width: calc(29% + 5px);
+    .carNames {
+      .carName {
+        padding: 3px 5px;
+        // width: calc(29% + 5px);
+        // margin: 5px auto;
 
-      i {
-        display: none;
+        i {
+          display: none;
+        }
       }
     }
   }
@@ -187,8 +224,11 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .color {
+    .carImg {
+      height: 400px;
+    }
     .text {
       margin-bottom: 30px;
     }
@@ -196,6 +236,30 @@
     .titleTwo {
       margin-bottom: 40px;
       font-size: 1.3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .color {
+    .carImg {
+      height: 350px;
+    }
+    .text {
+      margin-bottom: 30px;
+    }
+
+    .titleTwo {
+      margin-bottom: 40px;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .color {
+    .carImg {
+      height: 300px;
     }
   }
 }

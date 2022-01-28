@@ -21,15 +21,41 @@
     padding-top: 20px;
 
     .stars {
+      min-width: 140px;
       display: flex;
+      flex-direction: column-reverse;
 
       .lable {
-        margin-right: 20px;
+        display: flex;
+        align-items: center;
+        padding-bottom: 20px;
+
+        .reset {
+          transition: all 0.2s;
+          color: $colorPrimary;
+          cursor: pointer;
+          margin-left: 15px;
+          font-size: 0.8rem;
+          border-bottom: 1px solid $colorPrimary;
+
+          &:hover {
+            border-bottom: $colorNone;
+          }
+        }
+      }
+
+      .flex {
+        display: flex;
+        padding-bottom: 7px;
       }
 
       .star {
         color: orange;
         cursor: pointer;
+
+        i {
+          font-size: 1.5rem;
+        }
       }
     }
 
@@ -107,11 +133,10 @@
         display: flex;
 
         .lable {
-          margin-right: 10px;
+          padding-bottom: 14px;
         }
 
         .star {
-          font-size: 0.95rem;
           color: orange;
           cursor: pointer;
         }

@@ -12,8 +12,7 @@ export const data = [
         name: 'Штрих-корректор c эмалью по коду цвета автомобиля',
         description:
           'Эмаль по коду цвета автомобиля во флаконе с кисточкой, предназначенная для ремонта сколов и царапин',
-        imgUrl:
-          'https://a.allegroimg.com/original/1149d7/99e63a9f4cf39822b782db9bed38/Buteleczka-zaprawkowa-z-pedzelkiem-60ml-Finixa-TUB',
+        imgUrl: 'https://images.ru.prom.st/713797453_w640_h640_shtrih-korrektor-kraski-30.jpg',
         productUrl: 'corrector',
         price: 370,
       },
@@ -22,8 +21,7 @@ export const data = [
         name: 'Штрих-корректор с лаком',
         description:
           'Акриловый лак во флаконе с кистокой, предназначенный для ремонта сколов и царапин',
-        imgUrl:
-          'https://a.allegroimg.com/original/1149d7/99e63a9f4cf39822b782db9bed38/Buteleczka-zaprawkowa-z-pedzelkiem-60ml-Finixa-TUB',
+        imgUrl: 'https://images.ru.prom.st/713797453_w640_h640_shtrih-korrektor-kraski-30.jpg',
         productUrl: 'corrector',
         price: 250,
       },
@@ -32,8 +30,7 @@ export const data = [
         name: 'Штрих-корректор с грунтом',
         description:
           'Акриловый грунт во флаконе с кистокой, предназначенный для грунтования металла перед покраской',
-        imgUrl:
-          'https://a.allegroimg.com/original/1149d7/99e63a9f4cf39822b782db9bed38/Buteleczka-zaprawkowa-z-pedzelkiem-60ml-Finixa-TUB',
+        imgUrl: 'https://images.ru.prom.st/713797453_w640_h640_shtrih-korrektor-kraski-30.jpg',
         productUrl: 'corrector',
         price: 210,
       },
@@ -42,8 +39,7 @@ export const data = [
         name: 'Грунт-преобразователь ржавчины',
         description:
           'Грунт-преобразователь ржавчины во флаконе с кисточкой предназначенный для нейтрализации ржавчины',
-        imgUrl:
-          'https://a.allegroimg.com/original/1149d7/99e63a9f4cf39822b782db9bed38/Buteleczka-zaprawkowa-z-pedzelkiem-60ml-Finixa-TUB',
+        imgUrl: 'https://images.ru.prom.st/713797453_w640_h640_shtrih-korrektor-kraski-30.jpg',
         productUrl: 'corrector',
         price: 510,
       },
@@ -52,8 +48,7 @@ export const data = [
         name: 'Штрих-корректор c эмалью по каталогу RAL',
         description:
           'Эмаль любого цвета из каталога RAL, предназначенная для покраски любых поверхностей',
-        imgUrl:
-          'https://a.allegroimg.com/original/1149d7/99e63a9f4cf39822b782db9bed38/Buteleczka-zaprawkowa-z-pedzelkiem-60ml-Finixa-TUB',
+        imgUrl: 'https://images.ru.prom.st/713797453_w640_h640_shtrih-korrektor-kraski-30.jpg',
         productUrl: 'corrector',
         price: 370,
       },
@@ -62,8 +57,7 @@ export const data = [
         name: 'Штрих-корректор c эмалью по каталогу RAL DESIGN',
         description:
           'Эмаль любого цвета из каталога RAL DESIGN, предназначенная для покраски любых поверхностей',
-        imgUrl:
-          'https://a.allegroimg.com/original/1149d7/99e63a9f4cf39822b782db9bed38/Buteleczka-zaprawkowa-z-pedzelkiem-60ml-Finixa-TUB',
+        imgUrl: 'https://images.ru.prom.st/713797453_w640_h640_shtrih-korrektor-kraski-30.jpg',
         productUrl: 'corrector',
         price: 370,
       },
@@ -72,8 +66,7 @@ export const data = [
         name: 'Штрих-корректор c эмалью по коду цвета автомобиля',
         description:
           'Эмаль по коду цвета автомобиля во флаконе с кисточкой, предназначенная для локального ремонта или подкраски сколов и царапин',
-        imgUrl:
-          'https://a.allegroimg.com/original/1149d7/99e63a9f4cf39822b782db9bed38/Buteleczka-zaprawkowa-z-pedzelkiem-60ml-Finixa-TUB',
+        imgUrl: 'https://images.ru.prom.st/713797453_w640_h640_shtrih-korrektor-kraski-30.jpg',
         productUrl: 'corrector',
         price: 370,
       },
@@ -82,8 +75,7 @@ export const data = [
         name: 'Штрих-корректор с лаком',
         description:
           'Акриловый лак во флаконе с кистокой, предназначенный для ремонта сколов и царапин',
-        imgUrl:
-          'https://a.allegroimg.com/original/1149d7/99e63a9f4cf39822b782db9bed38/Buteleczka-zaprawkowa-z-pedzelkiem-60ml-Finixa-TUB',
+        imgUrl: 'https://images.ru.prom.st/713797453_w640_h640_shtrih-korrektor-kraski-30.jpg',
         productUrl: 'corrector',
         price: 250,
       },
@@ -482,8 +474,7 @@ export const popularData = {
       name: 'Штрих-корректор c эмалью по коду цвета автомобиля',
       description:
         'Эмаль по коду цвета автомобиля во флаконе с кисточкой, предназначенная для ремонта сколов и царапин',
-      imgUrl:
-        'https://a.allegroimg.com/original/1149d7/99e63a9f4cf39822b782db9bed38/Buteleczka-zaprawkowa-z-pedzelkiem-60ml-Finixa-TUB',
+      imgUrl: 'https://images.ru.prom.st/713797453_w640_h640_shtrih-korrektor-kraski-30.jpg',
       productUrl: 'color',
       price: 370,
     },

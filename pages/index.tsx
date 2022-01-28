@@ -13,6 +13,7 @@ import {
   ProductList,
   ProductSlider,
   StickyLinks,
+  NewSlider,
 } from '@components';
 import { useAuth, useTypedSelector } from '@hooks';
 import { wrapper } from '@store';
@@ -84,8 +85,8 @@ const Home: NextPage = () => {
           <div className={s.title}>
             <h2>Новое и популярное</h2>
           </div>
+          <NewSlider />
         </div>
-        <ProductSlider isHeight isMobile products={popularData.products} />
       </div>
       <div className={s.mainLanding}>
         <StickyLinks />

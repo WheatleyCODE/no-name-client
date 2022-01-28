@@ -11,7 +11,7 @@ export const ReviewItem: FC<ReviewItemProps> = ({ review }) => {
 
     for (let i = 0; i < num; i++) {
       starsArr.push(
-        <div className={s.star}>
+        <div key={i} className={s.star}>
           <i className="fas fa-star" />
         </div>
       );

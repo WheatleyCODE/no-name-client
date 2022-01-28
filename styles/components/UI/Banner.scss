@@ -1,6 +1,8 @@
 .banner {
+  cursor: pointer;
   max-width: 1300px;
-  padding: 20px;
+  padding: 0 20px;
+  margin: 20px 0;
   width: 100%;
 
   img {
@@ -16,11 +18,10 @@
 }
 
 .mobileBanner {
-  padding: 20px;
   display: none;
 
   img {
-    border-radius: 10px;
+    border-radius: 0px;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 5px 10px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
   }
 }
@@ -43,6 +44,6 @@
 
 @media screen and (min-width: 730px) {
   .banner {
-    padding: 30px 20px;
+    // padding: 30px 20px;
   }
 }

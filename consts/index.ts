@@ -42,6 +42,173 @@ export enum socials {
   WHATSAPP = 'whatsapp',
 }
 
+export const carBrands = [
+  {
+    brandName: 'Acura',
+    numbers: [15, 22],
+  },
+  {
+    brandName: 'Alfa Romeo',
+    numbers: [5, 8, 14, 17, 18],
+  },
+  {
+    brandName: 'Audi',
+    numbers: [14, 17, 18],
+  },
+  {
+    brandName: 'BMW',
+    numbers: [2, 3, 4, 7, 8],
+  },
+  {
+    brandName: 'Citroen',
+    numbers: [2, 3, 4, 7, 8, 10],
+  },
+  {
+    brandName: 'Fiat',
+    numbers: [4, 5, 14, 18],
+  },
+  {
+    brandName: 'Ford EUR',
+    numbers: [2, 3, 4, 7, 8, 10, 15, 17, 18, 22],
+  },
+  {
+    brandName: 'Ford USA',
+    numbers: [15],
+  },
+  {
+    brandName: 'GAZ (Volga)',
+    numbers: [18],
+  },
+  {
+    brandName: ' GM',
+    numbers: [2, 7, 10, 12],
+  },
+  {
+    brandName: 'GM USA',
+    numbers: [16, 18, 19, 20, 21],
+  },
+  {
+    brandName: 'Honda',
+    numbers: [15, 22],
+  },
+  {
+    brandName: 'Hyundai',
+    numbers: [2, 7, 10, 15],
+  },
+  {
+    brandName: 'Infiniti',
+    numbers: [7, 10],
+  },
+  {
+    brandName: 'Innocenti',
+    numbers: [22],
+  },
+  {
+    brandName: 'Isuzu',
+    numbers: [2, 7, 10, 13, 15],
+  },
+  {
+    brandName: 'Jaguar',
+    numbers: [2, 4, 5, 15],
+  },
+  {
+    brandName: 'Kia',
+    numbers: [15],
+  },
+  {
+    brandName: 'Lada',
+    numbers: [4, 5, 8, 17, 18, 19],
+  },
+  {
+    brandName: 'Lamborghini',
+    numbers: [18],
+  },
+  {
+    brandName: 'Land Rover',
+    numbers: [2, 3, 7, 10, 15, 17],
+  },
+  {
+    brandName: 'Lexus',
+    numbers: [3, 7, 10, 15],
+  },
+  {
+    brandName: 'Mazda',
+    numbers: [7, 10, 15],
+  },
+  {
+    brandName: 'Mersedes Benz',
+    numbers: [2, 3, 8, 10, 12, 15, 24],
+  },
+  {
+    brandName: 'Mini',
+    numbers: [4],
+  },
+  {
+    brandName: 'Mitsubushi',
+    numbers: [2, 3, 4, 5, 7, 8, 10, 15],
+  },
+  {
+    brandName: 'Nissan',
+    numbers: [2, 4, 7, 10, 15],
+  },
+  {
+    brandName: 'Opel',
+    numbers: [2, 3, 4, 7, 8, 10],
+  },
+  {
+    brandName: 'Peugeot',
+    numbers: [2, 3, 8],
+  },
+  {
+    brandName: 'Porsche',
+    numbers: [2, 7, 8, 10, 12, 15],
+  },
+  {
+    brandName: 'Renault',
+    numbers: [3, 7, 8, 10, 15],
+  },
+  {
+    brandName: 'Rover',
+    numbers: [2, 3, 5, 7, 10, 15],
+  },
+  {
+    brandName: 'Saab',
+    numbers: [3, 8, 10, 15, 17],
+  },
+  {
+    brandName: 'Ssang Yong',
+    numbers: [12, 15],
+  },
+  {
+    brandName: 'Seat',
+    numbers: [3, 8, 17, 18],
+  },
+  {
+    brandName: 'Skoda',
+    numbers: [8, 10, 17],
+  },
+  {
+    brandName: 'Subaru',
+    numbers: [2, 7, 8, 10, 11, 15],
+  },
+  {
+    brandName: 'Suzuki',
+    numbers: [7, 10, 11, 17, 20, 23, 24],
+  },
+  {
+    brandName: 'Toyota',
+    numbers: [3, 4, 7, 8, 10, 11, 12, 15, 17, 23],
+  },
+  {
+    brandName: 'Volkswagen',
+    numbers: [1, 2, 3, 7, 8, 14, 17, 18, 19],
+  },
+  {
+    brandName: 'Volvo',
+    numbers: [2, 3, 7, 8, 9, 10, 11, 12, 15],
+  },
+];
+
 export const messengers = [
   {
     name: 'Telegram',

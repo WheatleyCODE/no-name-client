@@ -8,3 +8,4 @@ export { ColorPanel } from './ColorPanel/ColorPanel';
 export { PageCloses } from './PageCloses';
 export { Banner } from './Banner';
 export { Messengers } from './Messengers';
+export { Loader } from './Loaders/Loader';

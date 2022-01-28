@@ -1,55 +1,26 @@
 import type { NextPage } from 'next';
 import { MainLayout } from '@components';
 import { Link, Element } from 'react-scroll';
-import s from '@s/pages/index.module.scss';
 import { useState } from 'react';
+import { carBrands } from 'consts';
+import s from '@s/pages/index.module.scss';
 
 const CarColor: NextPage = () => {
-  const carDrands = [
-    'Acura',
-    'Audi',
-    'BMV',
-    'Toyota',
-    'Mersedes',
-    'Shevrolet',
-    'Ford',
-    'Tesla',
-    'GM',
-    'Pegeot',
-    'Hyundai',
-    'LADA',
-    'Nissan',
-    'Renault',
-    'Chery',
-    'Hyundai',
-    'BMV',
-    'Tesla',
-    'Martin',
-    'Bob',
-    'Acura',
-    'Audi',
-    'BMV',
-    'Toyota',
-    'Mersedes',
-    'Shevrolet',
-    'Ford',
-    'Tesla',
-    'GM',
-    'Pegeot',
-    'Hyundai',
-    'LADA',
-    'Nissan',
-    'Renault',
-    'Chery',
-    'Hyundai',
-    'BMV',
-    'Tesla',
-    'Martin',
-    'Bob',
-  ];
+  const numbers: number[] = [];
+
+  for (let i = 1; i < 25; i++) {
+    numbers.push(i);
+  }
+
+  const [activeNum, setActiveNum] = useState([1, 24]);
 
   const [activeIndex, setActiveIndex] = useState(0);
   const hashLink = 'somerandomstring';
+
+  const onBrandClick = (i: number, numbers: number[]) => {
+    setActiveIndex(i);
+    setActiveNum([...numbers]);
+  };
 
   return (
     <MainLayout
@@ -77,9 +48,9 @@ const CarColor: NextPage = () => {
             </h4>
           </div>
           <div className={s.carNames}>
-            {carDrands.map((brand, i) => (
+            {carBrands.map((brand, i) => (
               <Link
-                onClick={() => setActiveIndex(i)}
+                onClick={() => onBrandClick(i, brand.numbers)}
                 to={hashLink}
                 spy
                 smooth
@@ -90,13 +61,42 @@ const CarColor: NextPage = () => {
               >
                 <span>
                   <i className="fal fa-car" />
-                  {brand}
+                  {brand.brandName}
                 </span>
               </Link>
             ))}
           </div>
+          <div>
+            <span className={s.brandName}>{carBrands[activeIndex].brandName}</span>
+            {activeNum.map((num, i) => (
+              <span key={num} className={s.number}>
+                {num}
+                {i !== activeNum.length - 1 && ','}
+              </span>
+            ))}
+          </div>
           <Element name={hashLink} className={s.carImg}>
-            <img src="http://192.168.88.16:5000/cars.jpg" alt="car" />
+            <img src="http://192.168.88.18:5000/cars.jpg" alt="car" />
+            {numbers.map((num) => {
+              let isActive = false;
+
+              activeNum.forEach((actNum) => {
+                if (num === actNum) {
+                  isActive = true;
+                }
+              });
+
+              console.log(isActive);
+
+              return (
+                <img
+                  className={isActive ? s.show : s.display}
+                  key={num}
+                  src={`http://192.168.88.18:5000/table/car_${num}.png`}
+                  alt="car"
+                />
+              );
+            })}
           </Element>
           <h2 className={s.titleTwo}>Альтертативные варианты</h2>
 
