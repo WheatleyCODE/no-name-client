@@ -13,8 +13,10 @@ export const ReviewList: FC<ReviewListProps> = ({ reviews }) => {
         <ReviewItem key={i} review={rev} />
       ))}
       <div className={s.pagination}>
-        {reviews.map((el) => (
-          <div key={el.text} className={s.pagItem} />
+        {reviews.map((el, i) => (
+          <div key={el.text} className={s.pagItem}>
+            {i + 1}
+          </div>
         ))}
       </div>
     </div>

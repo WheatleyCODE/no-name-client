@@ -1,26 +1,40 @@
 import type { NextPage } from 'next';
-import { MainLayout } from '@components';
-import { Link, Element } from 'react-scroll';
-import { useState } from 'react';
+import { MainLayout, ColorTable, CarBrandsList, Link, CarImages } from '@components';
+import { wrapper } from '@store';
+import { NextThunckDispatch } from '@store/reducers';
+import { setCurrentCarBrandAC, setCurrentCarBrandIndexAC } from '@store/actions-creators/carColor';
+import { useTypedSelector } from '@hooks';
 import { carBrands } from 'consts';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 import s from '@s/pages/index.module.scss';
 
-const CarColor: NextPage = () => {
-  const numbers: number[] = [];
+export const getServerSideProps = wrapper.getServerSideProps((store): any => ({ query }: any) => {
+  const { carColor } = store.getState();
+  if (carColor.currentCarBrand.brandName === query.brand) return;
 
-  for (let i = 1; i < 25; i++) {
-    numbers.push(i);
+  const dispatch = store.dispatch as NextThunckDispatch;
+  const index = carBrands.findIndex((brand) => query.brand === brand.brandName);
+
+  if (index !== -1) {
+    dispatch(setCurrentCarBrandIndexAC(index));
+    dispatch(setCurrentCarBrandAC({ ...carBrands[index] }));
   }
+});
 
-  const [activeNum, setActiveNum] = useState([1, 24]);
+const CarColor: NextPage = () => {
+  const { currentCarBrand } = useTypedSelector((state) => state.carColor);
+  const router = useRouter();
 
-  const [activeIndex, setActiveIndex] = useState(0);
-  const hashLink = 'somerandomstring';
-
-  const onBrandClick = (i: number, numbers: number[]) => {
-    setActiveIndex(i);
-    setActiveNum([...numbers]);
-  };
+  useEffect(() => {
+    if (currentCarBrand.brandName !== router.query.brand) {
+      router.push({
+        query: {
+          brand: currentCarBrand.brandName,
+        },
+      });
+    }
+  }, [router.query]);
 
   return (
     <MainLayout
@@ -35,71 +49,28 @@ const CarColor: NextPage = () => {
             <span>
               На многих автомобилях обозначение цветового код краски нанесено на заводскую табличку,
               которая находится в следующих местах.
-            </span>{' '}
+            </span>
             <ul>
-              <li>- Подкапотное пространство </li>
+              <li>- Подкапотное пространство</li>
               <li>- Проемы передних дверей</li>
               <li>- Крепление передней стойки под капотом</li>
               <li>- Крышка багажника</li>
               <li>- Под запасным колесом.</li>
             </ul>
             <h4>
-              Выберете марку, что бы посмотреть где находится табличка с кодом краски автомобиля
+              <span>
+                Выберете марку, что бы посмотреть где находится табличка с кодом краски автомобиля
+              </span>
+              <i className="fal fa-arrow-alt-down" />
             </h4>
           </div>
-          <div className={s.carNames}>
-            {carBrands.map((brand, i) => (
-              <Link
-                onClick={() => onBrandClick(i, brand.numbers)}
-                to={hashLink}
-                spy
-                smooth
-                offset={-100}
-                duration={500}
-                className={i === activeIndex ? s.carName + ' ' + s.active : s.carName}
-                key={i}
-              >
-                <span>
-                  <i className="fal fa-car" />
-                  {brand.brandName}
-                </span>
-              </Link>
-            ))}
+          <CarBrandsList />
+          <CarImages />
+          <div className={s.photoBlock}>
+            <h4>Как выглядит табличка с кодом цвета автомобиля {currentCarBrand.brandName} ?</h4>
+            <ColorTable url={null} />
           </div>
-          <div>
-            <span className={s.brandName}>{carBrands[activeIndex].brandName}</span>
-            {activeNum.map((num, i) => (
-              <span key={num} className={s.number}>
-                {num}
-                {i !== activeNum.length - 1 && ','}
-              </span>
-            ))}
-          </div>
-          <Element name={hashLink} className={s.carImg}>
-            <img src="http://192.168.88.18:5000/cars.jpg" alt="car" />
-            {numbers.map((num) => {
-              let isActive = false;
-
-              activeNum.forEach((actNum) => {
-                if (num === actNum) {
-                  isActive = true;
-                }
-              });
-
-              console.log(isActive);
-
-              return (
-                <img
-                  className={isActive ? s.show : s.display}
-                  key={num}
-                  src={`http://192.168.88.18:5000/table/car_${num}.png`}
-                  alt="car"
-                />
-              );
-            })}
-          </Element>
           <h2 className={s.titleTwo}>Альтертативные варианты</h2>
-
           <div className={s.text}>
             <i className="fal fa-book" />
             <div>
@@ -121,6 +92,13 @@ const CarColor: NextPage = () => {
                 произведен в до 2014 года, то можете смело пользоваться нашей бесплатной базой
                 цветовых кодов.
               </span>
+              <div className={s.dataSearch}>
+                <Link href="#">
+                  <span className={s.textLink}>
+                    Найти в нашей базе <i className="fad fa-hand-point-left" />
+                  </span>
+                </Link>
+              </div>
             </div>
           </div>
           <div className={s.text}>
@@ -133,6 +111,13 @@ const CarColor: NextPage = () => {
                 Вас в свидетельстве о регистрации на автомобиль. Вводите вин код авто и узнаете код
                 краски.
               </span>
+              <div className={s.winCheck}>
+                <Link href="#">
+                  <span className={s.textLink}>
+                    Узнать код краски WIN номеру <i className="fad fa-hand-point-left" />
+                  </span>
+                </Link>
+              </div>
             </div>
           </div>
           <div className={s.text}>

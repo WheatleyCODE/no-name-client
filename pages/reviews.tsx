@@ -1,9 +1,10 @@
 import type { NextPage } from 'next';
 import { Link, Loader, MainLayout, ReviewList, ReviewWrite } from '@components';
-import s from '@s/pages/index.module.scss';
-import { useAuth } from '@hooks';
-import { PathRoutes } from 'consts';
 import { useState } from 'react';
+import Select, { SingleValue } from 'react-select';
+import { PathRoutes } from 'consts';
+import { useAuth } from '@hooks';
+import s from '@s/pages/index.module.scss';
 
 const Reviews: NextPage = () => {
   const { isAuth } = useAuth();
@@ -40,31 +41,80 @@ const Reviews: NextPage = () => {
   ];
 
   const [activeStarIndex, setActiveStarIndex] = useState(0);
+  const [activeDateFilter, setActiveDateFilter] = useState<null | string>(null);
 
-  const getStars = (num: number, active?: boolean) => {
-    const starsArr = [];
+  const options = [
+    {
+      value: 5,
+      label: (
+        <>
+          <i className={`fas fa-star ${s.yellow}`} />
+          <i className={`fas fa-star ${s.yellow}`} />
+          <i className={`fas fa-star ${s.yellow}`} />
+          <i className={`fas fa-star ${s.yellow}`} />
+          <i className={`fas fa-star ${s.yellow}`} />
+        </>
+      ),
+    },
+    {
+      value: 4,
+      label: (
+        <>
+          <i className={`fas fa-star ${s.yellow}`} />
+          <i className={`fas fa-star ${s.yellow}`} />
+          <i className={`fas fa-star ${s.yellow}`} />
+          <i className={`fas fa-star ${s.yellow}`} />
+        </>
+      ),
+    },
+    {
+      value: 3,
+      label: (
+        <>
+          <i className={`fas fa-star ${s.yellow}`} />
+          <i className={`fas fa-star ${s.yellow}`} />
+          <i className={`fas fa-star ${s.yellow}`} />
+        </>
+      ),
+    },
+    {
+      value: 2,
+      label: (
+        <>
+          <i className={`fas fa-star ${s.yellow}`} />
+          <i className={`fas fa-star ${s.yellow}`} />
+        </>
+      ),
+    },
+    { value: 1, label: <i className={`fas fa-star ${s.yellow}`} /> },
+  ];
 
-    if (active) {
-      for (let i = 0; i < num; i++) {
-        starsArr.push(
-          <div key={i} className={s.star}>
-            <i className="fas fa-star" />
-          </div>
-        );
-      }
+  const filterDate = [
+    {
+      value: 'last',
+      label: 'Последние',
+    },
+    {
+      value: 'cool',
+      label: 'Полезные',
+    },
+  ];
 
-      return starsArr;
+  const onChangeStars = (newValue: SingleValue<{ value: number; label: JSX.Element }>) => {
+    if (newValue?.value) {
+      setActiveStarIndex(newValue.value);
     }
+  };
 
-    for (let i = 0; i < num; i++) {
-      starsArr.push(
-        <div key={i} className={s.star}>
-          <i className="fal fa-star" />
-        </div>
-      );
+  const onChangeDateFilter = (newValue: SingleValue<{ value: string; label: string }>) => {
+    if (newValue?.value) {
+      setActiveDateFilter(newValue.value);
     }
+  };
 
-    return starsArr;
+  const onResetFilters = () => {
+    setActiveStarIndex(0);
+    setActiveDateFilter(null);
   };
 
   return (
@@ -74,32 +124,37 @@ const Reviews: NextPage = () => {
           <h1 className={s.title}>Отзывы о сайте</h1>
           <div className={s.lableStars}>
             <h3>Фильтры</h3>
+            <div className={s.lable}>
+              {(activeStarIndex !== 0 || activeDateFilter !== null) && (
+                <span className={s.reset} onClick={onResetFilters}>
+                  Сбросить
+                </span>
+              )}
+            </div>
           </div>
           <div className={s.filters}>
             <div className={s.stars}>
-              {[1, 2, 3, 4, 5].map((el, i) => {
-                return (
-                  <div onClick={() => setActiveStarIndex(i + 1)} key={el} className={s.star}>
-                    <div className={s.flex}>{getStars(el, el === activeStarIndex)}</div>
-                  </div>
-                );
-              })}
-              <div className={s.lable}>
-                <span>Звезды</span>
-                {activeStarIndex !== 0 && (
-                  <span className={s.reset} onClick={() => setActiveStarIndex(0)}>Сбросить</span>
-                )}
-              </div>
+              <Select
+                isSearchable={false}
+                onChange={onChangeStars}
+                placeholder={'Звезды'}
+                options={options}
+              />
             </div>
             <div className={s.date}>
-              <select>
-                <option>Последние</option>
-                <option>Полезные</option>
-              </select>
+              <Select
+                isSearchable={false}
+                onChange={onChangeDateFilter}
+                placeholder={'Новые'}
+                options={filterDate}
+              />
             </div>
           </div>
-          {activeStarIndex !== 0 && <Loader />}
-          {activeStarIndex === 0 && <ReviewList reviews={reviews} />}
+          {activeStarIndex !== 0 || activeDateFilter !== null ? (
+            <Loader />
+          ) : (
+            <ReviewList reviews={reviews} />
+          )}
 
           {isAuth && <ReviewWrite />}
           {!isAuth && (

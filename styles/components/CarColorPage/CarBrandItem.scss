@@ -1,0 +1,42 @@
+.carBrandItem.active {
+  span {
+    color: $colorOrange;
+  }
+}
+
+.carBrandItem {
+  padding: 4px 9px;
+  margin-bottom: 7px;
+  border: 1px solid $colorLightGrey;
+  border-radius: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+
+  span {
+    transition: all 0.2s;
+  }
+
+  &:hover span {
+    color: $colorLightOrange;
+  }
+
+  i {
+    margin-right: 6px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .carBrandItem {
+    padding: 3px 5px;
+
+    i {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .carBrandItem {
+    font-size: 0.9rem;
+  }
+}

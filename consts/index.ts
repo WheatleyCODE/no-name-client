@@ -46,166 +46,214 @@ export const carBrands = [
   {
     brandName: 'Acura',
     numbers: [15, 22],
+    tableURL: null,
   },
   {
     brandName: 'Alfa Romeo',
     numbers: [5, 8, 14, 17, 18],
+    tableURL: null,
   },
   {
     brandName: 'Audi',
     numbers: [14, 17, 18],
+    tableURL: null,
   },
   {
     brandName: 'BMW',
     numbers: [2, 3, 4, 7, 8],
+    tableURL: null,
   },
   {
     brandName: 'Citroen',
     numbers: [2, 3, 4, 7, 8, 10],
+    tableURL: null,
   },
   {
     brandName: 'Fiat',
     numbers: [4, 5, 14, 18],
+    tableURL: null,
   },
   {
     brandName: 'Ford EUR',
     numbers: [2, 3, 4, 7, 8, 10, 15, 17, 18, 22],
+    tableURL: null,
   },
   {
     brandName: 'Ford USA',
     numbers: [15],
+    tableURL: null,
   },
   {
     brandName: 'GAZ (Volga)',
     numbers: [18],
+    tableURL: null,
   },
   {
     brandName: ' GM',
     numbers: [2, 7, 10, 12],
+    tableURL: null,
   },
   {
     brandName: 'GM USA',
     numbers: [16, 18, 19, 20, 21],
+    tableURL: null,
   },
   {
     brandName: 'Honda',
     numbers: [15, 22],
+    tableURL: null,
   },
   {
     brandName: 'Hyundai',
     numbers: [2, 7, 10, 15],
+    tableURL: null,
   },
   {
     brandName: 'Infiniti',
     numbers: [7, 10],
+    tableURL: null,
   },
   {
     brandName: 'Innocenti',
     numbers: [22],
+    tableURL: null,
   },
   {
     brandName: 'Isuzu',
     numbers: [2, 7, 10, 13, 15],
+    tableURL: null,
   },
   {
     brandName: 'Jaguar',
     numbers: [2, 4, 5, 15],
+    tableURL: null,
   },
   {
     brandName: 'Kia',
     numbers: [15],
+    tableURL: null,
   },
   {
     brandName: 'Lada',
     numbers: [4, 5, 8, 17, 18, 19],
+    tableURL: null,
   },
   {
     brandName: 'Lamborghini',
     numbers: [18],
+    tableURL: null,
   },
   {
     brandName: 'Land Rover',
     numbers: [2, 3, 7, 10, 15, 17],
+    tableURL: null,
   },
   {
     brandName: 'Lexus',
     numbers: [3, 7, 10, 15],
+    tableURL: null,
   },
   {
     brandName: 'Mazda',
     numbers: [7, 10, 15],
+    tableURL: null,
   },
   {
     brandName: 'Mersedes Benz',
     numbers: [2, 3, 8, 10, 12, 15, 24],
+    tableURL: null,
   },
   {
     brandName: 'Mini',
     numbers: [4],
+    tableURL: null,
   },
   {
     brandName: 'Mitsubushi',
     numbers: [2, 3, 4, 5, 7, 8, 10, 15],
+    tableURL: null,
   },
   {
     brandName: 'Nissan',
     numbers: [2, 4, 7, 10, 15],
+    tableURL: null,
   },
   {
     brandName: 'Opel',
     numbers: [2, 3, 4, 7, 8, 10],
+    tableURL: null,
   },
   {
     brandName: 'Peugeot',
     numbers: [2, 3, 8],
+    tableURL: null,
   },
   {
     brandName: 'Porsche',
     numbers: [2, 7, 8, 10, 12, 15],
+    tableURL: null,
   },
   {
     brandName: 'Renault',
     numbers: [3, 7, 8, 10, 15],
+    tableURL: null,
   },
   {
     brandName: 'Rover',
     numbers: [2, 3, 5, 7, 10, 15],
+    tableURL: null,
   },
   {
     brandName: 'Saab',
     numbers: [3, 8, 10, 15, 17],
+    tableURL: null,
   },
   {
     brandName: 'Ssang Yong',
     numbers: [12, 15],
+    tableURL: null,
   },
   {
     brandName: 'Seat',
     numbers: [3, 8, 17, 18],
+    tableURL: null,
   },
   {
     brandName: 'Skoda',
     numbers: [8, 10, 17],
+    tableURL: null,
   },
   {
     brandName: 'Subaru',
     numbers: [2, 7, 8, 10, 11, 15],
+    tableURL: null,
   },
   {
     brandName: 'Suzuki',
     numbers: [7, 10, 11, 17, 20, 23, 24],
+    tableURL: null,
   },
   {
     brandName: 'Toyota',
     numbers: [3, 4, 7, 8, 10, 11, 12, 15, 17, 23],
+    tableURL: null,
   },
   {
     brandName: 'Volkswagen',
     numbers: [1, 2, 3, 7, 8, 14, 17, 18, 19],
+    tableURL: null,
   },
   {
     brandName: 'Volvo',
     numbers: [2, 3, 7, 8, 9, 10, 11, 12, 15],
+    tableURL: null,
+  },
+  {
+    brandName: 'Все варианты',
+    numbers: [
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
+    ],
+    tableURL: null,
   },
 ];
 

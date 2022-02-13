@@ -1,0 +1,25 @@
+.carBrandsList {
+  .brandBlock {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 15px;
+
+    .number {
+      font-size: 1.1rem;
+      margin-right: 5px;
+    }
+  }
+
+  .brandName {
+    margin-right: 8px;
+    font-size: 1.3rem;
+  }
+
+  .carNames {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

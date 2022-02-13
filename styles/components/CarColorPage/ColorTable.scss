@@ -1,0 +1,36 @@
+.colorTable {
+  .photo {
+    cursor: pointer;
+    padding: 6px 15px;
+    border: 1px solid $colorLightGrey;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: all 1s;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+
+    .lable {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .img {
+      i {
+        font-size: 15rem;
+        color: $colorLightGrey;
+      }
+    }
+
+    i {
+      font-size: 1.3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      margin-bottom: -2px;
+    }
+  }
+}

@@ -9,7 +9,7 @@ interface NavLinkProps {
 
 export const NavLink: FC<NavLinkProps> = ({ href, children, onClickHandler }) => {
   const router = useRouter();
-  const className = router.asPath === href ? s.active : null;
+  const className = router.asPath.split('?')[0] === href ? s.active : null;
 
   const clickHandler = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();

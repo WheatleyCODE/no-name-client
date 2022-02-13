@@ -9,9 +9,31 @@
     padding: 0 20px;
   }
 
+  .lable {
+    display: flex;
+    align-items: center;
+
+    .reset {
+      transition: all 0.2s;
+      color: $colorPrimary;
+      cursor: pointer;
+      margin-left: 15px;
+      font-size: 0.8rem;
+      border-bottom: 1px solid $colorPrimary;
+
+      &:hover {
+        border-bottom: $colorNone;
+      }
+    }
+  }
+
   .title {
     margin-top: 40px;
     margin-bottom: 30px;
+  }
+
+  .yellow {
+    color: orange;
   }
 
   .filters {
@@ -21,41 +43,12 @@
     padding-top: 20px;
 
     .stars {
-      min-width: 140px;
+      min-width: 155px;
       display: flex;
       flex-direction: column-reverse;
 
-      .lable {
-        display: flex;
-        align-items: center;
-        padding-bottom: 20px;
-
-        .reset {
-          transition: all 0.2s;
-          color: $colorPrimary;
-          cursor: pointer;
-          margin-left: 15px;
-          font-size: 0.8rem;
-          border-bottom: 1px solid $colorPrimary;
-
-          &:hover {
-            border-bottom: $colorNone;
-          }
-        }
-      }
-
-      .flex {
-        display: flex;
-        padding-bottom: 7px;
-      }
-
-      .star {
-        color: orange;
+      div {
         cursor: pointer;
-
-        i {
-          font-size: 1.5rem;
-        }
       }
     }
 
@@ -63,6 +56,11 @@
       display: flex;
       flex-direction: column;
       margin-left: 20px;
+      min-width: 150px;
+
+      div {
+        cursor: pointer;
+      }
 
       select {
         outline: none;
@@ -75,6 +73,7 @@
   }
 
   .lableStars {
+    display: flex;
     padding: 7px 20px;
     border-bottom: 1px solid $colorLightGrey;
   }
@@ -132,10 +131,6 @@
       .stars {
         display: flex;
 
-        .lable {
-          padding-bottom: 14px;
-        }
-
         .star {
           color: orange;
           cursor: pointer;
@@ -159,6 +154,20 @@
     .lableStars {
       padding-left: 0;
       font-size: 0.9rem;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .reviews {
+    .filters {
+      .stars {
+        min-width: 130px;
+      }
+
+      .date {
+        min-width: 130px;
+      }
     }
   }
 }

@@ -1,0 +1,81 @@
+.carImages {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 30px;
+  height: 600px;
+
+  img {
+    position: absolute;
+    max-height: 600px;
+  }
+
+  .display {
+    opacity: 1;
+  }
+
+  .show {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .carImages {
+    height: 560px;
+  }
+}
+
+@media screen and (max-width: 625px) {
+  .carImages {
+    height: 550px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .carImages {
+    height: 540px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .carImages {
+    height: 520px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .carImages {
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .carImages {
+    height: 460px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .carImages {
+    height: 440px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .carImages {
+    height: 390px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .carImages {
+    height: 330px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .carImages {
+    height: 260px;
+  }
+}

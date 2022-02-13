@@ -6,6 +6,7 @@ export * from './CartPage';
 export * from './Product';
 export * from './Review';
 export * from './Sliders';
+export * from './CarColorPage';
 export { NewSlider } from './Home/NewSlider';
 export { LoginForm } from './LoginForm';
 export { SendMailAgain } from './SendMailAgain';

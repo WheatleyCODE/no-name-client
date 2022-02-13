@@ -1,13 +1,8 @@
 .color {
   @include flex-center;
 
-  .number {
-    margin-right: 5px;
-    font-size: 1.1rem;
-  }
-
-  .brandName {
-    margin-right: 10px;
+  .photoBlock {
+    padding: 20px 0;
   }
 
   .width {
@@ -20,28 +15,6 @@
     margin-top: 40px;
     margin-bottom: 30px;
     font-size: 1.6rem;
-  }
-
-  .carImg {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 30px;
-    height: 600px;
-
-    img {
-      position: absolute;
-      max-height: 600px;
-    }
-
-    .display {
-      opacity: 1;
-    }
-
-    .show {
-      opacity: 0;
-    }
   }
 
   .colorInfo {
@@ -59,40 +32,14 @@
 
     h4 {
       padding-top: 15px;
-      font-size: 1.1rem;
-    }
-  }
-
-  .carNames {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-bottom: 20px;
-
-    .carName.active {
-      span {
-        color: $colorOrange;
-      }
-    }
-
-    .carName {
-      padding: 4px 9px;
-      margin-bottom: 7px;
-      border: 1px solid $colorLightGrey;
-      border-radius: 5px;
-      margin-right: 5px;
-      cursor: pointer;
+      font-size: 1.2rem;
 
       span {
-        transition: all 0.2s;
-      }
-
-      &:hover span {
-        color: $colorLightOrange;
+        padding: 0 10px 0 0;
       }
 
       i {
-        margin-right: 6px;
+        font-size: 1.4rem;
       }
     }
   }
@@ -117,149 +64,44 @@
     h3 {
       margin-bottom: 5px;
     }
+
+    span {
+      padding-right: 5px;
+    }
   }
 
   .titleTwo {
-    padding-top: 20px;
-    margin-bottom: 40px;
+    padding-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .dataSearch,
+  .winCheck {
+    display: inline-block;
+    width: auto;
+    font-size: 1.1rem;
+
+    .textLink {
+      display: flex;
+      align-items: center;
+
+      i {
+        margin-left: 5px;
+      }
+    }
   }
 }
 
 @media screen and (max-width: 730px) {
   .color {
     .carNames {
-      .carName {
-        padding: 3px 5px;
-        // width: calc(15% + 5px);
-
-        i {
-          display: none;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .color {
-    .carImg {
-      height: 500px;
-    }
-
-    .carNames {
-    }
-    .carName {
-      padding: 3px 5px;
-      // width: calc(18% + 5px);
-
-      i {
-        display: none;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 540px) {
-  .color {
-    .carImg {
-      height: 450px;
-    }
-
-    .carNames {
-      .carName {
-        padding: 3px 5px;
-        // width: calc(22% + 5px);
-
-        i {
-          display: none;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 540px) {
-  .color {
-    .carNames {
-      .carName {
-        padding: 3px 5px;
-        // width: calc(29% + 5px);
-        // margin: 5px auto;
-
-        i {
-          display: none;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .color {
-    .title {
-      margin-top: 20px;
-      font-size: 1.6rem;
-    }
-
-    .titleTwo {
-      padding-top: 0px;
-      margin-bottom: 35px;
-    }
-
-    .carNames {
-      .carName.active {
-        span {
-          color: $colorOrange;
-        }
-      }
-
-      .carName {
+      .carBrandItem {
         padding: 3px 5px;
 
         i {
           display: none;
         }
       }
-    }
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .color {
-    .carImg {
-      height: 400px;
-    }
-    .text {
-      margin-bottom: 30px;
-    }
-
-    .titleTwo {
-      margin-bottom: 40px;
-      font-size: 1.3rem;
-    }
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .color {
-    .carImg {
-      height: 350px;
-    }
-    .text {
-      margin-bottom: 30px;
-    }
-
-    .titleTwo {
-      margin-bottom: 40px;
-      font-size: 1.3rem;
-    }
-  }
-}
-
-@media screen and (max-width: 350px) {
-  .color {
-    .carImg {
-      height: 300px;
     }
   }
 }
